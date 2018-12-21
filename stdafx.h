@@ -14,6 +14,9 @@
 //宏定义
 #define AFX_CLASS
 
+#define InitRandom srand((unsigned)time(NULL))
+#define GetRandom( min, max ) ((rand() % (int)(((max)+1) - (min))) + (min))
+
 // TODO:  在此处引用程序需要的其他头文件
 #include <stdio.h>
 #include <stdlib.h>

@@ -26,9 +26,11 @@ class AFX_EX_CLASS CExpress
 {
 public:
 	CExpress(const string &expression);
+	CExpress();
 	~CExpress();
 
 public:
+	int getVal(double &res, const string &expression);
 	int getVal(double &res);
 
 private:
@@ -52,7 +54,7 @@ private:
 	void readToken();
 
 	/* 比较两个运算符的优先 */
-	int comaprePrece(const string &ptr1, const std::string &ptr2);
+	int comparePrece(const string &ptr1, const std::string &ptr2);
 
 	/* 单步运算符计算 */
 	double calculate(const string &ptr, double arg[]);

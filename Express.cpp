@@ -41,6 +41,14 @@ CExpress::CExpress(const string &expression)
 	this->length = 1 + expression.length();
 }
 
+CExpress::CExpress()
+{
+	this->expression = "#";
+	this->token = "";
+	this->pos = 0;
+	this->length = 1;
+}
+
 CExpress::~CExpress()
 {
 }
@@ -69,7 +77,7 @@ int CExpress::getFunIndex(const string &fun)
 	return -1;
 }
 
-int CExpress::comaprePrece(const string &ptr1, const string &ptr2)
+int CExpress::comparePrece(const string &ptr1, const string &ptr2)
 {
 	int m = getPtrIndex(ptr1), n = getPtrIndex(ptr2);
 	if (m == -1) {
@@ -220,6 +228,16 @@ bool CExpress::getArg(stack<double> &opnd, double arg[], int n)
 	return true;
 }
 
+int CExpress::getVal(double &res, const string &expression)
+{
+	this->expression = expression + "#";
+	this->token = "";
+	this->pos = 0;
+	this->length = 1 + expression.length();
+
+	return getVal(res);
+}
+
 int CExpress::getVal(double &res)
 {
 	stack<string> optr;  //À„∑˚’ª 
@@ -249,7 +267,7 @@ int CExpress::getVal(double &res)
 		}
 		else 
 		{
-			int comRes = comaprePrece(optr.top(), token);
+			int comRes = comparePrece(optr.top(), token);
 #ifdef EXP_DEBUG
 			std::cout << "compare('" << optr.top() << "', '" << token << "') = " << comRes << std::endl;
 #endif
@@ -316,6 +334,13 @@ int CExpress::getVal(double &res)
 			}
 		}
 	}
-	res = opnd.top();
+	if (opnd.size() > 0)
+	{
+		res = opnd.top();
+	}
+	else
+	{
+		return -2;//±Ì¥Ô Ω¥ÌŒÛ 
+	}
 	return 0;
 }
