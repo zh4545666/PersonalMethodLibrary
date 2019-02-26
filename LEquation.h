@@ -11,71 +11,71 @@
 class AFX_EX_CLASS CLEquation
 {
 	//
-	// ¹«ÓĞ½Ó¿Úº¯Êı
+	// å…¬æœ‰æ¥å£å‡½æ•°
 	//
 public:
 
 	//
-	// ¹¹ÔìÓëÎö¹¹
+	// æ„é€ ä¸ææ„
 	//
 
-	CLEquation();				// Ä¬ÈÏ¹¹Ôìº¯Êı
-	// Ö¸¶¨ÏµÊıºÍ³£Êı¹¹Ôìº¯Êı
+	CLEquation();				// é»˜è®¤æ„é€ å‡½æ•°
+	// æŒ‡å®šç³»æ•°å’Œå¸¸æ•°æ„é€ å‡½æ•°
 	CLEquation(const CMatrix& mtxCoef, const CMatrix& mtxConst);
-	virtual ~CLEquation();		// Îö¹¹º¯Êı
-	// ³õÊ¼»¯
+	virtual ~CLEquation();		// ææ„å‡½æ•°
+	// åˆå§‹åŒ–
 	bool Init(const CMatrix& mtxCoef, const CMatrix& mtxConst);
 
 	//
-	// ÊôĞÔ
+	// å±æ€§
 	//
 
-	CMatrix GetCoefMatrix() const;	// »ñÈ¡ÏµÊı¾ØÕó
-	CMatrix GetConstMatrix() const;	// »ñÈ¡³£Êı¾ØÕó
-	int	GetNumEquations() const;	// »ñÈ¡·½³Ì¸öÊı
-	int	GetNumUnknowns() const;		// »ñÈ¡Î´ÖªÊı¸öÊı
+	CMatrix GetCoefMatrix() const;	// è·å–ç³»æ•°çŸ©é˜µ
+	CMatrix GetConstMatrix() const;	// è·å–å¸¸æ•°çŸ©é˜µ
+	int	GetNumEquations() const;	// è·å–æ–¹ç¨‹ä¸ªæ•°
+	int	GetNumUnknowns() const;		// è·å–æœªçŸ¥æ•°ä¸ªæ•°
 
 	//
-	// ÏßĞÔ·½³Ì×éÇó½âËã·¨
+	// çº¿æ€§æ–¹ç¨‹ç»„æ±‚è§£ç®—æ³•
 	//
 
-	// È«Ñ¡Ö÷Ôª¸ßË¹ÏûÈ¥·¨
+	// å…¨é€‰ä¸»å…ƒé«˜æ–¯æ¶ˆå»æ³•
 	bool GetRootsetGauss(CMatrix& mtxResult);
-	// È«Ñ¡Ö÷Ôª¸ßË¹£­Ô¼µ±ÏûÈ¥·¨
+	// å…¨é€‰ä¸»å…ƒé«˜æ–¯ï¼çº¦å½“æ¶ˆå»æ³•
 	bool GetRootsetGaussJordan(CMatrix& mtxResult);
-	// ¸´ÏµÊı·½³Ì×éµÄÈ«Ñ¡Ö÷Ôª¸ßË¹ÏûÈ¥·¨
+	// å¤ç³»æ•°æ–¹ç¨‹ç»„çš„å…¨é€‰ä¸»å…ƒé«˜æ–¯æ¶ˆå»æ³•
 	bool GetRootsetGauss(const CMatrix& mtxCoefImag, const CMatrix& mtxConstImag, CMatrix& mtxResult, CMatrix& mtxResultImag);
-	// ¸´ÏµÊı·½³Ì×éµÄÈ«Ñ¡Ö÷Ôª¸ßË¹£­Ô¼µ±ÏûÈ¥·¨
+	// å¤ç³»æ•°æ–¹ç¨‹ç»„çš„å…¨é€‰ä¸»å…ƒé«˜æ–¯ï¼çº¦å½“æ¶ˆå»æ³•
 	bool GetRootsetGaussJordan(const CMatrix& mtxCoefImag, const CMatrix& mtxConstImag, CMatrix& mtxResult, CMatrix& mtxResultImag);
-	// Çó½âÈı¶Ô½ÇÏß·½³Ì×éµÄ×·¸Ï·¨
+	// æ±‚è§£ä¸‰å¯¹è§’çº¿æ–¹ç¨‹ç»„çš„è¿½èµ¶æ³•
 	bool GetRootsetTriDiagonal(CMatrix& mtxResult);
-	// Ò»°ã´øĞÍ·½³Ì×éµÄÇó½â
+	// ä¸€èˆ¬å¸¦å‹æ–¹ç¨‹ç»„çš„æ±‚è§£
 	bool GetRootsetBand(int nBandWidth, CMatrix& mtxResult);
-	// Çó½â¶Ô³Æ·½³Ì×éµÄ·Ö½â·¨
+	// æ±‚è§£å¯¹ç§°æ–¹ç¨‹ç»„çš„åˆ†è§£æ³•
 	bool GetRootsetDjn(CMatrix& mtxResult);
-	// Çó½â¶Ô³ÆÕı¶¨·½³Ì×éµÄÆ½·½¸ù·¨
+	// æ±‚è§£å¯¹ç§°æ­£å®šæ–¹ç¨‹ç»„çš„å¹³æ–¹æ ¹æ³•
 	bool GetRootsetCholesky(CMatrix& mtxResult);
-	// Çó½â´óĞÍÏ¡Êè·½³Ì×éµÄÈ«Ñ¡Ö÷Ôª¸ßË¹£­Ô¼È¥ÏûÈ¥·¨
+	// æ±‚è§£å¤§å‹ç¨€ç–æ–¹ç¨‹ç»„çš„å…¨é€‰ä¸»å…ƒé«˜æ–¯ï¼çº¦å»æ¶ˆå»æ³•
 	bool GetRootsetGgje(CMatrix& mtxResult);
-	// Çó½âÍĞ²®Àû×È·½³Ì×éµÄÁĞÎÄÑ··½·¨
+	// æ±‚è§£æ‰˜ä¼¯åˆ©å…¹æ–¹ç¨‹ç»„çš„åˆ—æ–‡é€Šæ–¹æ³•
 	bool GetRootsetTlvs(CMatrix& mtxResult);
-	// ¸ßË¹£­ÈüµÂ¶ûµü´ú·¨
+	// é«˜æ–¯ï¼èµ›å¾·å°”è¿­ä»£æ³•
 	bool GetRootsetGaussSeidel(CMatrix& mtxResult, double eps = 0.000001);
-	// Çó½â¶Ô³ÆÕı¶¨·½³Ì×éµÄ¹²éîÌİ¶È·¨
+	// æ±‚è§£å¯¹ç§°æ­£å®šæ–¹ç¨‹ç»„çš„å…±è½­æ¢¯åº¦æ³•
 	void GetRootsetGrad(CMatrix& mtxResult, double eps = 0.000001);
-	// Çó½âÏßĞÔ×îĞ¡¶ş³ËÎÊÌâµÄºÀË¹ºÉ¶ûµÂ±ä»»·¨
+	// æ±‚è§£çº¿æ€§æœ€å°äºŒä¹˜é—®é¢˜çš„è±ªæ–¯è·å°”å¾·å˜æ¢æ³•
 	bool GetRootsetMqr(CMatrix& mtxResult, CMatrix& mtxQ, CMatrix& mtxR);
-	// Çó½âÏßĞÔ×îĞ¡¶ş³ËÎÊÌâµÄ¹ãÒåÄæ·¨
+	// æ±‚è§£çº¿æ€§æœ€å°äºŒä¹˜é—®é¢˜çš„å¹¿ä¹‰é€†æ³•
 	bool GetRootsetGinv(CMatrix& mtxResult, CMatrix& mtxAP, CMatrix& mtxU, CMatrix& mtxV, double eps = 0.000001);
-	// ²¡Ì¬·½³Ì×éµÄÇó½â
+	// ç—…æ€æ–¹ç¨‹ç»„çš„æ±‚è§£
 	bool GetRootsetMorbid(CMatrix& mtxResult, int nMaxIt = 60, double eps = 0.000001);
 
 	//
-	// ±£»¤ĞÔÊı¾İ³ÉÔ±
+	// ä¿æŠ¤æ€§æ•°æ®æˆå‘˜
 	//
 protected:
-	CMatrix	m_mtxCoef;		// ÏµÊı¾ØÕó
-	CMatrix m_mtxConst;		// ³£Êı¾ØÕó
+	CMatrix	m_mtxCoef;		// ç³»æ•°çŸ©é˜µ
+	CMatrix m_mtxConst;		// å¸¸æ•°çŸ©é˜µ
 
 };
 

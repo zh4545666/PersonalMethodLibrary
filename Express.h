@@ -2,8 +2,8 @@
 
 #include "stdafx.h"
 
-#define EXP_PTR_NUM 11  //ÔËËã·û¸öÊı
-#define EXP_FUN_NUM 12  //º¯Êı¸öÊı
+#define EXP_PTR_NUM 11  //è¿ç®—ç¬¦ä¸ªæ•°
+#define EXP_FUN_NUM 12  //å‡½æ•°ä¸ªæ•°
 
 #ifdef AFX_CLASS  
 #define AFX_EX_CLASS _declspec(dllexport)  
@@ -11,14 +11,14 @@
 #define AFX_EX_CLASS _declspec(dllimport)  
 #endif 
 
-/* µ¥´Ê·ûºÅÀàĞÍ */
+/* å•è¯ç¬¦å·ç±»å‹ */
 typedef enum{
-	TKT_NUMBER,    //Êı×Ö 
-	TKT_OPERATOR,  //ÔËËã·û 
-	TKT_FUNCTION,  //º¯Êı 
+	TKT_NUMBER,    //æ•°å­— 
+	TKT_OPERATOR,  //è¿ç®—ç¬¦ 
+	TKT_FUNCTION,  //å‡½æ•° 
 
-	TKT_ENDSIGN,   //½áÊø·û 
-	TKT_UNKNOW     //Î´Öª·ûºÅ 
+	TKT_ENDSIGN,   //ç»“æŸç¬¦ 
+	TKT_UNKNOW     //æœªçŸ¥ç¬¦å· 
 }TokenType_Express;
 
 
@@ -34,41 +34,41 @@ public:
 	int getVal(double &res);
 
 private:
-	string expression;        //±í´ïÊ½ 
-	string token;             //Ã¿´Î¶ÁÈ¡µÄµ¥´Ê 
-	TokenType_Express tkType; //¶ÁÈ¡µÄµ¥´ÊÀàĞÍ 
-	int pos, length;          //¶ÁÈ¡µÄÎ»ÖÃºÍ³¤¶È 
+	string expression;        //è¡¨è¾¾å¼ 
+	string token;             //æ¯æ¬¡è¯»å–çš„å•è¯ 
+	TokenType_Express tkType; //è¯»å–çš„å•è¯ç±»å‹ 
+	int pos, length;          //è¯»å–çš„ä½ç½®å’Œé•¿åº¦ 
 
-	/* ¾²Ì¬Êı¾İ */
-	static string ptrList[];   //Ö§³ÖµÄÔËËã·û
-	static int ptrArgCnt[];    //ÔËËã·û²ÎÊı¸öÊı
+	/* é™æ€æ•°æ® */
+	static string ptrList[];   //æ”¯æŒçš„è¿ç®—ç¬¦
+	static int ptrArgCnt[];    //è¿ç®—ç¬¦å‚æ•°ä¸ªæ•°
 
-	static string funList[];   //Ö§³ÖµÄº¯ÊıÁĞ±í 
-	static int funArgCnt[];    //ÔËËã·û²ÎÊı¸öÊı 
-	static int preceMap[][EXP_PTR_NUM];      //ÔËËãÓÅÏÈ¼¶±í 
+	static string funList[];   //æ”¯æŒçš„å‡½æ•°åˆ—è¡¨ 
+	static int funArgCnt[];    //è¿ç®—ç¬¦å‚æ•°ä¸ªæ•° 
+	static int preceMap[][EXP_PTR_NUM];      //è¿ç®—ä¼˜å…ˆçº§è¡¨ 
 
-	/* µ÷ÊÔÊä³ö */
+	/* è°ƒè¯•è¾“å‡º */
 	void debug();
 
-	/* ¶ÁÈ¡ÏÂÒ»¸öµ¥´Ê */
+	/* è¯»å–ä¸‹ä¸€ä¸ªå•è¯ */
 	void readToken();
 
-	/* ±È½ÏÁ½¸öÔËËã·ûµÄÓÅÏÈ */
+	/* æ¯”è¾ƒä¸¤ä¸ªè¿ç®—ç¬¦çš„ä¼˜å…ˆ */
 	int comparePrece(const string &ptr1, const std::string &ptr2);
 
-	/* µ¥²½ÔËËã·û¼ÆËã */
+	/* å•æ­¥è¿ç®—ç¬¦è®¡ç®— */
 	double calculate(const string &ptr, double arg[]);
 
-	/* µ¥²½º¯Êı¼ÆËã */
+	/* å•æ­¥å‡½æ•°è®¡ç®— */
 	double callFun(const string &fun, double arg[]);
 
-	/* »ñÈ¡ÔËËã·ûĞòºÅ */
+	/* è·å–è¿ç®—ç¬¦åºå· */
 	int getPtrIndex(const string &ptr);
 
-	/* »ñÈ¡º¯ÊıĞòºÅ */
+	/* è·å–å‡½æ•°åºå· */
 	int getFunIndex(const string &fun);
 
-	/* ´Ó²Ù×÷ÊıÕ»»ñÈ¡n¸ö²ÎÊı */
+	/* ä»æ“ä½œæ•°æ ˆè·å–nä¸ªå‚æ•° */
 	bool getArg(stack<double> &opnd, double arg[], int n);
 };
 

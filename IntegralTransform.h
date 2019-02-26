@@ -12,7 +12,7 @@ class AFX_EX_CLASS CIntegralTransform
 {
 public:
 	//
-	// ¹¹ÔìÓëÎö¹¹
+	// æ„é€ ä¸ææ„
 	//
 
 	CIntegralTransform();
@@ -20,34 +20,34 @@ public:
 
 public:
 	//
-	// »ı·Ö±ä»»·½·¨
+	// ç§¯åˆ†å˜æ¢æ–¹æ³•
 	//
 
-	//¿ìËÙ¸µÀïÒ¶±ä»» r=log2(N) 
+	//å¿«é€Ÿå‚…é‡Œå¶å˜æ¢ r=log2(N) 
 	static void FFT(double* TD, CComplex* FD, int r);
 	static void FFT(CComplex* TD, CComplex* FD, int r);
 	static void IFFT(CComplex* FD, double* TD, int r);
 	static void IFFT(CComplex* FD, CComplex* TD, int r);
 
-	//¸µÀïÒ¶±ä»»
+	//å‚…é‡Œå¶å˜æ¢
 	static void DFT(double* TD, CComplex* FD, size_t N);
 	static void DFT(CComplex* TD, CComplex* FD, size_t N);
 	static void IDFT(CComplex* FD, double* TD, size_t N);
 	static void IDFT(CComplex* FD, CComplex* TD, size_t N);
 
-	//Ï£¶û²®ÌØ
+	//å¸Œå°”ä¼¯ç‰¹
 	static void HilBert(double* TD,CComplex* FD,size_t N);
 	static void HilBert(CComplex* TD, CComplex* FD, size_t N);
 
-	//S±ä»» (FD must be preallocated, with N/2+1 rows and N columns)
+	//Så˜æ¢ (FD must be preallocated, with N/2+1 rows and N columns)
 	static void STransform(double* TD,CComplex* FD,size_t N);
-	//SÄæ±ä»»(ÓëÔ­ÇúÏßĞÎÌ¬ÏàÍ¬£¬·ùÖµ²»Ò»ÖÂ)
+	//Sé€†å˜æ¢(ä¸åŸæ›²çº¿å½¢æ€ç›¸åŒï¼Œå¹…å€¼ä¸ä¸€è‡´)
 	static void ISTransform(CComplex* FD,double* TD,size_t N);
 
-	//ÀëÉ¢ÓàÏÒ±ä»»£¨Ò»Î¬£©
+	//ç¦»æ•£ä½™å¼¦å˜æ¢ï¼ˆä¸€ç»´ï¼‰
 	static void DCT(double* TD, double* FD, size_t N);
 	static void IDCT(double* FD, double* TD, size_t N);
-	//ÀëÉ¢ÓàÏÒ±ä»»£¨¶şÎ¬£¬¾ØÕóĞëÎª·½Õó£©
+	//ç¦»æ•£ä½™å¼¦å˜æ¢ï¼ˆäºŒç»´ï¼ŒçŸ©é˜µé¡»ä¸ºæ–¹é˜µï¼‰
 	static void DCT2(CMatrix* TD, CMatrix* FD);
 	static void IDCT2(CMatrix* FD, CMatrix* TD);
 

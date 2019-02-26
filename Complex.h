@@ -11,34 +11,34 @@
 class AFX_EX_CLASS CComplex
 {
 	//
-	// ¹«ÓĞ½Ó¿Úº¯Êı
+	// å…¬æœ‰æ¥å£å‡½æ•°
 	//
 public:
 
 	//
-	// ¹¹ÔìÓëÎö¹¹
+	// æ„é€ ä¸ææ„
 	//
 
-	CComplex();							// »ù±¾¹¹Ôìº¯Êı
-	CComplex(double dblX, double dblY);	// Ö¸¶¨Öµ¹¹Ôìº¯Êı
-	CComplex(const CComplex& other);	// ¿½±´¹¹Ôìº¯Êı
-	virtual ~CComplex() {};				// Îö¹¹º¯Êı
+	CComplex();							// åŸºæœ¬æ„é€ å‡½æ•°
+	CComplex(double dblX, double dblY);	// æŒ‡å®šå€¼æ„é€ å‡½æ•°
+	CComplex(const CComplex& other);	// æ‹·è´æ„é€ å‡½æ•°
+	virtual ~CComplex() {};				// ææ„å‡½æ•°
 
 	//
-	// ÊäÈëÓëÏÔÊ¾
+	// è¾“å…¥ä¸æ˜¾ç¤º
 	//
 
 	void SetData(double dblX, double dblY);
-	void SetReal(double dblX);	// Ö¸¶¨¸´ÊıµÄÊµ²¿
-	void SetImag(double dblY);	// Ö¸¶¨¸´ÊıµÄĞé²¿
-	double GetReal();			// È¡¸´ÊıµÄÊµ²¿
-	double GetImag();			// È¡¸´ÊıµÄĞé²¿
-	string ToString(bool bflag = true) const;	// ½«¸´Êı×ª»¯Îª"a+bj"ĞÎÊ½µÄ×Ö·û´®
-	// ½«"a,b"ĞÎÊ½µÄ×Ö·û´®¶Ô×ª»¯Îª¸´Êı£¬ÒÔaÎª¸´ÊıµÄÊµ²¿£¬bÎª¸´ÊıµÄĞé²¿(sDelim²»ÄÜÎª'i'»ò'j')
+	void SetReal(double dblX);	// æŒ‡å®šå¤æ•°çš„å®éƒ¨
+	void SetImag(double dblY);	// æŒ‡å®šå¤æ•°çš„è™šéƒ¨
+	double GetReal();			// å–å¤æ•°çš„å®éƒ¨
+	double GetImag();			// å–å¤æ•°çš„è™šéƒ¨
+	string ToString(bool bflag = true) const;	// å°†å¤æ•°è½¬åŒ–ä¸º"a+bj"å½¢å¼çš„å­—ç¬¦ä¸²
+	// å°†"a,b"å½¢å¼çš„å­—ç¬¦ä¸²å¯¹è½¬åŒ–ä¸ºå¤æ•°ï¼Œä»¥aä¸ºå¤æ•°çš„å®éƒ¨ï¼Œbä¸ºå¤æ•°çš„è™šéƒ¨(sDelimä¸èƒ½ä¸º'i'æˆ–'j')
 	void FromString(string s, const string& sDelim = "");
 
 	//
-	// ÊıÑ§ÔËËã
+	// æ•°å­¦è¿ç®—
 	//
 
 	bool operator==(const CComplex& cpxX) const;
@@ -49,25 +49,25 @@ public:
 	CComplex operator*(const CComplex& cpxX) const;
 	CComplex operator*(const double& cpxX) const;
 	CComplex operator/(const CComplex& cpxX) const;
-	double Abs() const;	// ¸´ÊıµÄÄ£
+	double Abs() const;	// å¤æ•°çš„æ¨¡
 
 	//
-	// º¯ÊıÔËËã
+	// å‡½æ•°è¿ç®—
 	//
 
-	void Root(int n, CComplex cpxR[]) const;		// ¸´ÊıµÄ¸ù
-	CComplex Pow(double dblW) const;				// ¸´ÊıµÄÊµÃİÖ¸Êı
-	CComplex Pow(CComplex cpxW, int n = 0) const;	// ¸´ÊıµÄ¸´ÃİÖ¸Êı
-	CComplex Log() const;							// ¸´ÊıµÄ¶ÔÊı
-	CComplex Sin() const;							// ¸´ÊıµÄÕıÏÒ
-	CComplex Cos() const;							// ¸´ÊıµÄÓàÏÒ
-	CComplex Tan() const;							// ¸´ÊıµÄÕıÇĞ
+	void Root(int n, CComplex cpxR[]) const;		// å¤æ•°çš„æ ¹
+	CComplex Pow(double dblW) const;				// å¤æ•°çš„å®å¹‚æŒ‡æ•°
+	CComplex Pow(CComplex cpxW, int n = 0) const;	// å¤æ•°çš„å¤å¹‚æŒ‡æ•°
+	CComplex Log() const;							// å¤æ•°çš„å¯¹æ•°
+	CComplex Sin() const;							// å¤æ•°çš„æ­£å¼¦
+	CComplex Cos() const;							// å¤æ•°çš„ä½™å¼¦
+	CComplex Tan() const;							// å¤æ•°çš„æ­£åˆ‡
 
 	//
-	// ±£»¤ĞÔÊı¾İ
+	// ä¿æŠ¤æ€§æ•°æ®
 	//
 protected:
-	double	m_dblX;		// ¸´ÊıµÄÊµ²¿
-	double	m_dblY;		// ¸´ÊıµÄĞé²¿
+	double	m_dblX;		// å¤æ•°çš„å®éƒ¨
+	double	m_dblY;		// å¤æ•°çš„è™šéƒ¨
 };
 

@@ -226,7 +226,7 @@ void CDataAnalysis::IntToUnsignedChar(int val, unsigned char res[2])
 
 string CDataAnalysis::UnsignedCharToString(unsigned char c)
 {
-	//Êä³ö8Î»¶þ½øÖÆÖµ
+	//è¾“å‡º8ä½äºŒè¿›åˆ¶å€¼
 	int value = (int)c;
 	string s;
 	while (value > 0)
@@ -278,7 +278,7 @@ void CDataAnalysis::GetNextval(char* p, int next[])
 	int j = 0;
 	while (j < pLen - 1)
 	{
-		//p[k]±íÊ¾Ç°×º£¬p[j]±íÊ¾ºó×º    
+		//p[k]è¡¨ç¤ºå‰ç¼€ï¼Œp[j]è¡¨ç¤ºåŽç¼€    
 		if (k == -1 || p[j] == p[k])
 		{
 			++j;
@@ -286,7 +286,7 @@ void CDataAnalysis::GetNextval(char* p, int next[])
 			if (p[j] != p[k])
 				next[j] = k;
 			else
-				//ÒòÎª²»ÄÜ³öÏÖp[j] = p[ next[j ]]£¬ËùÒÔµ±³öÏÖÊ±ÐèÒª¼ÌÐøµÝ¹é£¬k = next[k] = next[next[k]]  
+				//å› ä¸ºä¸èƒ½å‡ºçŽ°p[j] = p[ next[j ]]ï¼Œæ‰€ä»¥å½“å‡ºçŽ°æ—¶éœ€è¦ç»§ç»­é€’å½’ï¼Œk = next[k] = next[next[k]]  
 				next[j] = next[k];
 		}
 		else

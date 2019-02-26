@@ -127,8 +127,8 @@ void CFit::FreeData(double **dat, double *d, int count)
 		free(dat[i]);
 	free(dat);
 }
-// ½âÏßĞÔ·½³Ì¡£data[count*(count+1)]¾ØÕóÊı×é£»count£º·½³ÌÔªÊı£»
-// Answer[count]£ºÇó½âÊı×é ¡£·µ»Ø£º0Çó½â³É¹¦£¬-1ÎŞ½â»òÕßÎŞÇî½â
+// è§£çº¿æ€§æ–¹ç¨‹ã€‚data[count*(count+1)]çŸ©é˜µæ•°ç»„ï¼›countï¼šæ–¹ç¨‹å…ƒæ•°ï¼›
+// Answer[count]ï¼šæ±‚è§£æ•°ç»„ ã€‚è¿”å›ï¼š0æ±‚è§£æˆåŠŸï¼Œ-1æ— è§£æˆ–è€…æ— ç©·è§£
 int CFit::LinearEquations(double *data, int count, double *Answer)
 {
 	int j, m, n;
@@ -142,7 +142,7 @@ int CFit::LinearEquations(double *data, int count, double *Answer)
 	d = (double*)malloc((count + 1) * sizeof(double));
 	for (m = 0; m < count - 1; m++)
 	{
-		// Èç¹ûÖ÷¶Ô½ÇÏßÔªËØÎª0£¬ĞĞ½»»»
+		// å¦‚æœä¸»å¯¹è§’çº¿å…ƒç´ ä¸º0ï¼Œè¡Œäº¤æ¢
 		for (n = m + 1; n < count && dat[m][m] == 0.0; n++)
 		{
 			if (dat[n][m] != 0.0)
@@ -152,13 +152,13 @@ int CFit::LinearEquations(double *data, int count, double *Answer)
 				memcpy(dat[n], d, (count + 1) * sizeof(double));
 			}
 		}
-		// ĞĞ½»»»ºó£¬Ö÷¶Ô½ÇÏßÔªËØÈÔÈ»Îª0£¬ÎŞ½â£¬·µ»Ø-1
+		// è¡Œäº¤æ¢åï¼Œä¸»å¯¹è§’çº¿å…ƒç´ ä»ç„¶ä¸º0ï¼Œæ— è§£ï¼Œè¿”å›-1
 		if (dat[m][m] == 0.0)
 		{
 			FreeData(dat, d, count);
 			return -1;
 		}
-		// ÏûÔª
+		// æ¶ˆå…ƒ
 		for (n = m + 1; n < count; n++)
 		{
 			tmp = dat[n][m] / dat[m][m];
@@ -168,9 +168,9 @@ int CFit::LinearEquations(double *data, int count, double *Answer)
 	}
 	for (j = 0; j < count; j++)
 		d[j] = 0.0;
-	// ÇóµÃcount - 1µÄÔª
+	// æ±‚å¾—count - 1çš„å…ƒ
 	Answer[count - 1] = dat[count - 1][count] / dat[count - 1][count - 1];
-	// ÖğĞĞ´úÈëÇó¸÷Ôª
+	// é€è¡Œä»£å…¥æ±‚å„å…ƒ
 	for (m = count - 2; m >= 0; m--)
 	{
 		for (j = count - 1; j > m; j--)
@@ -180,12 +180,12 @@ int CFit::LinearEquations(double *data, int count, double *Answer)
 	FreeData(dat, d, count);
 	return 0;
 }
-// Çó¶àÔª»Ø¹é·½³Ì£ºY = B0 + B1X1 + B2X2 + ...BnXn
-// data[rows*cols]¶şÎ¬Êı×é£»X1i,X2i,...Xni,Yi (i=0 to rows-1)
-// rows£ºÊı¾İĞĞÊı£»colsÊı¾İÁĞÊı£»
-// Answer[cols]£º·µ»Ø»Ø¹éÏµÊıÊı×é(B0,B1...Bn)
-// SquarePoor[4]£º·µ»Ø·½²î·ÖÎöÖ¸±ê: »Ø¹éÆ½·½ºÍ£¬Ê£ÓàÆ½·½ºÍ£¬»Ø¹éÆ½·½²î£¬Ê£ÓàÆ½·½²î
-// ·µ»ØÖµ£º0Çó½â³É¹¦£¬-1´íÎó
+// æ±‚å¤šå…ƒå›å½’æ–¹ç¨‹ï¼šY = B0 + B1X1 + B2X2 + ...BnXn
+// data[rows*cols]äºŒç»´æ•°ç»„ï¼›X1i,X2i,...Xni,Yi (i=0 to rows-1)
+// rowsï¼šæ•°æ®è¡Œæ•°ï¼›colsæ•°æ®åˆ—æ•°ï¼›
+// Answer[cols]ï¼šè¿”å›å›å½’ç³»æ•°æ•°ç»„(B0,B1...Bn)
+// SquarePoor[4]ï¼šè¿”å›æ–¹å·®åˆ†ææŒ‡æ ‡: å›å½’å¹³æ–¹å’Œï¼Œå‰©ä½™å¹³æ–¹å’Œï¼Œå›å½’å¹³æ–¹å·®ï¼Œå‰©ä½™å¹³æ–¹å·®
+// è¿”å›å€¼ï¼š0æ±‚è§£æˆåŠŸï¼Œ-1é”™è¯¯
 int CFit::MultipleRegression(double *data, int rows, int cols, double *Answer, double *SquarePoor)
 {
 	int m, n, i, count = cols - 1;
@@ -222,23 +222,23 @@ int CFit::MultipleRegression(double *data, int rows, int cols, double *Answer, d
 			a += (p[n] * p[count]);
 		dat[(n + 1) * (cols + 1) + cols] = a;        // dat[n+1, cols] = Sum(Xn * Y)
 	}
-	n = CFit::LinearEquations(dat, cols, Answer);          // ¼ÆËã·½³ÌÊ½
-	// ·½²î·ÖÎö
+	n = CFit::LinearEquations(dat, cols, Answer);          // è®¡ç®—æ–¹ç¨‹å¼
+	// æ–¹å·®åˆ†æ
 	if (n == 0 && SquarePoor)
 	{
-		b = b / rows;                                // b = YµÄÆ½¾ùÖµ
+		b = b / rows;                                // b = Yçš„å¹³å‡å€¼
 		SquarePoor[0] = SquarePoor[1] = 0.0;
 		p = data;
 		for (m = 0; m < rows; m++, p++)
 		{
 			for (i = 1, a = Answer[0]; i < cols; i++, p++)
-				a += (*p * Answer[i]);               // a = YmµÄ¹À¼ÆÖµ
-			SquarePoor[0] += ((a - b) * (a - b));    // U(»Ø¹éÆ½·½ºÍ)
-			SquarePoor[1] += ((*p - a) * (*p - a));  // Q(Ê£ÓàÆ½·½ºÍ)(*p = Ym)
+				a += (*p * Answer[i]);               // a = Ymçš„ä¼°è®¡å€¼
+			SquarePoor[0] += ((a - b) * (a - b));    // U(å›å½’å¹³æ–¹å’Œ)
+			SquarePoor[1] += ((*p - a) * (*p - a));  // Q(å‰©ä½™å¹³æ–¹å’Œ)(*p = Ym)
 		}
-		SquarePoor[2] = SquarePoor[0] / count;       // »Ø¹é·½²î
+		SquarePoor[2] = SquarePoor[0] / count;       // å›å½’æ–¹å·®
 		if (rows - cols > 0.0)
-			SquarePoor[3] = SquarePoor[1] / (rows - cols); // Ê£Óà·½²î
+			SquarePoor[3] = SquarePoor[1] / (rows - cols); // å‰©ä½™æ–¹å·®
 		else
 			SquarePoor[3] = 0.0;
 	}
@@ -250,18 +250,18 @@ void CFit::Display(double *dat, double *Answer, double *SquarePoor, int rows, in
 {
 	double v, *p;
 	int i, j;
-	printf("»Ø¹é·½³ÌÊ½:    Y = %.5lf", Answer[0]);
+	printf("å›å½’æ–¹ç¨‹å¼:    Y = %.5lf", Answer[0]);
 	for (i = 1; i < cols; i++)
 		printf(" + %.5lf*X%d", Answer[i], i);
 	printf(" \r\n");
-	printf("»Ø¹éÏÔÖøĞÔ¼ìÑé: \r\n");
-	printf("»Ø¹éÆ½·½ºÍ£º%12.4lf  »Ø¹é·½²î£º%12.4lf \r\n", SquarePoor[0], SquarePoor[2]);
-	printf("Ê£ÓàÆ½·½ºÍ£º%12.4lf  Ê£Óà·½²î£º%12.4lf \r\n", SquarePoor[1], SquarePoor[3]);
-	printf("Àë²îÆ½·½ºÍ£º%12.4lf  ±ê×¼Îó²î£º%12.4lf \r\n", SquarePoor[0] + SquarePoor[1], sqrt(SquarePoor[3]));
-	printf("F   ¼ì  Ñé£º%12.4lf  Ïà¹ØÏµÊı£º%12.4lf \r\n", SquarePoor[2] / SquarePoor[3],
+	printf("å›å½’æ˜¾è‘—æ€§æ£€éªŒ: \r\n");
+	printf("å›å½’å¹³æ–¹å’Œï¼š%12.4lf  å›å½’æ–¹å·®ï¼š%12.4lf \r\n", SquarePoor[0], SquarePoor[2]);
+	printf("å‰©ä½™å¹³æ–¹å’Œï¼š%12.4lf  å‰©ä½™æ–¹å·®ï¼š%12.4lf \r\n", SquarePoor[1], SquarePoor[3]);
+	printf("ç¦»å·®å¹³æ–¹å’Œï¼š%12.4lf  æ ‡å‡†è¯¯å·®ï¼š%12.4lf \r\n", SquarePoor[0] + SquarePoor[1], sqrt(SquarePoor[3]));
+	printf("F   æ£€  éªŒï¼š%12.4lf  ç›¸å…³ç³»æ•°ï¼š%12.4lf \r\n", SquarePoor[2] / SquarePoor[3],
 		sqrt(SquarePoor[0] / (SquarePoor[0] + SquarePoor[1])));
-	printf("Ê£Óà·ÖÎö: \r\n");
-	printf("      ¹Û²ìÖµ      ¹À¼ÆÖµ      Ê£ÓàÖµ    Ê£ÓàÆ½·½ \r\n");
+	printf("å‰©ä½™åˆ†æ: \r\n");
+	printf("      è§‚å¯Ÿå€¼      ä¼°è®¡å€¼      å‰©ä½™å€¼    å‰©ä½™å¹³æ–¹ \r\n");
 	for (i = 0, p = dat; i < rows; i++, p++)
 	{
 		v = Answer[0];
@@ -298,7 +298,7 @@ void CFit::GetParam(double* pM, double* pN, double* pY, int nCount, double& A, d
 	a11 = nCount;
 	a21 = a12;
 	a31 = a13;
-	a32 = a23;                     //Çó½â 
+	a32 = a23;                     //æ±‚è§£ 
 	A = c1*(a22*a33 - a23*a32) / (a11*a22*a33 - a11*a23*a32 - a21*a12*a33 + a21*a13*a32 + a31*a12*a23 - a31*a13*a22) - c2*(a12*a33 - a13*a32) / (a11*a22*a33 - a11*a23*a32 - a21*a12*a33 + a21*a13*a32 + a31*a12*a23 - a31*a13*a22) + c3*(a12*a23 - a13*a22) / (a11*a22*a33 - a11*a23*a32 - a21*a12*a33 + a21*a13*a32 + a31*a12*a23 - a31*a13*a22);
 	B = -c1*(a21*a33 - a23*a31) / (a11*a22*a33 - a11*a23*a32 - a21*a12*a33 + a21*a13*a32 + a31*a12*a23 - a31*a13*a22) + c2*(a11*a33 - a13*a31) / (a11*a22*a33 - a11*a23*a32 - a21*a12*a33 + a21*a13*a32 + a31*a12*a23 - a31*a13*a22) - c3*(a11*a23 - a13*a21) / (a11*a22*a33 - a11*a23*a32 - a21*a12*a33 + a21*a13*a32 + a31*a12*a23 - a31*a13*a22);
 	C = c1*(a21*a32 - a22*a31) / (a11*a22*a33 - a11*a23*a32 - a21*a12*a33 + a21*a13*a32 + a31*a12*a23 - a31*a13*a22) - c2*(a11*a32 - a12*a31) / (a11*a22*a33 - a11*a23*a32 - a21*a12*a33 + a21*a13*a32 + a31*a12*a23 - a31*a13*a22) + c3*(a11*a22 - a12*a21) / (a11*a22*a33 - a11*a23*a32 - a21*a12*a33 + a21*a13*a32 + a31*a12*a23 - a31*a13*a22);

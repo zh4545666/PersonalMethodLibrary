@@ -16,17 +16,17 @@ class AFX_EX_CLASS CAES
 public:  
 //  CAES(void);
 	
-	//³õÊ¼»¯AESÃÜÔ¿£¬Ä¬ÈÏÎª4*4
+	//åˆå§‹åŒ–AESå¯†é’¥ï¼Œé»˜è®¤ä¸º4*4
 	CAES(unsigned char* key, size_t N = 16);
     virtual ~CAES(void);  
   
-	//Ô­Ê¼Êý¾Ý£¬¼ÓÃÜ/½âÃÜºóÊý¾Ý£¬³¤¶È
+	//åŽŸå§‹æ•°æ®ï¼ŒåŠ å¯†/è§£å¯†åŽæ•°æ®ï¼Œé•¿åº¦
 	void Encrypt(BYTE *, BYTE *, size_t);
 	void Decrypt(BYTE *, BYTE *, size_t);
-	//Ô­Ê¼Êý¾Ý£¨¼ÓÃÜ/½âÃÜºóÊý¾Ý£©£¬³¤¶È
+	//åŽŸå§‹æ•°æ®ï¼ˆåŠ å¯†/è§£å¯†åŽæ•°æ®ï¼‰ï¼Œé•¿åº¦
 	void Encrypt(BYTE *, size_t);
 	void Decrypt(BYTE *, size_t);
-	//ÊäÈëÎÄ¼þÃû£¬Êä³öÎÄ¼þÃû
+	//è¾“å…¥æ–‡ä»¶åï¼Œè¾“å‡ºæ–‡ä»¶å
 	bool Encrypt(char *, char *);
 	bool Decrypt(char *, char *);
   

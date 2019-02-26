@@ -11,25 +11,25 @@
 class AFX_EX_CLASS CBigNum
 {
 private:
-	int a[500];    //¿ÉÒÔ¿ØÖÆ´óÊıµÄÎ»Êı 
-	int len;       //´óÊı³¤¶È
+	int a[500];    //å¯ä»¥æ§åˆ¶å¤§æ•°çš„ä½æ•° 
+	int len;       //å¤§æ•°é•¿åº¦
 public:
-	CBigNum(){ len = 1; memset(a, 0, sizeof(a)); }   //¹¹Ôìº¯Êı
-	CBigNum(const int);       //½«Ò»¸öintÀàĞÍµÄ±äÁ¿×ª»¯Îª´óÊı
-	CBigNum(const char*, bool bIgnoreNonnumeric = true);     //½«Ò»¸ö×Ö·û´®ÀàĞÍµÄ±äÁ¿×ª»¯Îª´óÊı
-	CBigNum(const CBigNum &);  //¿½±´¹¹Ôìº¯Êı
-	CBigNum &operator=(const CBigNum &);   //ÖØÔØ¸³ÖµÔËËã·û£¬´óÊıÖ®¼ä½øĞĞ¸³ÖµÔËËã
-	CBigNum operator+(const CBigNum &) const;   //ÖØÔØ¼Ó·¨ÔËËã·û£¬Á½¸ö´óÊıÖ®¼äµÄÏà¼ÓÔËËã 
-	CBigNum operator-(const CBigNum &) const;   //ÖØÔØ¼õ·¨ÔËËã·û£¬Á½¸ö´óÊıÖ®¼äµÄÏà¼õÔËËã 
-	CBigNum operator*(const CBigNum &) const;   //ÖØÔØ³Ë·¨ÔËËã·û£¬Á½¸ö´óÊıÖ®¼äµÄÏà³ËÔËËã 
-	CBigNum operator/(const int   &) const;    //ÖØÔØ³ı·¨ÔËËã·û£¬´óÊı¶ÔÒ»¸öÕûÊı½øĞĞÏà³ıÔËËã
-	CBigNum operator^(const int  &) const;    //´óÊıµÄn´Î·½ÔËËã
-	int    operator%(const int  &) const;    //´óÊı¶ÔÒ»¸öintÀàĞÍµÄ±äÁ¿½øĞĞÈ¡Ä£ÔËËã    
-	bool   operator>(const CBigNum & T)const;   //´óÊıºÍÁíÒ»¸ö´óÊıµÄ´óĞ¡±È½Ï
-	bool   operator>(const int & t)const;      //´óÊıºÍÒ»¸öintÀàĞÍµÄ±äÁ¿µÄ´óĞ¡±È½Ï
+	CBigNum(){ len = 1; memset(a, 0, sizeof(a)); }   //æ„é€ å‡½æ•°
+	CBigNum(const int);       //å°†ä¸€ä¸ªintç±»å‹çš„å˜é‡è½¬åŒ–ä¸ºå¤§æ•°
+	CBigNum(const char*, bool bIgnoreNonnumeric = true);     //å°†ä¸€ä¸ªå­—ç¬¦ä¸²ç±»å‹çš„å˜é‡è½¬åŒ–ä¸ºå¤§æ•°
+	CBigNum(const CBigNum &);  //æ‹·è´æ„é€ å‡½æ•°
+	CBigNum &operator=(const CBigNum &);   //é‡è½½èµ‹å€¼è¿ç®—ç¬¦ï¼Œå¤§æ•°ä¹‹é—´è¿›è¡Œèµ‹å€¼è¿ç®—
+	CBigNum operator+(const CBigNum &) const;   //é‡è½½åŠ æ³•è¿ç®—ç¬¦ï¼Œä¸¤ä¸ªå¤§æ•°ä¹‹é—´çš„ç›¸åŠ è¿ç®— 
+	CBigNum operator-(const CBigNum &) const;   //é‡è½½å‡æ³•è¿ç®—ç¬¦ï¼Œä¸¤ä¸ªå¤§æ•°ä¹‹é—´çš„ç›¸å‡è¿ç®— 
+	CBigNum operator*(const CBigNum &) const;   //é‡è½½ä¹˜æ³•è¿ç®—ç¬¦ï¼Œä¸¤ä¸ªå¤§æ•°ä¹‹é—´çš„ç›¸ä¹˜è¿ç®— 
+	CBigNum operator/(const int   &) const;    //é‡è½½é™¤æ³•è¿ç®—ç¬¦ï¼Œå¤§æ•°å¯¹ä¸€ä¸ªæ•´æ•°è¿›è¡Œç›¸é™¤è¿ç®—
+	CBigNum operator^(const int  &) const;    //å¤§æ•°çš„næ¬¡æ–¹è¿ç®—
+	int    operator%(const int  &) const;    //å¤§æ•°å¯¹ä¸€ä¸ªintç±»å‹çš„å˜é‡è¿›è¡Œå–æ¨¡è¿ç®—    
+	bool   operator>(const CBigNum & T)const;   //å¤§æ•°å’Œå¦ä¸€ä¸ªå¤§æ•°çš„å¤§å°æ¯”è¾ƒ
+	bool   operator>(const int & t)const;      //å¤§æ•°å’Œä¸€ä¸ªintç±»å‹çš„å˜é‡çš„å¤§å°æ¯”è¾ƒ
 	string ToString();
 
-	friend istream& operator>>(istream&, CBigNum&);   //ÖØÔØÊäÈëÔËËã·û
-	friend ostream& operator<<(ostream&, CBigNum&);   //ÖØÔØÊä³öÔËËã·û
+	friend istream& operator>>(istream&, CBigNum&);   //é‡è½½è¾“å…¥è¿ç®—ç¬¦
+	friend ostream& operator<<(ostream&, CBigNum&);   //é‡è½½è¾“å‡ºè¿ç®—ç¬¦
 };
 

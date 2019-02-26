@@ -23,12 +23,12 @@ private:
 	double rmse;
 public:
 	//
-	/// \ÄâºÏy=a0+a1*x
-	/// \brief Ö±ÏßÄâºÏ-Ò»Ôª»Ø¹é,ÄâºÏµÄ½á¹û¿ÉÒÔÊ¹ÓÃgetFactor»ñÈ¡£¬»òÕßÊ¹ÓÃgetSlope»ñÈ¡Ğ±ÂÊ£¬getIntercept»ñÈ¡½Ø¾à
-	/// \param x ¹Û²ìÖµµÄx
-	/// \param y ¹Û²ìÖµµÄy
-	/// \param length x,yÊı×éµÄ³¤¶È
-	/// \param isSaveFitYs ÄâºÏºóµÄÊı¾İÊÇ·ñ±£´æ£¬Ä¬ÈÏ·ñ
+	/// \æ‹Ÿåˆy=a0+a1*x
+	/// \brief ç›´çº¿æ‹Ÿåˆ-ä¸€å…ƒå›å½’,æ‹Ÿåˆçš„ç»“æœå¯ä»¥ä½¿ç”¨getFactorè·å–ï¼Œæˆ–è€…ä½¿ç”¨getSlopeè·å–æ–œç‡ï¼ŒgetInterceptè·å–æˆªè·
+	/// \param x è§‚å¯Ÿå€¼çš„x
+	/// \param y è§‚å¯Ÿå€¼çš„y
+	/// \param length x,yæ•°ç»„çš„é•¿åº¦
+	/// \param isSaveFitYs æ‹Ÿåˆåçš„æ•°æ®æ˜¯å¦ä¿å­˜ï¼Œé»˜è®¤å¦
 	///
 	template<typename T>
 	bool linearFit(const T* x, const T* y, size_t length, bool isSaveFitYs = false)
@@ -51,16 +51,16 @@ public:
 		pfactor[1] = (t3*length - t2*t4) / (t1*length - t2*t2);
 		pfactor[0] = (t1*t4 - t2*t3) / (t1*length - t2*t2);
 		//////////////////////////////////////////////////////////////////////////
-		//¼ÆËãÎó²î
+		//è®¡ç®—è¯¯å·®
 		calcError(x, y, length, this->ssr, this->sse, this->rmse, isSaveFitYs);
 		return true;
 	}
 	///
-	/// \brief ¶àÏîÊ½ÄâºÏ£¬ÄâºÏy=a0+a1*x+a2*x^2+¡­¡­+apoly_n*x^poly_n
-	/// \param x ¹Û²ìÖµµÄx
-	/// \param y ¹Û²ìÖµµÄy
-	/// \param poly_n ÆÚÍûÄâºÏµÄ½×Êı£¬Èôpoly_n=2£¬Ôòy=a0+a1*x+a2*x^2
-	/// \param isSaveFitYs ÄâºÏºóµÄÊı¾İÊÇ·ñ±£´æ£¬Ä¬ÈÏÊÇ
+	/// \brief å¤šé¡¹å¼æ‹Ÿåˆï¼Œæ‹Ÿåˆy=a0+a1*x+a2*x^2+â€¦â€¦+apoly_n*x^poly_n
+	/// \param x è§‚å¯Ÿå€¼çš„x
+	/// \param y è§‚å¯Ÿå€¼çš„y
+	/// \param poly_n æœŸæœ›æ‹Ÿåˆçš„é˜¶æ•°ï¼Œè‹¥poly_n=2ï¼Œåˆ™y=a0+a1*x+a2*x^2
+	/// \param isSaveFitYs æ‹Ÿåˆåçš„æ•°æ®æ˜¯å¦ä¿å­˜ï¼Œé»˜è®¤æ˜¯
 	/// 
 	template<typename T>
 	void polyfit(const T* x, const T* y, size_t length, size_t poly_n, bool isSaveFitYs = false)
@@ -97,13 +97,13 @@ public:
 		for (j = 0; j<poly_n + 1; j++)
 			ata[i*(poly_n + 1) + j] = sumxx[i + j];
 		gauss_solve(poly_n + 1, &ata[0], &pfactor[0], &sumxy[0]);
-		//¼ÆËãÄâºÏºóµÄÊı¾İ²¢¼ÆËãÎó²î
+		//è®¡ç®—æ‹Ÿåˆåçš„æ•°æ®å¹¶è®¡ç®—è¯¯å·®
 		calcError(&x[0], &y[0], length, this->ssr, this->sse, this->rmse, isSaveFitYs);
 	}
 
-	//ÄâºÏ·½³ÌµÄÏµÊı
+	//æ‹Ÿåˆæ–¹ç¨‹çš„ç³»æ•°
 	double getFactor(size_t i);
-	//·µ»Øx¶ÔÓ¦µÄyÖµ
+	//è¿”å›xå¯¹åº”çš„yå€¼
 	template<typename T>
 	double getY(const T x) const
 	{
@@ -112,19 +112,19 @@ public:
 			ans += pfactor[i] * pow((double)x, (int)i);
 		return ans;
 	}
-	//Ğ±ÂÊÖµ
+	//æ–œç‡å€¼
 	double getSlope();
-	//½Ø¾àÖµ
+	//æˆªè·å€¼
 	double getIntercept();
-	//Ê£ÓàÆ½·½ºÍ
+	//å‰©ä½™å¹³æ–¹å’Œ
 	double getSSE();
-	//»Ø¹éÆ½·½ºÍ
+	//å›å½’å¹³æ–¹å’Œ
 	double getSSR();
-	//¾ù·½¸ùÎó²î
+	//å‡æ–¹æ ¹è¯¯å·®
 	double getRMSE();
-	//È·¶¨ÏµÊı£¬ÏµÊıÊÇ0~1Ö®¼äµÄÊı£¬ÊÇÊıÀíÉÏÅĞ¶¨ÄâºÏÓÅ¶ÈµÄÒ»¸öÁ¿
+	//ç¡®å®šç³»æ•°ï¼Œç³»æ•°æ˜¯0~1ä¹‹é—´çš„æ•°ï¼Œæ˜¯æ•°ç†ä¸Šåˆ¤å®šæ‹Ÿåˆä¼˜åº¦çš„ä¸€ä¸ªé‡
 	double getR_square();
-	//¾ùÖµ
+	//å‡å€¼
 	template <typename T>
 	static T Mean(const T* v, size_t length)
 	{
@@ -164,8 +164,8 @@ private:
 		for (size_t i = 0; i<length; ++i)
 		{
 			yi = (T)getY(x[i]);
-			r_ssr += ((yi - mean_y)*(yi - mean_y));//¼ÆËã»Ø¹éÆ½·½ºÍ
-			r_sse += ((yi - y[i])*(yi - y[i]));//²Ğ²îÆ½·½ºÍ
+			r_ssr += ((yi - mean_y)*(yi - mean_y));//è®¡ç®—å›å½’å¹³æ–¹å’Œ
+			r_sse += ((yi - y[i])*(yi - y[i]));//æ®‹å·®å¹³æ–¹å’Œ
 			if (isSaveFitYs)
 				pfitedYs[i] = double(yi);
 		}
@@ -212,15 +212,15 @@ private:
 	}
 
 public:
-	//¶şÔªÒ»´ÎÄâºÏ  pY = A + B*pM + C*pN
+	//äºŒå…ƒä¸€æ¬¡æ‹Ÿåˆ  pY = A + B*pM + C*pN
 	static void GetParam(double* pM, double* pN, double* pY, int nCount, double& A, double& B, double& C);
 	//
-	//¶àÔª»Ø¹é·½³Ì£ºY = B0 + B1X1 + B2X2 + ...BnXn
-	// data[rows*cols]¶şÎ¬Êı×é£»X1i,X2i,...Xni,Yi (i=0 to rows-1)
-	// rows£ºÊı¾İĞĞÊı£»colsÊı¾İÁĞÊı£»
-	// Answer[cols]£º·µ»Ø»Ø¹éÏµÊıÊı×é(B0,B1...Bn)
-	// SquarePoor[4]£º·µ»Ø·½²î·ÖÎöÖ¸±ê: »Ø¹éÆ½·½ºÍ£¬Ê£ÓàÆ½·½ºÍ£¬»Ø¹éÆ½·½²î£¬Ê£ÓàÆ½·½²î
-	// ·µ»ØÖµ£º0Çó½â³É¹¦£¬-1´íÎó
+	//å¤šå…ƒå›å½’æ–¹ç¨‹ï¼šY = B0 + B1X1 + B2X2 + ...BnXn
+	// data[rows*cols]äºŒç»´æ•°ç»„ï¼›X1i,X2i,...Xni,Yi (i=0 to rows-1)
+	// rowsï¼šæ•°æ®è¡Œæ•°ï¼›colsæ•°æ®åˆ—æ•°ï¼›
+	// Answer[cols]ï¼šè¿”å›å›å½’ç³»æ•°æ•°ç»„(B0,B1...Bn)
+	// SquarePoor[4]ï¼šè¿”å›æ–¹å·®åˆ†ææŒ‡æ ‡: å›å½’å¹³æ–¹å’Œï¼Œå‰©ä½™å¹³æ–¹å’Œï¼Œå›å½’å¹³æ–¹å·®ï¼Œå‰©ä½™å¹³æ–¹å·®
+	// è¿”å›å€¼ï¼š0æ±‚è§£æˆåŠŸï¼Œ-1é”™è¯¯
 	//
 	static int MultipleRegression(double *data, int rows, int cols, double *Answer, double *SquarePoor);
 	static void Display(double *dat, double *Answer, double *SquarePoor, int rows, int cols);

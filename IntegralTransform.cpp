@@ -152,7 +152,7 @@ void CIntegralTransform::IFFT(CComplex* FD, CComplex* TD, int r)
 		memcpy(TD, FD, sizeof(CComplex)*count);
 
 	int i, j, a, b, p;
-	// Î»·´×ªÖÃ»» Bit-reversal Permutation
+	// ä½åè½¬ç½®æ¢ Bit-reversal Permutation
 	for (i = 1, p = 0; i < count; i *= 2)
 		p++;
 	for (i = 0; i < count; i++)
@@ -177,7 +177,7 @@ void CIntegralTransform::IFFT(CComplex* FD, CComplex* TD, int r)
 	if (!W)
 		return;
 	int m, k, t, index1, index2;
-	// ¼ÆËã 1 µÄÇ° n / 2 ¸ö n ´Î·½¸ù Wj = wreal [j] + i * wimag [j] , j = 0, 1, ... , n / 2 - 1
+	// è®¡ç®— 1 çš„å‰ n / 2 ä¸ª n æ¬¡æ–¹æ ¹ Wj = wreal [j] + i * wimag [j] , j = 0, 1, ... , n / 2 - 1
 	arg = 2 * PI / count;
 	treal = cos(arg);
 	timag = sin(arg);
@@ -196,7 +196,7 @@ void CIntegralTransform::IFFT(CComplex* FD, CComplex* TD, int r)
 			{
 				index1 = k + j;
 				index2 = index1 + m / 2;
-				t = (count / m) * j;    // Ğı×ªÒò×Ó w µÄÊµ²¿ÔÚ wreal [] ÖĞµÄÏÂ±êÎª t
+				t = (count / m) * j;    // æ—‹è½¬å› å­ w çš„å®éƒ¨åœ¨ wreal [] ä¸­çš„ä¸‹æ ‡ä¸º t
 				treal = W[t].GetReal()*TD[index2].GetReal() - W[t].GetImag()*TD[index2].GetImag();
 				timag = W[t].GetReal()*TD[index2].GetImag() + W[t].GetImag()*TD[index2].GetReal();
 				ureal = TD[index1].GetReal();
@@ -225,7 +225,7 @@ void CIntegralTransform::IFFT(CComplex* FD, double* TD, int r)
 	memcpy(Y, FD, sizeof(CComplex)*count);
 
 	int i, j, a, b, p;
-	// Î»·´×ªÖÃ»» Bit-reversal Permutation
+	// ä½åè½¬ç½®æ¢ Bit-reversal Permutation
 	for (i = 1, p = 0; i < count; i *= 2)
 		p++;
 	for (i = 0; i < count; i++)
@@ -250,7 +250,7 @@ void CIntegralTransform::IFFT(CComplex* FD, double* TD, int r)
 	if (!W)
 		return;
 	int m, k, t, index1, index2;
-	// ¼ÆËã 1 µÄÇ° n / 2 ¸ö n ´Î·½¸ù Wj = wreal [j] + i * wimag [j] , j = 0, 1, ... , n / 2 - 1
+	// è®¡ç®— 1 çš„å‰ n / 2 ä¸ª n æ¬¡æ–¹æ ¹ Wj = wreal [j] + i * wimag [j] , j = 0, 1, ... , n / 2 - 1
 	arg = 2 * PI / count;
 	treal = cos(arg);
 	timag = sin(arg);
@@ -269,7 +269,7 @@ void CIntegralTransform::IFFT(CComplex* FD, double* TD, int r)
 			{
 				index1 = k + j;
 				index2 = index1 + m / 2;
-				t = (count / m) * j;    // Ğı×ªÒò×Ó w µÄÊµ²¿ÔÚ wreal [] ÖĞµÄÏÂ±êÎª t
+				t = (count / m) * j;    // æ—‹è½¬å› å­ w çš„å®éƒ¨åœ¨ wreal [] ä¸­çš„ä¸‹æ ‡ä¸º t
 				treal = W[t].GetReal()*Y[index2].GetReal() - W[t].GetImag()*Y[index2].GetImag();
 				timag = W[t].GetReal()*Y[index2].GetImag() + W[t].GetImag()*Y[index2].GetReal();
 				ureal = Y[index1].GetReal();

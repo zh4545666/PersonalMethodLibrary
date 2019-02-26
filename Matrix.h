@@ -11,52 +11,52 @@
 class AFX_EX_CLASS CMatrix
 {
 	//
-	// ¹«ÓĞ½Ó¿Úº¯Êı
+	// å…¬æœ‰æ¥å£å‡½æ•°
 	//
 public:
 
 	//
-	// ¹¹ÔìÓëÎö¹¹
+	// æ„é€ ä¸ææ„
 	//
 
-	CMatrix();										// »ù´¡¹¹Ôìº¯Êı
-	CMatrix(int nRows, int nCols);					// Ö¸¶¨ĞĞÁĞ¹¹Ôìº¯Êı
-	CMatrix(int nRows, int nCols, double value[]);	// Ö¸¶¨Êı¾İ¹¹Ôìº¯Êı
-	CMatrix(int nSize);								// ·½Õó¹¹Ôìº¯Êı
-	CMatrix(int nSize, double value[]);				// Ö¸¶¨Êı¾İ·½Õó¹¹Ôìº¯Êı
-	CMatrix(const CMatrix& other);					// ¿½±´¹¹Ôìº¯Êı
-	bool	Init(int nRows, int nCols);				// ³õÊ¼»¯¾ØÕó	
-	bool	MakeUnitMatrix(int nSize);				// ½«·½Õó³õÊ¼»¯Îªµ¥Î»¾ØÕó
-	virtual ~CMatrix();								// Îö¹¹º¯Êı
+	CMatrix();										// åŸºç¡€æ„é€ å‡½æ•°
+	CMatrix(int nRows, int nCols);					// æŒ‡å®šè¡Œåˆ—æ„é€ å‡½æ•°
+	CMatrix(int nRows, int nCols, double value[]);	// æŒ‡å®šæ•°æ®æ„é€ å‡½æ•°
+	CMatrix(int nSize);								// æ–¹é˜µæ„é€ å‡½æ•°
+	CMatrix(int nSize, double value[]);				// æŒ‡å®šæ•°æ®æ–¹é˜µæ„é€ å‡½æ•°
+	CMatrix(const CMatrix& other);					// æ‹·è´æ„é€ å‡½æ•°
+	bool	Init(int nRows, int nCols);				// åˆå§‹åŒ–çŸ©é˜µ	
+	bool	MakeUnitMatrix(int nSize);				// å°†æ–¹é˜µåˆå§‹åŒ–ä¸ºå•ä½çŸ©é˜µ
+	virtual ~CMatrix();								// ææ„å‡½æ•°
 
 	//
-	// ÊäÈëÓëÏÔÊ¾
+	// è¾“å…¥ä¸æ˜¾ç¤º
 	//
 
-	// ½«×Ö·û´®×ª»»Îª¾ØÕóÊı¾İ
+	// å°†å­—ç¬¦ä¸²è½¬æ¢ä¸ºçŸ©é˜µæ•°æ®
 	bool FromString(string s, const string& sDelim = " ", bool bLineBreak = true);
-	// ½«¾ØÕó×ª»»Îª×Ö·û´®
+	// å°†çŸ©é˜µè½¬æ¢ä¸ºå­—ç¬¦ä¸²
 	string ToString(const string& sDelim = " ", bool bLineBreak = true) const;
-	// ½«¾ØÕóµÄÖ¸¶¨ĞĞ×ª»»Îª×Ö·û´®
+	// å°†çŸ©é˜µçš„æŒ‡å®šè¡Œè½¬æ¢ä¸ºå­—ç¬¦ä¸²
 	string RowToString(int nRow, const string& sDelim = " ") const;
-	// ½«¾ØÕóµÄÖ¸¶¨ÁĞ×ª»»Îª×Ö·û´®
+	// å°†çŸ©é˜µçš„æŒ‡å®šåˆ—è½¬æ¢ä¸ºå­—ç¬¦ä¸²
 	string ColToString(int nCol, const string& sDelim = " ") const;
 
 	//
-	// ÔªËØÓëÖµ²Ù×÷
+	// å…ƒç´ ä¸å€¼æ“ä½œ
 	//
 
-	bool	SetElement(int nRow, int nCol, double value);	// ÉèÖÃÖ¸¶¨ÔªËØµÄÖµ
-	double	GetElement(int nRow, int nCol) const;			// »ñÈ¡Ö¸¶¨ÔªËØµÄÖµ
-	void    SetData(double value[]);						// ÉèÖÃ¾ØÕóµÄÖµ(value³¤¶È±ØĞëµÈÓÚm_nNumColumns*m_nNumRows)
-	int		GetNumColumns() const;							// »ñÈ¡¾ØÕóµÄÁĞÊı
-	int		GetNumRows() const;								// »ñÈ¡¾ØÕóµÄĞĞÊı
-	int     GetRowVector(int nRow, double* pVector) const;	// »ñÈ¡¾ØÕóµÄÖ¸¶¨ĞĞ¾ØÕó
-	int     GetColVector(int nCol, double* pVector) const;	// »ñÈ¡¾ØÕóµÄÖ¸¶¨ÁĞ¾ØÕó
-	double* GetData() const;								// »ñÈ¡¾ØÕóµÄÖµ
+	bool	SetElement(int nRow, int nCol, double value);	// è®¾ç½®æŒ‡å®šå…ƒç´ çš„å€¼
+	double	GetElement(int nRow, int nCol) const;			// è·å–æŒ‡å®šå…ƒç´ çš„å€¼
+	void    SetData(double value[]);						// è®¾ç½®çŸ©é˜µçš„å€¼(valueé•¿åº¦å¿…é¡»ç­‰äºm_nNumColumns*m_nNumRows)
+	int		GetNumColumns() const;							// è·å–çŸ©é˜µçš„åˆ—æ•°
+	int		GetNumRows() const;								// è·å–çŸ©é˜µçš„è¡Œæ•°
+	int     GetRowVector(int nRow, double* pVector) const;	// è·å–çŸ©é˜µçš„æŒ‡å®šè¡ŒçŸ©é˜µ
+	int     GetColVector(int nCol, double* pVector) const;	// è·å–çŸ©é˜µçš„æŒ‡å®šåˆ—çŸ©é˜µ
+	double* GetData() const;								// è·å–çŸ©é˜µçš„å€¼
 
 	//
-	// ÊıÑ§²Ù×÷
+	// æ•°å­¦æ“ä½œ
 	//
 
 	CMatrix& operator=(const CMatrix& other);
@@ -66,60 +66,60 @@ public:
 	CMatrix	operator-(const CMatrix& other) const;
 	CMatrix	operator*(double value) const;
 	CMatrix	operator*(const CMatrix& other) const;
-	// ¸´¾ØÕó³Ë·¨
+	// å¤çŸ©é˜µä¹˜æ³•
 	bool CMul(const CMatrix& AR, const CMatrix& AI, const CMatrix& BR, const CMatrix& BI, CMatrix& CR, CMatrix& CI) const;
-	// ¾ØÕóµÄ×ªÖÃ
+	// çŸ©é˜µçš„è½¬ç½®
 	CMatrix Transpose() const;
 
 	//
-	// Ëã·¨
+	// ç®—æ³•
 	//
 
-	// Êµ¾ØÕóÇóÄæµÄÈ«Ñ¡Ö÷Ôª¸ßË¹£­Ô¼µ±·¨
+	// å®çŸ©é˜µæ±‚é€†çš„å…¨é€‰ä¸»å…ƒé«˜æ–¯ï¼çº¦å½“æ³•
 	bool InvertGaussJordan();
-	// ¸´¾ØÕóÇóÄæµÄÈ«Ñ¡Ö÷Ôª¸ßË¹£­Ô¼µ±·¨
+	// å¤çŸ©é˜µæ±‚é€†çš„å…¨é€‰ä¸»å…ƒé«˜æ–¯ï¼çº¦å½“æ³•
 	bool InvertGaussJordan(CMatrix& mtxImag);
-	// ¶Ô³ÆÕı¶¨¾ØÕóµÄÇóÄæ
+	// å¯¹ç§°æ­£å®šçŸ©é˜µçš„æ±‚é€†
 	bool InvertSsgj();
-	// ÍĞ²®Àû×È¾ØÕóÇóÄæµÄ°£À¼ÌØ·½·¨
+	// æ‰˜ä¼¯åˆ©å…¹çŸ©é˜µæ±‚é€†çš„åŸƒå…°ç‰¹æ–¹æ³•
 	bool InvertTrench();
-	// ÇóĞĞÁĞÊ½ÖµµÄÈ«Ñ¡Ö÷Ôª¸ßË¹ÏûÈ¥·¨
+	// æ±‚è¡Œåˆ—å¼å€¼çš„å…¨é€‰ä¸»å…ƒé«˜æ–¯æ¶ˆå»æ³•
 	double DetGauss();
-	// Çó¾ØÕóÖÈµÄÈ«Ñ¡Ö÷Ôª¸ßË¹ÏûÈ¥·¨
+	// æ±‚çŸ©é˜µç§©çš„å…¨é€‰ä¸»å…ƒé«˜æ–¯æ¶ˆå»æ³•
 	int RankGauss();
-	// ¶Ô³ÆÕı¶¨¾ØÕóµÄÇÇÀïË¹»ù·Ö½âÓëĞĞÁĞÊ½µÄÇóÖµ
+	// å¯¹ç§°æ­£å®šçŸ©é˜µçš„ä¹”é‡Œæ–¯åŸºåˆ†è§£ä¸è¡Œåˆ—å¼çš„æ±‚å€¼
 	bool DetCholesky(double* dblDet);
-	// ¾ØÕóµÄÈı½Ç·Ö½â
+	// çŸ©é˜µçš„ä¸‰è§’åˆ†è§£
 	bool SplitLU(CMatrix& mtxL, CMatrix& mtxU);
-	// Ò»°ãÊµ¾ØÕóµÄQR·Ö½â
+	// ä¸€èˆ¬å®çŸ©é˜µçš„QRåˆ†è§£
 	bool SplitQR(CMatrix& mtxQ);
-	// Ò»°ãÊµ¾ØÕóµÄÆæÒìÖµ·Ö½â
+	// ä¸€èˆ¬å®çŸ©é˜µçš„å¥‡å¼‚å€¼åˆ†è§£
 	bool SplitUV(CMatrix& mtxU, CMatrix& mtxV, double eps = 0.000001);
-	// Çó¹ãÒåÄæµÄÆæÒìÖµ·Ö½â·¨
+	// æ±‚å¹¿ä¹‰é€†çš„å¥‡å¼‚å€¼åˆ†è§£æ³•
 	bool GInvertUV(CMatrix& mtxAP, CMatrix& mtxU, CMatrix& mtxV, double eps = 0.000001);
-	// Ô¼»¯¶Ô³Æ¾ØÕóÎª¶Ô³ÆÈı¶Ô½ÇÕóµÄºÀË¹ºÉ¶ûµÂ±ä»»·¨
+	// çº¦åŒ–å¯¹ç§°çŸ©é˜µä¸ºå¯¹ç§°ä¸‰å¯¹è§’é˜µçš„è±ªæ–¯è·å°”å¾·å˜æ¢æ³•
 	bool MakeSymTri(CMatrix& mtxQ, CMatrix& mtxT, double dblB[], double dblC[]);
-	// Êµ¶Ô³ÆÈı¶Ô½ÇÕóµÄÈ«²¿ÌØÕ÷ÖµÓëÌØÕ÷ÏòÁ¿µÄ¼ÆËã
+	// å®å¯¹ç§°ä¸‰å¯¹è§’é˜µçš„å…¨éƒ¨ç‰¹å¾å€¼ä¸ç‰¹å¾å‘é‡çš„è®¡ç®—
 	bool SymTriEigenv(double dblB[], double dblC[], CMatrix& mtxQ, int nMaxIt = 60, double eps = 0.000001);
-	// Ô¼»¯Ò»°ãÊµ¾ØÕóÎªºÕÉê²®¸ñ¾ØÕóµÄ³õµÈÏàËÆ±ä»»·¨
+	// çº¦åŒ–ä¸€èˆ¬å®çŸ©é˜µä¸ºèµ«ç”³ä¼¯æ ¼çŸ©é˜µçš„åˆç­‰ç›¸ä¼¼å˜æ¢æ³•
 	void MakeHberg();
-	// ÇóºÕÉê²®¸ñ¾ØÕóÈ«²¿ÌØÕ÷ÖµµÄQR·½·¨
+	// æ±‚èµ«ç”³ä¼¯æ ¼çŸ©é˜µå…¨éƒ¨ç‰¹å¾å€¼çš„QRæ–¹æ³•
 	bool HBergEigenv(double dblU[], double dblV[], int nMaxIt = 60, double eps = 0.000001);
-	// ÇóÊµ¶Ô³Æ¾ØÕóÌØÕ÷ÖµÓëÌØÕ÷ÏòÁ¿µÄÑÅ¿É±È·¨
+	// æ±‚å®å¯¹ç§°çŸ©é˜µç‰¹å¾å€¼ä¸ç‰¹å¾å‘é‡çš„é›…å¯æ¯”æ³•
 	bool JacobiEigenv(double dblEigenValue[], CMatrix& mtxEigenVector, int nMaxIt = 60, double eps = 0.000001);
-	// ÇóÊµ¶Ô³Æ¾ØÕóÌØÕ÷ÖµÓëÌØÕ÷ÏòÁ¿µÄÑÅ¿É±È¹ı¹Ø·¨
+	// æ±‚å®å¯¹ç§°çŸ©é˜µç‰¹å¾å€¼ä¸ç‰¹å¾å‘é‡çš„é›…å¯æ¯”è¿‡å…³æ³•
 	bool JacobiEigenv2(double dblEigenValue[], CMatrix& mtxEigenVector, double eps = 0.000001);
 
 	//
-	// ±£»¤ĞÔÊı¾İ³ÉÔ±
+	// ä¿æŠ¤æ€§æ•°æ®æˆå‘˜
 	//
 protected:
-	int	m_nNumColumns;			// ¾ØÕóÁĞÊı
-	int	m_nNumRows;				// ¾ØÕóĞĞÊı
-	double*	m_pData;			// ¾ØÕóÊı¾İ»º³åÇø
+	int	m_nNumColumns;			// çŸ©é˜µåˆ—æ•°
+	int	m_nNumRows;				// çŸ©é˜µè¡Œæ•°
+	double*	m_pData;			// çŸ©é˜µæ•°æ®ç¼“å†²åŒº
 
 	//
-	// ÄÚ²¿º¯Êı
+	// å†…éƒ¨å‡½æ•°
 	//
 private:
 	void ppp(double a[], double e[], double s[], double v[], int m, int n);
@@ -133,47 +133,47 @@ class AFX_EX_CLASS CComplexMatrix
 {
 public:
 	//
-	// ¹¹ÔìÓëÎö¹¹
+	// æ„é€ ä¸ææ„
 	//
 
-	CComplexMatrix();										// »ù´¡¹¹Ôìº¯Êı
-	CComplexMatrix(int nRows, int nCols);					// Ö¸¶¨ĞĞÁĞ¹¹Ôìº¯Êı
-	CComplexMatrix(int nRows, int nCols, CComplex value[]);	// Ö¸¶¨Êı¾İ¹¹Ôìº¯Êı
-	CComplexMatrix(int nSize);								// ·½Õó¹¹Ôìº¯Êı
-	CComplexMatrix(int nSize, CComplex value[]);			// Ö¸¶¨Êı¾İ·½Õó¹¹Ôìº¯Êı
-	CComplexMatrix(const CComplexMatrix& other);			// ¿½±´¹¹Ôìº¯Êı
-	bool	Init(int nRows, int nCols);				// ³õÊ¼»¯¾ØÕó	
-	bool	MakeUnitMatrix(int nSize);				// ½«·½Õó³õÊ¼»¯Îªµ¥Î»¾ØÕó
+	CComplexMatrix();										// åŸºç¡€æ„é€ å‡½æ•°
+	CComplexMatrix(int nRows, int nCols);					// æŒ‡å®šè¡Œåˆ—æ„é€ å‡½æ•°
+	CComplexMatrix(int nRows, int nCols, CComplex value[]);	// æŒ‡å®šæ•°æ®æ„é€ å‡½æ•°
+	CComplexMatrix(int nSize);								// æ–¹é˜µæ„é€ å‡½æ•°
+	CComplexMatrix(int nSize, CComplex value[]);			// æŒ‡å®šæ•°æ®æ–¹é˜µæ„é€ å‡½æ•°
+	CComplexMatrix(const CComplexMatrix& other);			// æ‹·è´æ„é€ å‡½æ•°
+	bool	Init(int nRows, int nCols);				// åˆå§‹åŒ–çŸ©é˜µ	
+	bool	MakeUnitMatrix(int nSize);				// å°†æ–¹é˜µåˆå§‹åŒ–ä¸ºå•ä½çŸ©é˜µ
 	virtual ~CComplexMatrix();
 
 	//
-	// ÊäÈëÓëÏÔÊ¾
+	// è¾“å…¥ä¸æ˜¾ç¤º
 	//
 
-	// ½«×Ö·û´®×ª»»Îª¾ØÕóÊı¾İ
+	// å°†å­—ç¬¦ä¸²è½¬æ¢ä¸ºçŸ©é˜µæ•°æ®
 	bool FromString(string s, const string& sDelim = " ", bool bLineBreak = true);
-	// ½«¾ØÕó×ª»»Îª×Ö·û´®
+	// å°†çŸ©é˜µè½¬æ¢ä¸ºå­—ç¬¦ä¸²
 	string ToString(const string& sDelim = " ", bool bLineBreak = true) const;
-	// ½«¾ØÕóµÄÖ¸¶¨ĞĞ×ª»»Îª×Ö·û´®
+	// å°†çŸ©é˜µçš„æŒ‡å®šè¡Œè½¬æ¢ä¸ºå­—ç¬¦ä¸²
 	string RowToString(int nRow, const string& sDelim = " ") const;
-	// ½«¾ØÕóµÄÖ¸¶¨ÁĞ×ª»»Îª×Ö·û´®
+	// å°†çŸ©é˜µçš„æŒ‡å®šåˆ—è½¬æ¢ä¸ºå­—ç¬¦ä¸²
 	string ColToString(int nCol, const string& sDelim = " ") const;
 
 	//
-	// ÔªËØÓëÖµ²Ù×÷
+	// å…ƒç´ ä¸å€¼æ“ä½œ
 	//
 
-	bool		SetElement(int nRow, int nCol, CComplex& pValue);	// ÉèÖÃÖ¸¶¨ÔªËØµÄÖµ
-	CComplex	GetElement(int nRow, int nCol) const;			// »ñÈ¡Ö¸¶¨ÔªËØµÄÖµ
-	void		SetData(CComplex value[]);						// ÉèÖÃ¾ØÕóµÄÖµ(value³¤¶È±ØĞëµÈÓÚm_nNumColumns*m_nNumRows)
-	int			GetNumColumns() const;							// »ñÈ¡¾ØÕóµÄÁĞÊı
-	int			GetNumRows() const;								// »ñÈ¡¾ØÕóµÄĞĞÊı
-	int			GetRowVector(int nRow, CComplex* pVector) const;	// »ñÈ¡¾ØÕóµÄÖ¸¶¨ĞĞ¾ØÕó
-	int			GetColVector(int nCol, CComplex* pVector) const;	// »ñÈ¡¾ØÕóµÄÖ¸¶¨ÁĞ¾ØÕó
-	CComplex*	GetData() const;								// »ñÈ¡¾ØÕóµÄÖµ
+	bool		SetElement(int nRow, int nCol, CComplex& pValue);	// è®¾ç½®æŒ‡å®šå…ƒç´ çš„å€¼
+	CComplex	GetElement(int nRow, int nCol) const;			// è·å–æŒ‡å®šå…ƒç´ çš„å€¼
+	void		SetData(CComplex value[]);						// è®¾ç½®çŸ©é˜µçš„å€¼(valueé•¿åº¦å¿…é¡»ç­‰äºm_nNumColumns*m_nNumRows)
+	int			GetNumColumns() const;							// è·å–çŸ©é˜µçš„åˆ—æ•°
+	int			GetNumRows() const;								// è·å–çŸ©é˜µçš„è¡Œæ•°
+	int			GetRowVector(int nRow, CComplex* pVector) const;	// è·å–çŸ©é˜µçš„æŒ‡å®šè¡ŒçŸ©é˜µ
+	int			GetColVector(int nCol, CComplex* pVector) const;	// è·å–çŸ©é˜µçš„æŒ‡å®šåˆ—çŸ©é˜µ
+	CComplex*	GetData() const;								// è·å–çŸ©é˜µçš„å€¼
 
 	//
-	// ÊıÑ§²Ù×÷
+	// æ•°å­¦æ“ä½œ
 	//
 
 	CComplexMatrix& operator=(const CComplexMatrix& other);
@@ -189,12 +189,12 @@ private:
 
 
 	//
-	// ±£»¤ĞÔÊı¾İ³ÉÔ±
+	// ä¿æŠ¤æ€§æ•°æ®æˆå‘˜
 	//
 protected:
-	int	m_nNumColumns;			// ¾ØÕóÁĞÊı
-	int	m_nNumRows;				// ¾ØÕóĞĞÊı
-	CComplex*	m_pData;			// ¾ØÕóÊı¾İ»º³åÇø
+	int	m_nNumColumns;			// çŸ©é˜µåˆ—æ•°
+	int	m_nNumRows;				// çŸ©é˜µè¡Œæ•°
+	CComplex*	m_pData;			// çŸ©é˜µæ•°æ®ç¼“å†²åŒº
 
 };
 

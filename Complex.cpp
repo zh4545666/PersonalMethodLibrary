@@ -3,7 +3,7 @@
 
 
 //////////////////////////////////////////////////////////////////////
-// »ù±¾¹¹Ôìº¯Êý
+// åŸºæœ¬æž„é€ å‡½æ•°
 //////////////////////////////////////////////////////////////////////
 CComplex::CComplex()
 {
@@ -12,11 +12,11 @@ CComplex::CComplex()
 }
 
 //////////////////////////////////////////////////////////////////////
-// Ö¸¶¨Öµ¹¹Ôìº¯Êý
+// æŒ‡å®šå€¼æž„é€ å‡½æ•°
 //
-// ²ÎÊý£º
-// 1. double dblX - Ö¸¶¨µÄÊµ²¿
-// 2. double dblY - Ö¸¶¨µÄÐé²¿
+// å‚æ•°ï¼š
+// 1. double dblX - æŒ‡å®šçš„å®žéƒ¨
+// 2. double dblY - æŒ‡å®šçš„è™šéƒ¨
 //////////////////////////////////////////////////////////////////////
 CComplex::CComplex(double dblX, double dblY)
 {
@@ -25,10 +25,10 @@ CComplex::CComplex(double dblX, double dblY)
 }
 
 //////////////////////////////////////////////////////////////////////
-// ¿½±´¹¹Ôìº¯Êý
+// æ‹·è´æž„é€ å‡½æ•°
 //
-// ²ÎÊý£º
-// 1. const CComplex& other - Ô´¸´Êý
+// å‚æ•°ï¼š
+// 1. const CComplex& other - æºå¤æ•°
 //////////////////////////////////////////////////////////////////////
 CComplex::CComplex(const CComplex& other)
 {
@@ -37,11 +37,11 @@ CComplex::CComplex(const CComplex& other)
 }
 
 //////////////////////////////////////////////////////////////////////
-// Ö¸¶¨¸´ÊýµÄÊµ²¿ºÍÐé²¿
+// æŒ‡å®šå¤æ•°çš„å®žéƒ¨å’Œè™šéƒ¨
 //
-// ²ÎÊý£º
-// 1. double dblX - ¸´ÊýµÄÊµ²¿
-// 2. double dblY - ¸´ÊýµÄÐé²¿
+// å‚æ•°ï¼š
+// 1. double dblX - å¤æ•°çš„å®žéƒ¨
+// 2. double dblY - å¤æ•°çš„è™šéƒ¨
 //////////////////////////////////////////////////////////////////////
 void CComplex::SetData(double dblX, double dblY)
 {
@@ -50,10 +50,10 @@ void CComplex::SetData(double dblX, double dblY)
 }
 
 //////////////////////////////////////////////////////////////////////
-// Ö¸¶¨¸´ÊýµÄÊµ²¿
+// æŒ‡å®šå¤æ•°çš„å®žéƒ¨
 //
-// ²ÎÊý£º
-// 1. double dblX - ¸´ÊýµÄÊµ²¿
+// å‚æ•°ï¼š
+// 1. double dblX - å¤æ•°çš„å®žéƒ¨
 //////////////////////////////////////////////////////////////////////
 void CComplex::SetReal(double dblX)
 {
@@ -61,10 +61,10 @@ void CComplex::SetReal(double dblX)
 }
 
 //////////////////////////////////////////////////////////////////////
-// Ö¸¶¨¸´ÊýµÄÐé²¿
+// æŒ‡å®šå¤æ•°çš„è™šéƒ¨
 //
-// ²ÎÊý£º
-// 1. double dblX - ¸´ÊýµÄÐé²¿
+// å‚æ•°ï¼š
+// 1. double dblX - å¤æ•°çš„è™šéƒ¨
 //////////////////////////////////////////////////////////////////////
 void CComplex::SetImag(double dblY)
 {
@@ -72,11 +72,11 @@ void CComplex::SetImag(double dblY)
 }
 
 //////////////////////////////////////////////////////////////////////
-// È¡¸´ÊýµÄÊµ²¿
+// å–å¤æ•°çš„å®žéƒ¨
 //
-// ²ÎÊý£º  ÎÞ
+// å‚æ•°ï¼š  æ— 
 //
-// ·µ»ØÖµ£ºdouble ÐÍ£¬¸´ÊýµÄÊµ²¿
+// è¿”å›žå€¼ï¼šdouble åž‹ï¼Œå¤æ•°çš„å®žéƒ¨
 //////////////////////////////////////////////////////////////////////
 double CComplex::GetReal()
 {
@@ -84,11 +84,11 @@ double CComplex::GetReal()
 }
 
 //////////////////////////////////////////////////////////////////////
-// È¡¸´ÊýµÄÐé²¿
+// å–å¤æ•°çš„è™šéƒ¨
 //
-// ²ÎÊý£º  ÎÞ
+// å‚æ•°ï¼š  æ— 
 //
-// ·µ»ØÖµ£ºdouble ÐÍ£¬¸´ÊýµÄÐé²¿
+// è¿”å›žå€¼ï¼šdouble åž‹ï¼Œå¤æ•°çš„è™šéƒ¨
 //////////////////////////////////////////////////////////////////////
 double CComplex::GetImag()
 {
@@ -96,11 +96,11 @@ double CComplex::GetImag()
 }
 
 //////////////////////////////////////////////////////////////////////
-// ½«¸´Êý×ª»¯Îª"a+bj"ÐÎÊ½µÄ×Ö·û´®
+// å°†å¤æ•°è½¬åŒ–ä¸º"a+bj"å½¢å¼çš„å­—ç¬¦ä¸²
 //
-// ²ÎÊý£º  ÎÞ
+// å‚æ•°ï¼š  æ— 
 //
-// ·µ»ØÖµ£ºstring ¶ÔÏó£¬"a+bj"ÐÎÊ½µÄ×Ö·û´®
+// è¿”å›žå€¼ï¼šstring å¯¹è±¡ï¼Œ"a+bj"å½¢å¼çš„å­—ç¬¦ä¸²
 //////////////////////////////////////////////////////////////////////
 string CComplex::ToString(bool bflag) const
 {
@@ -141,13 +141,13 @@ string CComplex::ToString(bool bflag) const
 }
 
 //////////////////////////////////////////////////////////////////////
-// ½«"a,b"ÐÎÊ½µÄ×Ö·û´®×ª»¯Îª¸´Êý£¬ÒÔaÎª¸´ÊýµÄÊµ²¿£¬bÎª¸´ÊýµÄÐé²¿
+// å°†"a,b"å½¢å¼çš„å­—ç¬¦ä¸²è½¬åŒ–ä¸ºå¤æ•°ï¼Œä»¥aä¸ºå¤æ•°çš„å®žéƒ¨ï¼Œbä¸ºå¤æ•°çš„è™šéƒ¨
 //
-// ²ÎÊý£º
-// 1. string s - "a,b"ÐÎÊ½µÄ×Ö·û´®£¬aÎª¸´ÊýµÄÊµ²¿£¬bÎª¸´ÊýµÄÐé²¿
-// 2. const string& sDelim - a, bÖ®¼äµÄ·Ö¸ô·û£¬Ä¬ÈÏÎª¿Õ¸ñ
+// å‚æ•°ï¼š
+// 1. string s - "a,b"å½¢å¼çš„å­—ç¬¦ä¸²ï¼Œaä¸ºå¤æ•°çš„å®žéƒ¨ï¼Œbä¸ºå¤æ•°çš„è™šéƒ¨
+// 2. const string& sDelim - a, bä¹‹é—´çš„åˆ†éš”ç¬¦ï¼Œé»˜è®¤ä¸ºç©ºæ ¼
 //
-// ·µ»ØÖµ£ºÎÞ
+// è¿”å›žå€¼ï¼šæ— 
 //////////////////////////////////////////////////////////////////////
 void CComplex::FromString(string s, const string& sDelim /*= " "*/)
 {
@@ -231,12 +231,12 @@ void CComplex::FromString(string s, const string& sDelim /*= " "*/)
 }
 
 //////////////////////////////////////////////////////////////////////
-// ÖØÔØÔËËã·û==£¬±È½ÏÁ½¸ö¸´ÊýÊÇ·ñÏàµÈ
+// é‡è½½è¿ç®—ç¬¦==ï¼Œæ¯”è¾ƒä¸¤ä¸ªå¤æ•°æ˜¯å¦ç›¸ç­‰
 //
-// ²ÎÊý£º
-// 1. const CComplex& cpxX - ÓÃÓÚ±È½ÏµÄ¸´Êý
+// å‚æ•°ï¼š
+// 1. const CComplex& cpxX - ç”¨äºŽæ¯”è¾ƒçš„å¤æ•°
 //
-// ·µ»ØÖµ£ºboolÐÍ£¬ÏàµÈÔòÎªtrue£¬·ñÔòÎªfalse
+// è¿”å›žå€¼ï¼šboolåž‹ï¼Œç›¸ç­‰åˆ™ä¸ºtrueï¼Œå¦åˆ™ä¸ºfalse
 //////////////////////////////////////////////////////////////////////
 bool CComplex::operator==(const CComplex& cpxX) const
 {
@@ -244,12 +244,12 @@ bool CComplex::operator==(const CComplex& cpxX) const
 }
 
 //////////////////////////////////////////////////////////////////////
-// ÖØÔØÔËËã·û!=£¬±È½ÏÁ½¸ö¸´ÊýÊÇ·ñ²»µÈ
+// é‡è½½è¿ç®—ç¬¦!=ï¼Œæ¯”è¾ƒä¸¤ä¸ªå¤æ•°æ˜¯å¦ä¸ç­‰
 //
-// ²ÎÊý£º
-// 1. const CComplex& cpxX - ÓÃÓÚ±È½ÏµÄ¸´Êý
+// å‚æ•°ï¼š
+// 1. const CComplex& cpxX - ç”¨äºŽæ¯”è¾ƒçš„å¤æ•°
 //
-// ·µ»ØÖµ£ºboolÐÍ£¬²»ÏàµÈÔòÎªtrue£¬ÏàµÈÎªfalse
+// è¿”å›žå€¼ï¼šboolåž‹ï¼Œä¸ç›¸ç­‰åˆ™ä¸ºtrueï¼Œç›¸ç­‰ä¸ºfalse
 //////////////////////////////////////////////////////////////////////
 bool CComplex::operator!=(const CComplex& cpxX) const
 {
@@ -257,12 +257,12 @@ bool CComplex::operator!=(const CComplex& cpxX) const
 }
 
 //////////////////////////////////////////////////////////////////////
-// ÖØÔØÔËËã·û=£¬¸ø¸´Êý¸³Öµ
+// é‡è½½è¿ç®—ç¬¦=ï¼Œç»™å¤æ•°èµ‹å€¼
 //
-// ²ÎÊý£º
-// 1. const CComplex& cpxX - ÓÃÓÚ¸ø¸´Êý¸³ÖµµÄÔ´¸´Êý
+// å‚æ•°ï¼š
+// 1. const CComplex& cpxX - ç”¨äºŽç»™å¤æ•°èµ‹å€¼çš„æºå¤æ•°
 //
-// ·µ»ØÖµ£ºCComplexÐÍµÄÒýÓÃ£¬ËùÒýÓÃµÄ¸´ÊýÓëcpxXÏàµÈ
+// è¿”å›žå€¼ï¼šCComplexåž‹çš„å¼•ç”¨ï¼Œæ‰€å¼•ç”¨çš„å¤æ•°ä¸ŽcpxXç›¸ç­‰
 //////////////////////////////////////////////////////////////////////
 CComplex& CComplex::operator=(const CComplex& cpxX)
 {
@@ -273,12 +273,12 @@ CComplex& CComplex::operator=(const CComplex& cpxX)
 }
 
 //////////////////////////////////////////////////////////////////////
-// ÖØÔØÔËËã·û+£¬ÊµÏÖ¸´ÊýµÄ¼Ó·¨
+// é‡è½½è¿ç®—ç¬¦+ï¼Œå®žçŽ°å¤æ•°çš„åŠ æ³•
 //
-// ²ÎÊý£º
-// 1. const CComplex& cpxX - ÓëÖ¸¶¨¸´ÊýÏà¼ÓµÄ¸´Êý
+// å‚æ•°ï¼š
+// 1. const CComplex& cpxX - ä¸ŽæŒ‡å®šå¤æ•°ç›¸åŠ çš„å¤æ•°
 //
-// ·µ»ØÖµ£ºCComplexÐÍ£¬Ö¸¶¨¸´ÊýÓëcpxXÏà¼ÓÖ®ºÍ
+// è¿”å›žå€¼ï¼šCComplexåž‹ï¼ŒæŒ‡å®šå¤æ•°ä¸ŽcpxXç›¸åŠ ä¹‹å’Œ
 //////////////////////////////////////////////////////////////////////
 CComplex CComplex::operator+(const CComplex& cpxX) const
 {
@@ -289,12 +289,12 @@ CComplex CComplex::operator+(const CComplex& cpxX) const
 }
 
 //////////////////////////////////////////////////////////////////////
-// ÖØÔØÔËËã·û-£¬ÊµÏÖ¸´ÊýµÄ¼õ·¨
+// é‡è½½è¿ç®—ç¬¦-ï¼Œå®žçŽ°å¤æ•°çš„å‡æ³•
 //
-// ²ÎÊý£º
-// 1. const CComplex& cpxX - ÓëÖ¸¶¨¸´ÊýÏà¼õµÄ¸´Êý
+// å‚æ•°ï¼š
+// 1. const CComplex& cpxX - ä¸ŽæŒ‡å®šå¤æ•°ç›¸å‡çš„å¤æ•°
 //
-// ·µ»ØÖµ£ºCComplexÐÍ£¬Ö¸¶¨¸´Êý¼õÈ¥cpxXÖ®²î
+// è¿”å›žå€¼ï¼šCComplexåž‹ï¼ŒæŒ‡å®šå¤æ•°å‡åŽ»cpxXä¹‹å·®
 //////////////////////////////////////////////////////////////////////
 CComplex CComplex::operator-(const CComplex& cpxX) const
 {
@@ -305,12 +305,12 @@ CComplex CComplex::operator-(const CComplex& cpxX) const
 }
 
 //////////////////////////////////////////////////////////////////////
-// ÖØÔØÔËËã·û*£¬ÊµÏÖ¸´ÊýµÄ³Ë·¨
+// é‡è½½è¿ç®—ç¬¦*ï¼Œå®žçŽ°å¤æ•°çš„ä¹˜æ³•
 //
-// ²ÎÊý£º
-// 1. const CComplex& cpxX - ÓëÖ¸¶¨¸´ÊýÏà³ËµÄ¸´Êý
+// å‚æ•°ï¼š
+// 1. const CComplex& cpxX - ä¸ŽæŒ‡å®šå¤æ•°ç›¸ä¹˜çš„å¤æ•°
 //
-// ·µ»ØÖµ£ºCComplexÐÍ£¬Ö¸¶¨¸´ÊýÓëcpxXÏà³ËÖ®»ý
+// è¿”å›žå€¼ï¼šCComplexåž‹ï¼ŒæŒ‡å®šå¤æ•°ä¸ŽcpxXç›¸ä¹˜ä¹‹ç§¯
 //////////////////////////////////////////////////////////////////////
 CComplex CComplex::operator*(const CComplex& cpxX) const
 {
@@ -321,12 +321,12 @@ CComplex CComplex::operator*(const CComplex& cpxX) const
 }
 
 //////////////////////////////////////////////////////////////////////
-// ÖØÔØÔËËã·û*£¬ÊµÏÖ¸´ÊýµÄ³Ë·¨
+// é‡è½½è¿ç®—ç¬¦*ï¼Œå®žçŽ°å¤æ•°çš„ä¹˜æ³•
 //
-// ²ÎÊý£º
-// 1. const double& cpxX - ÓëÖ¸¶¨¸´ÊýÏà³ËµÄ¸´Êý
+// å‚æ•°ï¼š
+// 1. const double& cpxX - ä¸ŽæŒ‡å®šå¤æ•°ç›¸ä¹˜çš„å¤æ•°
 //
-// ·µ»ØÖµ£ºCComplexÐÍ£¬Ö¸¶¨¸´ÊýÓëcpxXÏà³ËÖ®»ý
+// è¿”å›žå€¼ï¼šCComplexåž‹ï¼ŒæŒ‡å®šå¤æ•°ä¸ŽcpxXç›¸ä¹˜ä¹‹ç§¯
 //////////////////////////////////////////////////////////////////////
 CComplex CComplex::operator*(const double& cpxX) const
 {
@@ -337,12 +337,12 @@ CComplex CComplex::operator*(const double& cpxX) const
 }
 
 //////////////////////////////////////////////////////////////////////
-// ÖØÔØÔËËã·û/£¬ÊµÏÖ¸´ÊýµÄ³ý·¨
+// é‡è½½è¿ç®—ç¬¦/ï¼Œå®žçŽ°å¤æ•°çš„é™¤æ³•
 //
-// ²ÎÊý£º
-// 1. const CComplex& cpxX - ÓëÖ¸¶¨¸´ÊýÏà³ýµÄ¸´Êý
+// å‚æ•°ï¼š
+// 1. const CComplex& cpxX - ä¸ŽæŒ‡å®šå¤æ•°ç›¸é™¤çš„å¤æ•°
 //
-// ·µ»ØÖµ£ºCComplexÐÍ£¬Ö¸¶¨¸´Êý³ýÓëcpxXÖ®ÉÌ
+// è¿”å›žå€¼ï¼šCComplexåž‹ï¼ŒæŒ‡å®šå¤æ•°é™¤ä¸ŽcpxXä¹‹å•†
 //////////////////////////////////////////////////////////////////////
 CComplex CComplex::operator/(const CComplex& cpxX) const
 {
@@ -369,15 +369,15 @@ CComplex CComplex::operator/(const CComplex& cpxX) const
 }
 
 //////////////////////////////////////////////////////////////////////
-// ¼ÆËã¸´ÊýµÄÄ£
+// è®¡ç®—å¤æ•°çš„æ¨¡
 //
-// ²ÎÊý£ºÎÞ
+// å‚æ•°ï¼šæ— 
 //
-// ·µ»ØÖµ£ºdoubleÐÍ£¬Ö¸¶¨¸´ÊýµÄÄ£
+// è¿”å›žå€¼ï¼šdoubleåž‹ï¼ŒæŒ‡å®šå¤æ•°çš„æ¨¡
 //////////////////////////////////////////////////////////////////////
 double CComplex::Abs() const
 {
-	// ÇóÈ¡Êµ²¿ºÍÐé²¿µÄ¾ø¶ÔÖµ
+	// æ±‚å–å®žéƒ¨å’Œè™šéƒ¨çš„ç»å¯¹å€¼
 	double x = fabs(m_dblX);
 	double y = fabs(m_dblY);
 
@@ -387,7 +387,7 @@ double CComplex::Abs() const
 		return x;
 
 
-	// ¼ÆËãÄ£
+	// è®¡ç®—æ¨¡
 	if (x > y)
 		return (x * sqrt(1 + (y / x) * (y / x)));
 
@@ -395,13 +395,13 @@ double CComplex::Abs() const
 }
 
 //////////////////////////////////////////////////////////////////////
-// ¼ÆËã¸´ÊýµÄ¸ù
+// è®¡ç®—å¤æ•°çš„æ ¹
 //
-// ²ÎÊý£º
-// 1. int n - ´ýÇó¸ùµÄ¸ù´Î
-// 2. CComplex cpxR[] - CComplexÐÍÊý×é£¬³¤¶ÈÎªn£¬·µ»Ø¸´ÊýµÄËùÓÐ¸ù
+// å‚æ•°ï¼š
+// 1. int n - å¾…æ±‚æ ¹çš„æ ¹æ¬¡
+// 2. CComplex cpxR[] - CComplexåž‹æ•°ç»„ï¼Œé•¿åº¦ä¸ºnï¼Œè¿”å›žå¤æ•°çš„æ‰€æœ‰æ ¹
 //
-// ·µ»ØÖµ£ºÎÞ
+// è¿”å›žå€¼ï¼šæ— 
 //////////////////////////////////////////////////////////////////////
 void CComplex::Root(int n, CComplex cpxR[]) const
 {
@@ -425,26 +425,26 @@ void CComplex::Root(int n, CComplex cpxR[]) const
 }
 
 //////////////////////////////////////////////////////////////////////
-// ¼ÆËã¸´ÊýµÄÊµÃÝÖ¸Êý
+// è®¡ç®—å¤æ•°çš„å®žå¹‚æŒ‡æ•°
 //
-// ²ÎÊý£º
-// 1. double dblW - ´ýÇóÊµÃÝÖ¸ÊýµÄÃÝ´Î
+// å‚æ•°ï¼š
+// 1. double dblW - å¾…æ±‚å®žå¹‚æŒ‡æ•°çš„å¹‚æ¬¡
 //
-// ·µ»ØÖµ£ºCComplexÐÍ£¬¸´ÊýµÄÊµÃÝÖ¸ÊýÖµ
+// è¿”å›žå€¼ï¼šCComplexåž‹ï¼Œå¤æ•°çš„å®žå¹‚æŒ‡æ•°å€¼
 //////////////////////////////////////////////////////////////////////
 CComplex CComplex::Pow(double dblW) const
 {
-	// ³£Á¿
+	// å¸¸é‡
 	const double PI = 3.14159265358979;
 
-	// ¾Ö²¿±äÁ¿
+	// å±€éƒ¨å˜é‡
 	double r, t;
 
-	// ÌØÊâÖµ´¦Àí
+	// ç‰¹æ®Šå€¼å¤„ç†
 	if ((m_dblX == 0) && (m_dblY == 0))
 		return CComplex(0, 0);
 
-	// ÃÝÔËËã¹«Ê½ÖÐµÄÈý½Çº¯ÊýÔËËã
+	// å¹‚è¿ç®—å…¬å¼ä¸­çš„ä¸‰è§’å‡½æ•°è¿ç®—
 	if (m_dblX == 0)
 	{
 		if (m_dblY > 0)
@@ -465,30 +465,30 @@ CComplex CComplex::Pow(double dblW) const
 		}
 	}
 
-	// Ä£µÄÃÝ
+	// æ¨¡çš„å¹‚
 	r = exp(dblW * log(sqrt(m_dblX * m_dblX + m_dblY * m_dblY)));
 
-	// ¸´ÊýµÄÊµÃÝÖ¸Êý
+	// å¤æ•°çš„å®žå¹‚æŒ‡æ•°
 	return CComplex(r * cos(dblW * t), r * sin(dblW * t));
 }
 
 //////////////////////////////////////////////////////////////////////
-// ¼ÆËã¸´ÊýµÄ¸´ÃÝÖ¸Êý
+// è®¡ç®—å¤æ•°çš„å¤å¹‚æŒ‡æ•°
 //
-// ²ÎÊý£º
-// 1. CComplex cpxW - ´ýÇó¸´ÃÝÖ¸ÊýµÄÃÝ´Î
-// 2. int n - ¿ØÖÆ²ÎÊý£¬Ä¬ÈÏÖµÎª0¡£µ±n=0Ê±£¬ÇóµÃµÄ½á¹ûÎª¸´ÃÝÖ¸ÊýµÄÖ÷Öµ¡£
+// å‚æ•°ï¼š
+// 1. CComplex cpxW - å¾…æ±‚å¤å¹‚æŒ‡æ•°çš„å¹‚æ¬¡
+// 2. int n - æŽ§åˆ¶å‚æ•°ï¼Œé»˜è®¤å€¼ä¸º0ã€‚å½“n=0æ—¶ï¼Œæ±‚å¾—çš„ç»“æžœä¸ºå¤å¹‚æŒ‡æ•°çš„ä¸»å€¼ã€‚
 //
-// ·µ»ØÖµ£ºCComplexÐÍ£¬¸´ÊýµÄ¸´ÃÝÖ¸ÊýÖµ
+// è¿”å›žå€¼ï¼šCComplexåž‹ï¼Œå¤æ•°çš„å¤å¹‚æŒ‡æ•°å€¼
 //////////////////////////////////////////////////////////////////////
 CComplex CComplex::Pow(CComplex cpxW, int n /*= 0*/) const
 {
-	// ³£Á¿
+	// å¸¸é‡
 	const double PI = 3.14159265358979;
-	// ¾Ö²¿±äÁ¿
+	// å±€éƒ¨å˜é‡
 	double r, s, u, v;
 
-	// ÌØÊâÖµ´¦Àí
+	// ç‰¹æ®Šå€¼å¤„ç†
 	if (m_dblX == 0)
 	{
 		if (m_dblY == 0)
@@ -509,7 +509,7 @@ CComplex CComplex::Pow(CComplex cpxW, int n /*= 0*/) const
 		}
 	}
 
-	// ÇóÃÝÔËËã¹«Ê½
+	// æ±‚å¹‚è¿ç®—å…¬å¼
 	r = 0.5 * log(m_dblX * m_dblX + m_dblY * m_dblY);
 	v = cpxW.m_dblX * r + cpxW.m_dblY * s;
 	u = exp(cpxW.m_dblX * r - cpxW.m_dblY * s);
@@ -518,11 +518,11 @@ CComplex CComplex::Pow(CComplex cpxW, int n /*= 0*/) const
 }
 
 //////////////////////////////////////////////////////////////////////
-// ¼ÆËã¸´ÊýµÄ×ÔÈ»¶ÔÊý
+// è®¡ç®—å¤æ•°çš„è‡ªç„¶å¯¹æ•°
 //
-// ²ÎÊý£ºÎÞ
+// å‚æ•°ï¼šæ— 
 //
-// ·µ»ØÖµ£ºCComplexÐÍ£¬¸´ÊýµÄ×ÔÈ»¶ÔÊýÖµ
+// è¿”å›žå€¼ï¼šCComplexåž‹ï¼Œå¤æ•°çš„è‡ªç„¶å¯¹æ•°å€¼
 //////////////////////////////////////////////////////////////////////
 CComplex CComplex::Log() const
 {
@@ -531,18 +531,18 @@ CComplex CComplex::Log() const
 }
 
 //////////////////////////////////////////////////////////////////////
-// ¼ÆËã¸´ÊýµÄÕýÏÒ
+// è®¡ç®—å¤æ•°çš„æ­£å¼¦
 //
-// ²ÎÊý£ºÎÞ
+// å‚æ•°ï¼šæ— 
 //
-// ·µ»ØÖµ£ºCComplexÐÍ£¬¸´ÊýµÄÕýÏÒÖµ
+// è¿”å›žå€¼ï¼šCComplexåž‹ï¼Œå¤æ•°çš„æ­£å¼¦å€¼
 //////////////////////////////////////////////////////////////////////
 CComplex CComplex::Sin() const
 {
 	int i;
 	double x, y, y1, br, b1, b2, c[6];
 
-	// ÇÐ±ÈÑ©·ò¹«Ê½µÄ³£ÊýÏµÊý
+	// åˆ‡æ¯”é›ªå¤«å…¬å¼çš„å¸¸æ•°ç³»æ•°
 	c[0] = 1.13031820798497;
 	c[1] = 0.04433684984866;
 	c[2] = 0.00054292631191;
@@ -572,7 +572,7 @@ CComplex CComplex::Sin() const
 		y = m_dblY * (br - b1);
 	}
 
-	// ×éºÏ¼ÆËã½á¹û
+	// ç»„åˆè®¡ç®—ç»“æžœ
 	x = x * sin(m_dblX);
 	y = y * cos(m_dblX);
 
@@ -580,18 +580,18 @@ CComplex CComplex::Sin() const
 }
 
 //////////////////////////////////////////////////////////////////////
-// ¼ÆËã¸´ÊýµÄÓàÏÒ
+// è®¡ç®—å¤æ•°çš„ä½™å¼¦
 //
-// ²ÎÊý£ºÎÞ
+// å‚æ•°ï¼šæ— 
 //
-// ·µ»ØÖµ£ºCComplexÐÍ£¬¸´ÊýµÄÓàÏÒÖµ
+// è¿”å›žå€¼ï¼šCComplexåž‹ï¼Œå¤æ•°çš„ä½™å¼¦å€¼
 //////////////////////////////////////////////////////////////////////
 CComplex CComplex::Cos() const
 {
 	int i;
 	double x, y, y1, br, b1, b2, c[6];
 
-	// ÇÐ±ÈÑ©·ò¹«Ê½µÄ³£ÊýÏµÊý
+	// åˆ‡æ¯”é›ªå¤«å…¬å¼çš„å¸¸æ•°ç³»æ•°
 	c[0] = 1.13031820798497;
 	c[1] = 0.04433684984866;
 	c[2] = 0.00054292631191;
@@ -621,7 +621,7 @@ CComplex CComplex::Cos() const
 		y = m_dblY * (br - b1);
 	}
 
-	// ×éºÏ¼ÆËã½á¹û
+	// ç»„åˆè®¡ç®—ç»“æžœ
 	x = x * cos(m_dblX);
 	y = -y * sin(m_dblX);
 
@@ -629,11 +629,11 @@ CComplex CComplex::Cos() const
 }
 
 //////////////////////////////////////////////////////////////////////
-// ¼ÆËã¸´ÊýµÄÕýÇÐ
+// è®¡ç®—å¤æ•°çš„æ­£åˆ‡
 //
-// ²ÎÊý£ºÎÞ
+// å‚æ•°ï¼šæ— 
 //
-// ·µ»ØÖµ£ºCComplexÐÍ£¬¸´ÊýµÄÕýÇÐÖµ
+// è¿”å›žå€¼ï¼šCComplexåž‹ï¼Œå¤æ•°çš„æ­£åˆ‡å€¼
 //////////////////////////////////////////////////////////////////////
 CComplex CComplex::Tan() const
 {

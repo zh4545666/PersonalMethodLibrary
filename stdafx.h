@@ -1,23 +1,23 @@
-// stdafx.h : ±ê×¼ÏµÍ³°üº¬ÎÄ¼şµÄ°üº¬ÎÄ¼ş£¬
-// »òÊÇ¾­³£Ê¹ÓÃµ«²»³£¸ü¸ÄµÄ
-// ÌØ¶¨ÓÚÏîÄ¿µÄ°üº¬ÎÄ¼ş
+// stdafx.h : æ ‡å‡†ç³»ç»ŸåŒ…å«æ–‡ä»¶çš„åŒ…å«æ–‡ä»¶ï¼Œ
+// æˆ–æ˜¯ç»å¸¸ä½¿ç”¨ä½†ä¸å¸¸æ›´æ”¹çš„
+// ç‰¹å®šäºé¡¹ç›®çš„åŒ…å«æ–‡ä»¶
 //
 
 #pragma once
 
 #include "targetver.h"
 
-#define WIN32_LEAN_AND_MEAN             //  ´Ó Windows Í·ÎÄ¼şÖĞÅÅ³ı¼«ÉÙÊ¹ÓÃµÄĞÅÏ¢
-// Windows Í·ÎÄ¼ş: 
+#define WIN32_LEAN_AND_MEAN             //  ä» Windows å¤´æ–‡ä»¶ä¸­æ’é™¤æå°‘ä½¿ç”¨çš„ä¿¡æ¯
+// Windows å¤´æ–‡ä»¶: 
 #include <windows.h>
 
-//ºê¶¨Òå
+//å®å®šä¹‰
 #define AFX_CLASS
 
 #define InitRandom srand((unsigned)time(NULL))
 #define GetRandom( min, max ) ((rand() % (int)(((max)+1) - (min))) + (min))
 
-// TODO:  ÔÚ´Ë´¦ÒıÓÃ³ÌĞòĞèÒªµÄÆäËûÍ·ÎÄ¼ş
+// TODO:  åœ¨æ­¤å¤„å¼•ç”¨ç¨‹åºéœ€è¦çš„å…¶ä»–å¤´æ–‡ä»¶
 #include <stdio.h>
 #include <stdlib.h>
 

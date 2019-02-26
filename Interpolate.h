@@ -10,64 +10,64 @@ class AFX_EX_CLASS CInterpolate
 {
 public:
 	//
-	// ¹¹ÔìÓëÎö¹¹
+	// æ„é€ ä¸ææ„
 	//
 
 	CInterpolate();
 	virtual ~CInterpolate();
 
 	//
-	// ½«×Ö·û´®×ª»»³É½áµãÖµ
+	// å°†å­—ç¬¦ä¸²è½¬æ¢æˆç»“ç‚¹å€¼
 	//
 
 	static int GetNodesFromString(string s, int n, double dblNodes[], const string& sDelim = " ");
 
 	//
-	// ²åÖµËã·¨º¯Êı
+	// æ’å€¼ç®—æ³•å‡½æ•°
 	//
 
-	// Ò»ÔªÈ«Çø¼ä²»µÈ¾à²åÖµ
+	// ä¸€å…ƒå…¨åŒºé—´ä¸ç­‰è·æ’å€¼
 	static double GetValueLagrange(int n, double x[], double y[], double t);
-	// Ò»ÔªÈ«Çø¼äµÈ¾à²åÖµ
+	// ä¸€å…ƒå…¨åŒºé—´ç­‰è·æ’å€¼
 	static double GetValueLagrange(int n, double x0, double xStep, double y[], double t);
-	// Ò»ÔªÈıµã²»µÈ¾à²åÖµ
+	// ä¸€å…ƒä¸‰ç‚¹ä¸ç­‰è·æ’å€¼
 	static double GetValueLagrange3(int n, double x[], double y[], double t);
-	// Ò»ÔªÈıµãµÈ¾à²åÖµ
+	// ä¸€å…ƒä¸‰ç‚¹ç­‰è·æ’å€¼
 	static double GetValueLagrange3(int n, double x0, double xStep, double y[], double t);
-	// Á¬·ÖÊ½²»µÈ¾à²åÖµ
+	// è¿åˆ†å¼ä¸ç­‰è·æ’å€¼
 	static double GetValuePqs(int n, double x[], double y[], double t);
-	// Á¬·ÖÊ½µÈ¾à²åÖµ
+	// è¿åˆ†å¼ç­‰è·æ’å€¼
 	static double GetValuePqs(int n, double x0, double xStep, double y[], double t);
-	// °£¶ûÃ×ÌØ²»µÈ¾à²åÖµ
+	// åŸƒå°”ç±³ç‰¹ä¸ç­‰è·æ’å€¼
 	static double GetValueHermite(int n, double x[], double y[], double dy[], double t);
-	// °£¶ûÃ×ÌØµÈ¾à²åÖµ
+	// åŸƒå°”ç±³ç‰¹ç­‰è·æ’å€¼
 	static double GetValueHermite(int n, double x0, double xStep, double y[], double dy[], double t);
-	// °£ÌØ½ğ²»µÈ¾àÖğ²½²åÖµ
+	// åŸƒç‰¹é‡‘ä¸ç­‰è·é€æ­¥æ’å€¼
 	static double GetValueAitken(int n, double x[], double y[], double t, double eps = 0.000001);
-	// °£ÌØ½ğµÈ¾àÖğ²½²åÖµ
+	// åŸƒç‰¹é‡‘ç­‰è·é€æ­¥æ’å€¼
 	static double GetValueAitken(int n, double x0, double xStep, double y[], double t, double eps = 0.000001);
-	// ¹â»¬²»µÈ¾à²åÖµ
+	// å…‰æ»‘ä¸ç­‰è·æ’å€¼
 	static double GetValueAkima(int n, double x[], double y[], double t, double s[], int k = -1);
-	// ¹â»¬µÈ¾à²åÖµ
+	// å…‰æ»‘ç­‰è·æ’å€¼
 	static double GetValueAkima(int n, double x0, double xStep, double y[], double t, double s[], int k = -1);
-	// µÚÒ»ÖÖ±ß½çÌõ¼şµÄÈı´ÎÑùÌõº¯Êı²åÖµ¡¢Î¢ÉÌÓë»ı·Ö
+	// ç¬¬ä¸€ç§è¾¹ç•Œæ¡ä»¶çš„ä¸‰æ¬¡æ ·æ¡å‡½æ•°æ’å€¼ã€å¾®å•†ä¸ç§¯åˆ†
 	static double GetValueSpline1(int n, double x[], double y[], double dy[], double ddy[],
 		int m, double t[], double z[], double dz[], double ddz[]);
-	// µÚ¶şÖÖ±ß½çÌõ¼şµÄÈı´ÎÑùÌõº¯Êı²åÖµ¡¢Î¢ÉÌÓë»ı·Ö
+	// ç¬¬äºŒç§è¾¹ç•Œæ¡ä»¶çš„ä¸‰æ¬¡æ ·æ¡å‡½æ•°æ’å€¼ã€å¾®å•†ä¸ç§¯åˆ†
 	static double GetValueSpline2(int n, double x[], double y[], double dy[], double ddy[],
 		int m, double t[], double z[], double dz[], double ddz[]);
-	// µÚÈıÖÖ±ß½çÌõ¼şµÄÈı´ÎÑùÌõº¯Êı²åÖµ¡¢Î¢ÉÌÓë»ı·Ö
+	// ç¬¬ä¸‰ç§è¾¹ç•Œæ¡ä»¶çš„ä¸‰æ¬¡æ ·æ¡å‡½æ•°æ’å€¼ã€å¾®å•†ä¸ç§¯åˆ†
 	static double GetValueSpline3(int n, double x[], double y[], double dy[], double ddy[],
 		int m, double t[], double z[], double dz[], double ddz[]);
-	// ¶şÔªÈıµã²åÖµ
+	// äºŒå…ƒä¸‰ç‚¹æ’å€¼
 	static double GetValueTqip(int n, double x[], int m, double y[], double z[], double u, double v);
-	// ¶şÔªÈ«Çø¼ä²åÖµ
+	// äºŒå…ƒå…¨åŒºé—´æ’å€¼
 	static double GetValueLagrange2(int n, double x[], int m, double y[], double z[], double u, double v);
 
 public:	
-	//Èı´ÎÑùÌõ²åÖµ
+	//ä¸‰æ¬¡æ ·æ¡æ’å€¼
 	static double Spline(double x[], double y[], int n, double ddy1, double ddyn, double t[], int m, double z[]);
-	//À­¸ñÀÊÈÕ²åÖµ
+	//æ‹‰æ ¼æœ—æ—¥æ’å€¼
 	static double Lagrange(double *x, double *y, double xx, int n);
 
 };

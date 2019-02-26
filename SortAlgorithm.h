@@ -2,8 +2,8 @@
 
 namespace SortAlgorithm
 {
-	//ÅÅĞò(Ä¬ÈÏÉıĞò)
-	//ÔªËØ½»»»
+	//æ’åº(é»˜è®¤å‡åº)
+	//å…ƒç´ äº¤æ¢
 	template<class T>
 	inline void SwapT(T& t1, T& t2)
 	{
@@ -12,7 +12,7 @@ namespace SortAlgorithm
 		t2 = temp;
 	}
 
-	//Ã°ÅİËã·¨£¨ÎÈ¶¨ÅÅĞò£©
+	//å†’æ³¡ç®—æ³•ï¼ˆç¨³å®šæ’åºï¼‰
 	template<typename T>
 	void BubbleSort(T* pData, size_t  N, bool bflag = true)
 	{
@@ -42,7 +42,7 @@ namespace SortAlgorithm
 		}
 	}
 
-	//¿ìËÙÅÅĞò£¨²»ÎÈ¶¨ÅÅĞò£©
+	//å¿«é€Ÿæ’åºï¼ˆä¸ç¨³å®šæ’åºï¼‰
 	template<typename T>
 	void QuickSort(T* pData, size_t N, bool bflag, size_t begin, size_t end)
 	{
@@ -50,32 +50,32 @@ namespace SortAlgorithm
 
 		if (begin < end)
 		{
-			i = begin + 1;  // ½«array[begin]×÷Îª»ù×¼Êı£¬Òò´Ë´Óarray[begin+1]¿ªÊ¼Óë»ù×¼Êı±È½Ï£¡  
-			j = end;        // array[end]ÊÇÊı×éµÄ×îºóÒ»Î»  
+			i = begin + 1;  // å°†array[begin]ä½œä¸ºåŸºå‡†æ•°ï¼Œå› æ­¤ä»array[begin+1]å¼€å§‹ä¸åŸºå‡†æ•°æ¯”è¾ƒï¼  
+			j = end;        // array[end]æ˜¯æ•°ç»„çš„æœ€åä¸€ä½  
 
 			if (bflag)
 			{
 				while (i < j)
 				{
-					if (pData[i] > pData[begin])  // Èç¹û±È½ÏµÄÊı×éÔªËØ´óÓÚ»ù×¼Êı£¬Ôò½»»»Î»ÖÃ¡£  
+					if (pData[i] > pData[begin])  // å¦‚æœæ¯”è¾ƒçš„æ•°ç»„å…ƒç´ å¤§äºåŸºå‡†æ•°ï¼Œåˆ™äº¤æ¢ä½ç½®ã€‚  
 					{
-						SwapT(pData[i], pData[j]);  // ½»»»Á½¸öÊı  
+						SwapT(pData[i], pData[j]);  // äº¤æ¢ä¸¤ä¸ªæ•°  
 						j--;
 					}
 					else
 					{
-						i++;  // ½«Êı×éÏòºóÒÆÒ»Î»£¬¼ÌĞøÓë»ù×¼Êı±È½Ï¡£  
+						i++;  // å°†æ•°ç»„å‘åç§»ä¸€ä½ï¼Œç»§ç»­ä¸åŸºå‡†æ•°æ¯”è¾ƒã€‚  
 					}
 				}
 
-				/* Ìø³öwhileÑ­»·ºó£¬i = j¡£
-				* ´ËÊ±Êı×é±»·Ö¸î³ÉÁ½¸ö²¿·Ö  -->  array[begin+1] ~ array[i-1] < array[begin]
+				/* è·³å‡ºwhileå¾ªç¯åï¼Œi = jã€‚
+				* æ­¤æ—¶æ•°ç»„è¢«åˆ†å‰²æˆä¸¤ä¸ªéƒ¨åˆ†  -->  array[begin+1] ~ array[i-1] < array[begin]
 				*                           -->  array[i+1] ~ array[end] > array[begin]
-				* Õâ¸öÊ±ºò½«Êı×éarray·Ö³ÉÁ½¸ö²¿·Ö£¬ÔÙ½«array[i]Óëarray[begin]½øĞĞ±È½Ï£¬¾ö¶¨array[i]µÄÎ»ÖÃ¡£
-				* ×îºó½«array[i]Óëarray[begin]½»»»£¬½øĞĞÁ½¸ö·Ö¸î²¿·ÖµÄÅÅĞò£¡ÒÔ´ËÀàÍÆ£¬Ö±µ½×îºói = j²»Âú×ãÌõ¼ş¾ÍÍË³ö£¡
+				* è¿™ä¸ªæ—¶å€™å°†æ•°ç»„arrayåˆ†æˆä¸¤ä¸ªéƒ¨åˆ†ï¼Œå†å°†array[i]ä¸array[begin]è¿›è¡Œæ¯”è¾ƒï¼Œå†³å®šarray[i]çš„ä½ç½®ã€‚
+				* æœ€åå°†array[i]ä¸array[begin]äº¤æ¢ï¼Œè¿›è¡Œä¸¤ä¸ªåˆ†å‰²éƒ¨åˆ†çš„æ’åºï¼ä»¥æ­¤ç±»æ¨ï¼Œç›´åˆ°æœ€åi = jä¸æ»¡è¶³æ¡ä»¶å°±é€€å‡ºï¼
 				*/
 
-				if (pData[i] >= pData[begin])  // ÕâÀï±ØĞëÒªÈ¡µÈ¡°>=¡±£¬·ñÔòÊı×éÔªËØÓÉÏàÍ¬µÄÖµÊ±£¬»á³öÏÖ´íÎó£¡  
+				if (pData[i] >= pData[begin])  // è¿™é‡Œå¿…é¡»è¦å–ç­‰â€œ>=â€ï¼Œå¦åˆ™æ•°ç»„å…ƒç´ ç”±ç›¸åŒçš„å€¼æ—¶ï¼Œä¼šå‡ºç°é”™è¯¯ï¼  
 				{
 					i--;
 				}
@@ -84,31 +84,31 @@ namespace SortAlgorithm
 			{
 				while (i < j)
 				{
-					if (pData[i] < pData[begin])  // Èç¹û±È½ÏµÄÊı×éÔªËØĞ¡ÓÚ»ù×¼Êı£¬Ôò½»»»Î»ÖÃ¡£  
+					if (pData[i] < pData[begin])  // å¦‚æœæ¯”è¾ƒçš„æ•°ç»„å…ƒç´ å°äºåŸºå‡†æ•°ï¼Œåˆ™äº¤æ¢ä½ç½®ã€‚  
 					{
-						SwapT(pData[i], pData[j]);  // ½»»»Á½¸öÊı  
+						SwapT(pData[i], pData[j]);  // äº¤æ¢ä¸¤ä¸ªæ•°  
 						j--;
 					}
 					else
 					{
-						i++;  // ½«Êı×éÏòºóÒÆÒ»Î»£¬¼ÌĞøÓë»ù×¼Êı±È½Ï¡£  
+						i++;  // å°†æ•°ç»„å‘åç§»ä¸€ä½ï¼Œç»§ç»­ä¸åŸºå‡†æ•°æ¯”è¾ƒã€‚  
 					}
 				}
 
-				/* Ìø³öwhileÑ­»·ºó£¬i = j¡£
-				* ´ËÊ±Êı×é±»·Ö¸î³ÉÁ½¸ö²¿·Ö  -->  array[begin+1] ~ array[i-1] < array[begin]
+				/* è·³å‡ºwhileå¾ªç¯åï¼Œi = jã€‚
+				* æ­¤æ—¶æ•°ç»„è¢«åˆ†å‰²æˆä¸¤ä¸ªéƒ¨åˆ†  -->  array[begin+1] ~ array[i-1] < array[begin]
 				*                           -->  array[i+1] ~ array[end] > array[begin]
-				* Õâ¸öÊ±ºò½«Êı×éarray·Ö³ÉÁ½¸ö²¿·Ö£¬ÔÙ½«array[i]Óëarray[begin]½øĞĞ±È½Ï£¬¾ö¶¨array[i]µÄÎ»ÖÃ¡£
-				* ×îºó½«array[i]Óëarray[begin]½»»»£¬½øĞĞÁ½¸ö·Ö¸î²¿·ÖµÄÅÅĞò£¡ÒÔ´ËÀàÍÆ£¬Ö±µ½×îºói = j²»Âú×ãÌõ¼ş¾ÍÍË³ö£¡
+				* è¿™ä¸ªæ—¶å€™å°†æ•°ç»„arrayåˆ†æˆä¸¤ä¸ªéƒ¨åˆ†ï¼Œå†å°†array[i]ä¸array[begin]è¿›è¡Œæ¯”è¾ƒï¼Œå†³å®šarray[i]çš„ä½ç½®ã€‚
+				* æœ€åå°†array[i]ä¸array[begin]äº¤æ¢ï¼Œè¿›è¡Œä¸¤ä¸ªåˆ†å‰²éƒ¨åˆ†çš„æ’åºï¼ä»¥æ­¤ç±»æ¨ï¼Œç›´åˆ°æœ€åi = jä¸æ»¡è¶³æ¡ä»¶å°±é€€å‡ºï¼
 				*/
 
-				if (pData[i] <= pData[begin])  // ÕâÀï±ØĞëÒªÈ¡µÈ¡°>=¡±£¬·ñÔòÊı×éÔªËØÓÉÏàÍ¬µÄÖµÊ±£¬»á³öÏÖ´íÎó£¡  
+				if (pData[i] <= pData[begin])  // è¿™é‡Œå¿…é¡»è¦å–ç­‰â€œ>=â€ï¼Œå¦åˆ™æ•°ç»„å…ƒç´ ç”±ç›¸åŒçš„å€¼æ—¶ï¼Œä¼šå‡ºç°é”™è¯¯ï¼  
 				{
 					i--;
 				}
 			}
 
-			SwapT(pData[begin], pData[i]);  // ½»»»array[i]Óëarray[begin]  
+			SwapT(pData[begin], pData[i]);  // äº¤æ¢array[i]ä¸array[begin]  
 
 			QuickSort(pData, N, bflag, begin, i);
 			QuickSort(pData, N, bflag, j, end);
@@ -122,7 +122,7 @@ namespace SortAlgorithm
 		QuickSort(pData, N, bflag, 0, N - 1);
 	}
 
-	//Ñ¡ÔñÅÅĞò£¨·ÇÎÈ¶¨ÅÅĞò£©
+	//é€‰æ‹©æ’åºï¼ˆéç¨³å®šæ’åºï¼‰
 	template<typename T>
 	void SelectionSort(T* pData, size_t N, bool bflag = true)
 	{
@@ -168,59 +168,59 @@ namespace SortAlgorithm
 		}
 	}
 
-	//¶ÑÅÅĞò£¨·ÇÎÈ¶¨ÅÅĞò£©
+	//å †æ’åºï¼ˆéç¨³å®šæ’åºï¼‰
 	template<typename T>
 	void MinHeapify(T* pData, size_t N, int element, bool bflag)
 	{
-		size_t lchild = element * 2 + 1, rchild = lchild + 1;//×óÓÒ×ÓÊ÷
+		size_t lchild = element * 2 + 1, rchild = lchild + 1;//å·¦å³å­æ ‘
 		if (!bflag)
 		{
-			while (rchild<N)//×ÓÊ÷¾ùÔÚ·¶Î§ÄÚ
+			while (rchild<N)//å­æ ‘å‡åœ¨èŒƒå›´å†…
 			{
-				if (pData[element] <= pData[lchild] && pData[element] <= pData[rchild])//Èç¹û±È×óÓÒ×ÓÊ÷¶¼Ğ¡£¬Íê³ÉÕûÀí
+				if (pData[element] <= pData[lchild] && pData[element] <= pData[rchild])//å¦‚æœæ¯”å·¦å³å­æ ‘éƒ½å°ï¼Œå®Œæˆæ•´ç†
 				{
 					return;
 				}
-				if (pData[lchild] <= pData[rchild])//Èç¹û×ó±ß×îĞ¡
+				if (pData[lchild] <= pData[rchild])//å¦‚æœå·¦è¾¹æœ€å°
 				{
-					SwapT(pData[element], pData[lchild]);//°Ñ×óÃæµÄÌáµ½ÉÏÃæ
-					element = lchild;//Ñ­»·Ê±ÕûÀí×ÓÊ÷
+					SwapT(pData[element], pData[lchild]);//æŠŠå·¦é¢çš„æåˆ°ä¸Šé¢
+					element = lchild;//å¾ªç¯æ—¶æ•´ç†å­æ ‘
 				}
-				else//·ñÔòÓÒÃæ×îĞ¡
+				else//å¦åˆ™å³é¢æœ€å°
 				{
-					SwapT(pData[element], pData[rchild]);//Í¬Àí
+					SwapT(pData[element], pData[rchild]);//åŒç†
 					element = rchild;
 				}
 				lchild = element * 2 + 1;
-				rchild = lchild + 1;//ÖØĞÂ¼ÆËã×ÓÊ÷Î»ÖÃ
+				rchild = lchild + 1;//é‡æ–°è®¡ç®—å­æ ‘ä½ç½®
 			}
-			if (lchild<N&&pData[lchild]<pData[element])//Ö»ÓĞ×ó×ÓÊ÷ÇÒ×ÓÊ÷Ğ¡ÓÚ×Ô¼º
+			if (lchild<N&&pData[lchild]<pData[element])//åªæœ‰å·¦å­æ ‘ä¸”å­æ ‘å°äºè‡ªå·±
 			{
 				SwapT(pData[lchild], pData[element]);
 			}
 		}
 		else
 		{
-			while (rchild<N)//×ÓÊ÷¾ùÔÚ·¶Î§ÄÚ
+			while (rchild<N)//å­æ ‘å‡åœ¨èŒƒå›´å†…
 			{
-				if (pData[element] >= pData[lchild] && pData[element] >= pData[rchild])//Èç¹û±È×óÓÒ×ÓÊ÷¶¼´ó£¬Íê³ÉÕûÀí
+				if (pData[element] >= pData[lchild] && pData[element] >= pData[rchild])//å¦‚æœæ¯”å·¦å³å­æ ‘éƒ½å¤§ï¼Œå®Œæˆæ•´ç†
 				{
 					return;
 				}
-				if (pData[lchild] >= pData[rchild])//Èç¹û×ó±ß×î´ó
+				if (pData[lchild] >= pData[rchild])//å¦‚æœå·¦è¾¹æœ€å¤§
 				{
-					SwapT(pData[element], pData[lchild]);//°Ñ×óÃæµÄÌáµ½ÉÏÃæ
-					element = lchild;//Ñ­»·Ê±ÕûÀí×ÓÊ÷
+					SwapT(pData[element], pData[lchild]);//æŠŠå·¦é¢çš„æåˆ°ä¸Šé¢
+					element = lchild;//å¾ªç¯æ—¶æ•´ç†å­æ ‘
 				}
-				else//·ñÔòÓÒÃæ×î´ó
+				else//å¦åˆ™å³é¢æœ€å¤§
 				{
-					SwapT(pData[element], pData[rchild]);//Í¬Àí
+					SwapT(pData[element], pData[rchild]);//åŒç†
 					element = rchild;
 				}
 				lchild = element * 2 + 1;
-				rchild = lchild + 1;//ÖØĞÂ¼ÆËã×ÓÊ÷Î»ÖÃ
+				rchild = lchild + 1;//é‡æ–°è®¡ç®—å­æ ‘ä½ç½®
 			}
-			if (lchild<N&&pData[lchild]>pData[element])//Ö»ÓĞ×ó×ÓÊ÷ÇÒ×ÓÊ÷´óÓÚ×Ô¼º
+			if (lchild<N&&pData[lchild]>pData[element])//åªæœ‰å·¦å­æ ‘ä¸”å­æ ‘å¤§äºè‡ªå·±
 			{
 				SwapT(pData[lchild], pData[element]);
 			}
@@ -233,20 +233,20 @@ namespace SortAlgorithm
 		if (N <= 1 || !pData)
 			return;
 		int i;
-		for (i = N - 1; i >= 0; i--)//´Ó×ÓÊ÷¿ªÊ¼ÕûÀíÊ÷
+		for (i = N - 1; i >= 0; i--)//ä»å­æ ‘å¼€å§‹æ•´ç†æ ‘
 		{
 			MinHeapify(pData, N, i, bflag);
 		}
-		while (size>0)//²ğ³ıÊ÷
+		while (size>0)//æ‹†é™¤æ ‘
 		{
-			SwapT(pData[N - 1], pData[0]);//½«¸ù£¨×îĞ¡£©ÓëÊı×é×îÄ©½»»»
-			N--;//Ê÷´óĞ¡¼õĞ¡
-			MinHeapify(pData, N, 0, bflag);//ÕûÀíÊ÷
+			SwapT(pData[N - 1], pData[0]);//å°†æ ¹ï¼ˆæœ€å°ï¼‰ä¸æ•°ç»„æœ€æœ«äº¤æ¢
+			N--;//æ ‘å¤§å°å‡å°
+			MinHeapify(pData, N, 0, bflag);//æ•´ç†æ ‘
 		}
 		return;
 	}
 
-	//²åÈëÅÅĞò£¨ÎÈ¶¨ÅÅĞò£©
+	//æ’å…¥æ’åºï¼ˆç¨³å®šæ’åºï¼‰
 	template<typename T>
 	void InsertionSort(T* pData, size_t N, bool bflag = true)
 	{
@@ -306,7 +306,7 @@ namespace SortAlgorithm
 #endif
 	}
 
-	//Ï£¶ûÅÅĞò£¨²åÈëÅÅĞò¸Ä½ø°æ£¬·ÇÎÈ¶¨ÅÅĞò£©
+	//å¸Œå°”æ’åºï¼ˆæ’å…¥æ’åºæ”¹è¿›ç‰ˆï¼Œéç¨³å®šæ’åºï¼‰
 	template<typename T>
 	void ShellSort(T* pData, size_t N, bool bflag = true)
 	{
@@ -314,38 +314,38 @@ namespace SortAlgorithm
 			return;
 		if (bflag)
 		{
-			for (size_t div = N / 2; div >= 1; div = div / 2)//¶¨ÔöÁ¿div£¬²¢²»¶Ï¼õĞ¡
+			for (size_t div = N / 2; div >= 1; div = div / 2)//å®šå¢é‡divï¼Œå¹¶ä¸æ–­å‡å°
 			{
-				for (size_t i = 0; i <= div; ++i)//·Ö×é³Édiv×é
+				for (size_t i = 0; i <= div; ++i)//åˆ†ç»„æˆdivç»„
 				{
-					for (size_t j = i; j<N - div; j += div)//¶ÔÃ¿×é½øĞĞ²åÈëÅÅĞò
+					for (size_t j = i; j<N - div; j += div)//å¯¹æ¯ç»„è¿›è¡Œæ’å…¥æ’åº
 					for (size_t k = j; k<N; k += div)
 					if (pData[j]>pData[k])
-						SwapT(pData[j], pData[k]);//½»»»Á½¸öÊıµÄÖµ
+						SwapT(pData[j], pData[k]);//äº¤æ¢ä¸¤ä¸ªæ•°çš„å€¼
 				}
 			}
 		}
 		else
 		{
-			for (size_t div = N / 2; div >= 1; div = div / 2)//¶¨ÔöÁ¿div£¬²¢²»¶Ï¼õĞ¡
+			for (size_t div = N / 2; div >= 1; div = div / 2)//å®šå¢é‡divï¼Œå¹¶ä¸æ–­å‡å°
 			{
-				for (size_t i = 0; i <= div; ++i)//·Ö×é³Édiv×é
+				for (size_t i = 0; i <= div; ++i)//åˆ†ç»„æˆdivç»„
 				{
-					for (size_t j = i; j<N - div; j += div)//¶ÔÃ¿×é½øĞĞ²åÈëÅÅĞò
+					for (size_t j = i; j<N - div; j += div)//å¯¹æ¯ç»„è¿›è¡Œæ’å…¥æ’åº
 					for (size_t k = j; k<N; k += div)
 					if (pData[j]<pData[k])
-						SwapT(pData[j], pData[k]);//½»»»Á½¸öÊıµÄÖµ
+						SwapT(pData[j], pData[k]);//äº¤æ¢ä¸¤ä¸ªæ•°çš„å€¼
 				}
 			}
 		}
 
 	}
 
-	//¹é²¢ÅÅĞò£¨ÎÈ¶¨ÅÅĞò£©
+	//å½’å¹¶æ’åºï¼ˆç¨³å®šæ’åºï¼‰
 	template<typename T>
 	void merge(T* pData, size_t start, size_t end, T* result, bool bflag = true)
 	{
-		size_t left_length = (end - start + 1) / 2 + 1;//×ó²¿·ÖÇø¼äµÄÊı¾İÔªËØµÄ¸öÊı
+		size_t left_length = (end - start + 1) / 2 + 1;//å·¦éƒ¨åˆ†åŒºé—´çš„æ•°æ®å…ƒç´ çš„ä¸ªæ•°
 		size_t left_index = start;
 		size_t right_index = start + left_length;
 		size_t result_index = start;
@@ -353,7 +353,7 @@ namespace SortAlgorithm
 		{
 			while (left_index < start + left_length && right_index < end + 1)
 			{
-				//¶Ô·Ö±ğÒÑ¾­ÅÅºÃĞòµÄ×óÇø¼äºÍÓÒÇø¼ä½øĞĞºÏ²¢
+				//å¯¹åˆ†åˆ«å·²ç»æ’å¥½åºçš„å·¦åŒºé—´å’Œå³åŒºé—´è¿›è¡Œåˆå¹¶
 				if (pData[left_index] <= pData[right_index])
 					result[result_index++] = pData[left_index++];
 				else
@@ -368,7 +368,7 @@ namespace SortAlgorithm
 		{
 			while (left_index < start + left_length && right_index < end + 1)
 			{
-				//¶Ô·Ö±ğÒÑ¾­ÅÅºÃĞòµÄ×óÇø¼äºÍÓÒÇø¼ä½øĞĞºÏ²¢
+				//å¯¹åˆ†åˆ«å·²ç»æ’å¥½åºçš„å·¦åŒºé—´å’Œå³åŒºé—´è¿›è¡Œåˆå¹¶
 				if (pData[left_index] >= pData[right_index])
 					result[result_index++] = pData[left_index++];
 				else
@@ -384,7 +384,7 @@ namespace SortAlgorithm
 	template<typename T>
 	void merge_sort(T* pData, size_t start, size_t end, T* result, bool bflag = true)
 	{
-		if (1 == end - start)//Èç¹ûÇø¼äÖĞÖ»ÓĞÁ½¸öÔªËØ£¬Ôò¶ÔÕâÁ½¸öÔªËØ½øĞĞÅÅĞò
+		if (1 == end - start)//å¦‚æœåŒºé—´ä¸­åªæœ‰ä¸¤ä¸ªå…ƒç´ ï¼Œåˆ™å¯¹è¿™ä¸¤ä¸ªå…ƒç´ è¿›è¡Œæ’åº
 		{
 			if (bflag)
 			{
@@ -398,16 +398,16 @@ namespace SortAlgorithm
 			}
 			return;
 		}
-		else if (0 == end - start)//Èç¹ûÖ»ÓĞÒ»¸öÔªËØ£¬Ôò²»ÓÃÅÅĞò
+		else if (0 == end - start)//å¦‚æœåªæœ‰ä¸€ä¸ªå…ƒç´ ï¼Œåˆ™ä¸ç”¨æ’åº
 			return;
 		else
 		{
-			//¼ÌĞø»®·Ö×ÓÇø¼ä£¬·Ö±ğ¶Ô×óÓÒ×ÓÇø¼ä½øĞĞÅÅĞò
+			//ç»§ç»­åˆ’åˆ†å­åŒºé—´ï¼Œåˆ†åˆ«å¯¹å·¦å³å­åŒºé—´è¿›è¡Œæ’åº
 			merge_sort(pData, start, (end - start + 1) / 2 + start, result, bflag);
 			merge_sort(pData, (end - start + 1) / 2 + start + 1, end, result, bflag);
-			//¿ªÊ¼¹é²¢ÒÑ¾­ÅÅºÃĞòµÄstartµ½endÖ®¼äµÄÊı¾İ
+			//å¼€å§‹å½’å¹¶å·²ç»æ’å¥½åºçš„startåˆ°endä¹‹é—´çš„æ•°æ®
 			merge(pData, start, end, result, bflag);
-			//°ÑÅÅĞòºóµÄÇø¼äÊı¾İ¸´ÖÆµ½Ô­Ê¼Êı¾İÖĞÈ¥
+			//æŠŠæ’åºåçš„åŒºé—´æ•°æ®å¤åˆ¶åˆ°åŸå§‹æ•°æ®ä¸­å»
 			for (size_t i = start; i <= end; ++i)
 				pData[i] = result[i];
 		}

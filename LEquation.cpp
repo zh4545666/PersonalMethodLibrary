@@ -7,18 +7,18 @@
 //////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////////
-// »ù±¾¹¹Ôìº¯Êı
+// åŸºæœ¬æ„é€ å‡½æ•°
 //////////////////////////////////////////////////////////////////////
 CLEquation::CLEquation()
 {
 }
 
 //////////////////////////////////////////////////////////////////////
-// Ö¸¶¨ÏµÊıºÍ³£Êı¹¹Ôìº¯Êı
+// æŒ‡å®šç³»æ•°å’Œå¸¸æ•°æ„é€ å‡½æ•°
 //
-// ²ÎÊı£º
-// 1. const CMatrix& mtxCoef - Ö¸¶¨µÄÏµÊı¾ØÕó
-// 2. const CMatrix& mtxConst - Ö¸¶¨µÄ³£Êı¾ØÕó
+// å‚æ•°ï¼š
+// 1. const CMatrix& mtxCoef - æŒ‡å®šçš„ç³»æ•°çŸ©é˜µ
+// 2. const CMatrix& mtxConst - æŒ‡å®šçš„å¸¸æ•°çŸ©é˜µ
 //////////////////////////////////////////////////////////////////////
 CLEquation::CLEquation(const CMatrix& mtxCoef, const CMatrix& mtxConst)
 {
@@ -27,20 +27,20 @@ CLEquation::CLEquation(const CMatrix& mtxCoef, const CMatrix& mtxConst)
 }
 
 //////////////////////////////////////////////////////////////////////
-// Îö¹¹º¯Êı
+// ææ„å‡½æ•°
 //////////////////////////////////////////////////////////////////////
 CLEquation::~CLEquation()
 {
 }
 
 //////////////////////////////////////////////////////////////////////
-// ³õÊ¼»¯º¯Êı
+// åˆå§‹åŒ–å‡½æ•°
 //
-// ²ÎÊı£º
-// 1. const CMatrix& mtxCoef - Ö¸¶¨µÄÏµÊı¾ØÕó
-// 2. const CMatrix& mtxConst - Ö¸¶¨µÄ³£Êı¾ØÕó
+// å‚æ•°ï¼š
+// 1. const CMatrix& mtxCoef - æŒ‡å®šçš„ç³»æ•°çŸ©é˜µ
+// 2. const CMatrix& mtxConst - æŒ‡å®šçš„å¸¸æ•°çŸ©é˜µ
 //
-// ·µ»ØÖµ£ºbool ĞÍ£¬³õÊ¼»¯ÊÇ·ñ³É¹¦
+// è¿”å›å€¼ï¼šbool å‹ï¼Œåˆå§‹åŒ–æ˜¯å¦æˆåŠŸ
 //////////////////////////////////////////////////////////////////////
 bool CLEquation::Init(const CMatrix& mtxCoef, const CMatrix& mtxConst)
 {
@@ -54,11 +54,11 @@ bool CLEquation::Init(const CMatrix& mtxCoef, const CMatrix& mtxConst)
 }
 
 //////////////////////////////////////////////////////////////////////
-// »ñÈ¡ÏµÊı¾ØÕó
+// è·å–ç³»æ•°çŸ©é˜µ
 //
-// ²ÎÊı£ºÎŞ
+// å‚æ•°ï¼šæ— 
 //
-// ·µ»ØÖµ£ºCMatrix ĞÍ£¬·µ»ØÏµÊı¾ØÕó
+// è¿”å›å€¼ï¼šCMatrix å‹ï¼Œè¿”å›ç³»æ•°çŸ©é˜µ
 //////////////////////////////////////////////////////////////////////
 inline CMatrix CLEquation::GetCoefMatrix() const
 {
@@ -66,11 +66,11 @@ inline CMatrix CLEquation::GetCoefMatrix() const
 }
 
 //////////////////////////////////////////////////////////////////////
-// »ñÈ¡³£Êı¾ØÕó
+// è·å–å¸¸æ•°çŸ©é˜µ
 //
-// ²ÎÊı£ºÎŞ
+// å‚æ•°ï¼šæ— 
 //
-// ·µ»ØÖµ£ºCMatrix ĞÍ£¬·µ»Ø³£Êı¾ØÕó
+// è¿”å›å€¼ï¼šCMatrix å‹ï¼Œè¿”å›å¸¸æ•°çŸ©é˜µ
 //////////////////////////////////////////////////////////////////////
 inline CMatrix CLEquation::GetConstMatrix() const
 {
@@ -78,11 +78,11 @@ inline CMatrix CLEquation::GetConstMatrix() const
 }
 
 //////////////////////////////////////////////////////////////////////
-// »ñÈ¡·½³Ì¸öÊı
+// è·å–æ–¹ç¨‹ä¸ªæ•°
 //
-// ²ÎÊı£ºÎŞ
+// å‚æ•°ï¼šæ— 
 //
-// ·µ»ØÖµ£ºint ĞÍ£¬·µ»Ø·½³Ì×é·½³ÌµÄ¸öÊı
+// è¿”å›å€¼ï¼šint å‹ï¼Œè¿”å›æ–¹ç¨‹ç»„æ–¹ç¨‹çš„ä¸ªæ•°
 //////////////////////////////////////////////////////////////////////
 inline int	CLEquation::GetNumEquations() const
 {
@@ -90,11 +90,11 @@ inline int	CLEquation::GetNumEquations() const
 }
 
 //////////////////////////////////////////////////////////////////////
-// »ñÈ¡Î´ÖªÊı¸öÊı
+// è·å–æœªçŸ¥æ•°ä¸ªæ•°
 //
-// ²ÎÊı£ºÎŞ
+// å‚æ•°ï¼šæ— 
 //
-// ·µ»ØÖµ£ºint ĞÍ£¬·µ»Ø·½³Ì×éÎ´ÖªÊıµÄ¸öÊı
+// è¿”å›å€¼ï¼šint å‹ï¼Œè¿”å›æ–¹ç¨‹ç»„æœªçŸ¥æ•°çš„ä¸ªæ•°
 //////////////////////////////////////////////////////////////////////
 inline int	CLEquation::GetNumUnknowns() const
 {
@@ -102,28 +102,28 @@ inline int	CLEquation::GetNumUnknowns() const
 }
 
 //////////////////////////////////////////////////////////////////////
-// È«Ñ¡Ö÷Ôª¸ßË¹ÏûÈ¥·¨
+// å…¨é€‰ä¸»å…ƒé«˜æ–¯æ¶ˆå»æ³•
 //
-// ²ÎÊı£º
-// 1. CMatrix& mtxResult - CMatrixÒıÓÃ¶ÔÏó£¬·µ»Ø·½³Ì×éµÄ½â
+// å‚æ•°ï¼š
+// 1. CMatrix& mtxResult - CMatrixå¼•ç”¨å¯¹è±¡ï¼Œè¿”å›æ–¹ç¨‹ç»„çš„è§£
 //
-// ·µ»ØÖµ£ºbool ĞÍ£¬·½³Ì×éÇó½âÊÇ·ñ³É¹¦
+// è¿”å›å€¼ï¼šbool å‹ï¼Œæ–¹ç¨‹ç»„æ±‚è§£æ˜¯å¦æˆåŠŸ
 //////////////////////////////////////////////////////////////////////
 bool CLEquation::GetRootsetGauss(CMatrix& mtxResult)
 {
 	int *pnJs, l, k, i, j, nIs, p, q;
 	double d, t;
 
-	// ·½³Ì×éµÄÊôĞÔ£¬½«³£Êı¾ØÕó¸³¸ø½â¾ØÕó
+	// æ–¹ç¨‹ç»„çš„å±æ€§ï¼Œå°†å¸¸æ•°çŸ©é˜µèµ‹ç»™è§£çŸ©é˜µ
 	mtxResult = m_mtxConst;
 	double *pDataCoef = m_mtxCoef.GetData();
 	double *pDataConst = mtxResult.GetData();
 	int n = GetNumUnknowns();
 
-	// ÁÙÊ±»º³åÇø£¬´æ·ÅÁĞÊı
+	// ä¸´æ—¶ç¼“å†²åŒºï¼Œå­˜æ”¾åˆ—æ•°
 	pnJs = new int[n];
 
-	// ÏûÔª
+	// æ¶ˆå…ƒ
 	l = 1;
 	for (k = 0; k <= n - 2; k++)
 	{
@@ -175,7 +175,7 @@ bool CLEquation::GetRootsetGauss(CMatrix& mtxResult)
 			}
 		}
 
-		// Çó½âÊ§°Ü
+		// æ±‚è§£å¤±è´¥
 		if (l == 0)
 		{
 			delete[] pnJs;
@@ -202,7 +202,7 @@ bool CLEquation::GetRootsetGauss(CMatrix& mtxResult)
 		}
 	}
 
-	// Çó½âÊ§°Ü
+	// æ±‚è§£å¤±è´¥
 	d = pDataCoef[(n - 1)*n + n - 1];
 	if (d == 0.0)
 	{
@@ -210,7 +210,7 @@ bool CLEquation::GetRootsetGauss(CMatrix& mtxResult)
 		return false;
 	}
 
-	// Çó½â
+	// æ±‚è§£
 	pDataConst[n - 1] = pDataConst[n - 1] / d;
 	for (i = n - 2; i >= 0; i--)
 	{
@@ -220,7 +220,7 @@ bool CLEquation::GetRootsetGauss(CMatrix& mtxResult)
 		pDataConst[i] = pDataConst[i] - t;
 	}
 
-	// µ÷Õû½âµÄÎ»ÖÃ
+	// è°ƒæ•´è§£çš„ä½ç½®
 	pnJs[n - 1] = n - 1;
 	for (k = n - 1; k >= 0; k--)
 	{
@@ -232,36 +232,36 @@ bool CLEquation::GetRootsetGauss(CMatrix& mtxResult)
 		}
 	}
 
-	// ÇåÀíÄÚ´æ
+	// æ¸…ç†å†…å­˜
 	delete[] pnJs;
 
 	return true;
 }
 
 //////////////////////////////////////////////////////////////////////
-// È«Ñ¡Ö÷Ôª¸ßË¹£­Ô¼µ±ÏûÈ¥·¨
+// å…¨é€‰ä¸»å…ƒé«˜æ–¯ï¼çº¦å½“æ¶ˆå»æ³•
 //
-// ²ÎÊı£º
-// 1. CMatrix& mtxResult - CMatrixÒıÓÃ¶ÔÏó£¬·µ»Ø·½³Ì×éµÄ½â
+// å‚æ•°ï¼š
+// 1. CMatrix& mtxResult - CMatrixå¼•ç”¨å¯¹è±¡ï¼Œè¿”å›æ–¹ç¨‹ç»„çš„è§£
 //
-// ·µ»ØÖµ£ºbool ĞÍ£¬·½³Ì×éÇó½âÊÇ·ñ³É¹¦
+// è¿”å›å€¼ï¼šbool å‹ï¼Œæ–¹ç¨‹ç»„æ±‚è§£æ˜¯å¦æˆåŠŸ
 //////////////////////////////////////////////////////////////////////
 bool CLEquation::GetRootsetGaussJordan(CMatrix& mtxResult)
 {
 	int *pnJs, l, k, i, j, nIs, p, q;
 	double d, t;
 
-	// ·½³Ì×éµÄÊôĞÔ£¬½«³£Êı¾ØÕó¸³¸ø½â¾ØÕó
+	// æ–¹ç¨‹ç»„çš„å±æ€§ï¼Œå°†å¸¸æ•°çŸ©é˜µèµ‹ç»™è§£çŸ©é˜µ
 	mtxResult = m_mtxConst;
 	double *pDataCoef = m_mtxCoef.GetData();
 	double *pDataConst = mtxResult.GetData();
 	int n = GetNumUnknowns();
 	int m = m_mtxConst.GetNumColumns();
 
-	// ÁÙÊ±»º³åÇø£¬´æ·Å±ä»»µÄÁĞÊı
+	// ä¸´æ—¶ç¼“å†²åŒºï¼Œå­˜æ”¾å˜æ¢çš„åˆ—æ•°
 	pnJs = new int[n];
 
-	// ÏûÔª
+	// æ¶ˆå…ƒ
 	l = 1;
 	for (k = 0; k <= n - 1; k++)
 	{
@@ -318,7 +318,7 @@ bool CLEquation::GetRootsetGaussJordan(CMatrix& mtxResult)
 			}
 		}
 
-		// Çó½âÊ§°Ü
+		// æ±‚è§£å¤±è´¥
 		if (l == 0)
 		{
 			delete[] pnJs;
@@ -359,7 +359,7 @@ bool CLEquation::GetRootsetGaussJordan(CMatrix& mtxResult)
 		}
 	}
 
-	// µ÷Õû
+	// è°ƒæ•´
 	for (k = n - 1; k >= 0; k--)
 	{
 		if (pnJs[k] != k)
@@ -375,29 +375,29 @@ bool CLEquation::GetRootsetGaussJordan(CMatrix& mtxResult)
 		}
 	}
 
-	// ÇåÀíÄÚ´æ
+	// æ¸…ç†å†…å­˜
 	delete[] pnJs;
 
 	return true;
 }
 
 //////////////////////////////////////////////////////////////////////
-// ¸´ÏµÊı·½³Ì×éµÄÈ«Ñ¡Ö÷Ôª¸ßË¹ÏûÈ¥·¨
+// å¤ç³»æ•°æ–¹ç¨‹ç»„çš„å…¨é€‰ä¸»å…ƒé«˜æ–¯æ¶ˆå»æ³•
 //
-// ²ÎÊı£º
-// 1. const CMatrix& mtxCoefImag - ÏµÊı¾ØÕóµÄĞé²¿¾ØÕó
-// 2. const CMatrix& mtxConstImag - ³£Êı¾ØÕóµÄĞé²¿¾ØÕó
-// 3. CMatrix& mtxResult - CMatrixÒıÓÃ¶ÔÏó£¬·µ»Ø·½³Ì×é½â¾ØÕóµÄÊµ²¿¾ØÕó
-// 4. CMatrix& mtxResultImag - CMatrixÒıÓÃ¶ÔÏó£¬·µ»Ø·½³Ì×é½â¾ØÕóµÄĞé²¿¾ØÕó
+// å‚æ•°ï¼š
+// 1. const CMatrix& mtxCoefImag - ç³»æ•°çŸ©é˜µçš„è™šéƒ¨çŸ©é˜µ
+// 2. const CMatrix& mtxConstImag - å¸¸æ•°çŸ©é˜µçš„è™šéƒ¨çŸ©é˜µ
+// 3. CMatrix& mtxResult - CMatrixå¼•ç”¨å¯¹è±¡ï¼Œè¿”å›æ–¹ç¨‹ç»„è§£çŸ©é˜µçš„å®éƒ¨çŸ©é˜µ
+// 4. CMatrix& mtxResultImag - CMatrixå¼•ç”¨å¯¹è±¡ï¼Œè¿”å›æ–¹ç¨‹ç»„è§£çŸ©é˜µçš„è™šéƒ¨çŸ©é˜µ
 //
-// ·µ»ØÖµ£ºbool ĞÍ£¬·½³Ì×éÇó½âÊÇ·ñ³É¹¦
+// è¿”å›å€¼ï¼šbool å‹ï¼Œæ–¹ç¨‹ç»„æ±‚è§£æ˜¯å¦æˆåŠŸ
 //////////////////////////////////////////////////////////////////////
 bool CLEquation::GetRootsetGauss(const CMatrix& mtxCoefImag, const CMatrix& mtxConstImag, CMatrix& mtxResult, CMatrix& mtxResultImag)
 {
 	int *pnJs, l, k, i, j, nIs, u, v;
 	double p, q, s, d;
 
-	// ·½³Ì×éµÄÊôĞÔ£¬½«³£Êı¾ØÕó¸³¸ø½â¾ØÕó
+	// æ–¹ç¨‹ç»„çš„å±æ€§ï¼Œå°†å¸¸æ•°çŸ©é˜µèµ‹ç»™è§£çŸ©é˜µ
 	mtxResult = m_mtxConst;
 	mtxResultImag = mtxConstImag;
 	double *pDataCoef = m_mtxCoef.GetData();
@@ -407,10 +407,10 @@ bool CLEquation::GetRootsetGauss(const CMatrix& mtxCoefImag, const CMatrix& mtxC
 	int n = GetNumUnknowns();
 	int m = m_mtxConst.GetNumColumns();
 
-	// ÁÙÊ±»º³åÇø£¬´æ·Å±ä»»µÄÁĞÊı
+	// ä¸´æ—¶ç¼“å†²åŒºï¼Œå­˜æ”¾å˜æ¢çš„åˆ—æ•°
 	pnJs = new int[n];
 
-	// ÏûÔª
+	// æ¶ˆå…ƒ
 	for (k = 0; k <= n - 2; k++)
 	{
 		d = 0.0;
@@ -429,7 +429,7 @@ bool CLEquation::GetRootsetGauss(const CMatrix& mtxCoefImag, const CMatrix& mtxC
 			}
 		}
 
-		// Çó½âÊ§°Ü
+		// æ±‚è§£å¤±è´¥
 		if (d == 0.0)
 		{
 			delete[] pnJs;
@@ -515,14 +515,14 @@ bool CLEquation::GetRootsetGauss(const CMatrix& mtxCoefImag, const CMatrix& mtxC
 	u = (n - 1)*n + n - 1;
 	d = pDataCoef[u] * pDataCoef[u] + pDataCoefImag[u] * pDataCoefImag[u];
 
-	// Çó½âÊ§°Ü
+	// æ±‚è§£å¤±è´¥
 	if (d == 0.0)
 	{
 		delete[] pnJs;
 		return false;
 	}
 
-	// Çó½â
+	// æ±‚è§£
 	p = pDataCoef[u] * pDataConst[n - 1]; q = -pDataCoefImag[u] * pDataConstImag[n - 1];
 	s = (pDataCoef[u] - pDataCoefImag[u])*(pDataConst[n - 1] + pDataConstImag[n - 1]);
 	pDataConst[n - 1] = (p - q) / d; pDataConstImag[n - 1] = (s - p - q) / d;
@@ -540,7 +540,7 @@ bool CLEquation::GetRootsetGauss(const CMatrix& mtxCoefImag, const CMatrix& mtxC
 		}
 	}
 
-	// µ÷ÕûÎ»ÖÃ
+	// è°ƒæ•´ä½ç½®
 	pnJs[n - 1] = n - 1;
 	for (k = n - 1; k >= 0; k--)
 	{
@@ -555,29 +555,29 @@ bool CLEquation::GetRootsetGauss(const CMatrix& mtxCoefImag, const CMatrix& mtxC
 		}
 	}
 
-	// ÇåÀíÄÚ´æ
+	// æ¸…ç†å†…å­˜
 	delete[] pnJs;
 
 	return true;
 }
 
 //////////////////////////////////////////////////////////////////////
-// ¸´ÏµÊı·½³Ì×éµÄÈ«Ñ¡Ö÷Ôª¸ßË¹£­Ô¼µ±ÏûÈ¥·¨
+// å¤ç³»æ•°æ–¹ç¨‹ç»„çš„å…¨é€‰ä¸»å…ƒé«˜æ–¯ï¼çº¦å½“æ¶ˆå»æ³•
 //
-// ²ÎÊı£º
-// 1. const CMatrix& mtxCoefImag - ÏµÊı¾ØÕóµÄĞé²¿¾ØÕó
-// 2. const CMatrix& mtxConstImag - ³£Êı¾ØÕóµÄĞé²¿¾ØÕó
-// 3. CMatrix& mtxResult - CMatrixÒıÓÃ¶ÔÏó£¬·µ»Ø·½³Ì×é½â¾ØÕóµÄÊµ²¿¾ØÕó
-// 4. CMatrix& mtxResultImag - CMatrixÒıÓÃ¶ÔÏó£¬·µ»Ø·½³Ì×é½â¾ØÕóµÄĞé²¿¾ØÕó
+// å‚æ•°ï¼š
+// 1. const CMatrix& mtxCoefImag - ç³»æ•°çŸ©é˜µçš„è™šéƒ¨çŸ©é˜µ
+// 2. const CMatrix& mtxConstImag - å¸¸æ•°çŸ©é˜µçš„è™šéƒ¨çŸ©é˜µ
+// 3. CMatrix& mtxResult - CMatrixå¼•ç”¨å¯¹è±¡ï¼Œè¿”å›æ–¹ç¨‹ç»„è§£çŸ©é˜µçš„å®éƒ¨çŸ©é˜µ
+// 4. CMatrix& mtxResultImag - CMatrixå¼•ç”¨å¯¹è±¡ï¼Œè¿”å›æ–¹ç¨‹ç»„è§£çŸ©é˜µçš„è™šéƒ¨çŸ©é˜µ
 //
-// ·µ»ØÖµ£ºbool ĞÍ£¬·½³Ì×éÇó½âÊÇ·ñ³É¹¦
+// è¿”å›å€¼ï¼šbool å‹ï¼Œæ–¹ç¨‹ç»„æ±‚è§£æ˜¯å¦æˆåŠŸ
 //////////////////////////////////////////////////////////////////////
 bool CLEquation::GetRootsetGaussJordan(const CMatrix& mtxCoefImag, const CMatrix& mtxConstImag, CMatrix& mtxResult, CMatrix& mtxResultImag)
 {
 	int *pnJs, l, k, i, j, nIs, u, v;
 	double p, q, s, d;
 
-	// ·½³Ì×éµÄÊôĞÔ£¬½«³£Êı¾ØÕó¸³¸ø½â¾ØÕó
+	// æ–¹ç¨‹ç»„çš„å±æ€§ï¼Œå°†å¸¸æ•°çŸ©é˜µèµ‹ç»™è§£çŸ©é˜µ
 	mtxResult = m_mtxConst;
 	mtxResultImag = mtxConstImag;
 	double *pDataCoef = m_mtxCoef.GetData();
@@ -587,10 +587,10 @@ bool CLEquation::GetRootsetGaussJordan(const CMatrix& mtxCoefImag, const CMatrix
 	int n = GetNumUnknowns();
 	int m = m_mtxConst.GetNumColumns();
 
-	// ÁÙÊ±»º³åÇø£¬´æ·Å±ä»»µÄÁĞÊı
+	// ä¸´æ—¶ç¼“å†²åŒºï¼Œå­˜æ”¾å˜æ¢çš„åˆ—æ•°
 	pnJs = new int[n];
 
-	// ÏûÔª
+	// æ¶ˆå…ƒ
 	for (k = 0; k <= n - 1; k++)
 	{
 		d = 0.0;
@@ -609,7 +609,7 @@ bool CLEquation::GetRootsetGaussJordan(const CMatrix& mtxCoefImag, const CMatrix
 			}
 		}
 
-		// Çó½âÊ§°Ü
+		// æ±‚è§£å¤±è´¥
 		if (d == 0.0)
 		{
 			delete[] pnJs;
@@ -708,7 +708,7 @@ bool CLEquation::GetRootsetGaussJordan(const CMatrix& mtxCoefImag, const CMatrix
 		}
 	}
 
-	// Çó½âµ÷Õû
+	// æ±‚è§£è°ƒæ•´
 	for (k = n - 1; k >= 0; k--)
 	{
 		if (pnJs[k] != k)
@@ -727,26 +727,26 @@ bool CLEquation::GetRootsetGaussJordan(const CMatrix& mtxCoefImag, const CMatrix
 		}
 	}
 
-	// ÇåÀíÄÚ´æ
+	// æ¸…ç†å†…å­˜
 	delete[] pnJs;
 
 	return true;
 }
 
 //////////////////////////////////////////////////////////////////////
-// Çó½âÈı¶Ô½ÇÏß·½³Ì×éµÄ×·¸Ï·¨
+// æ±‚è§£ä¸‰å¯¹è§’çº¿æ–¹ç¨‹ç»„çš„è¿½èµ¶æ³•
 //
-// ²ÎÊı£º
-// 1. CMatrix& mtxResult - CMatrixÒıÓÃ¶ÔÏó£¬·µ»Ø·½³Ì×é½â¾ØÕó
+// å‚æ•°ï¼š
+// 1. CMatrix& mtxResult - CMatrixå¼•ç”¨å¯¹è±¡ï¼Œè¿”å›æ–¹ç¨‹ç»„è§£çŸ©é˜µ
 //
-// ·µ»ØÖµ£ºbool ĞÍ£¬·½³Ì×éÇó½âÊÇ·ñ³É¹¦
+// è¿”å›å€¼ï¼šbool å‹ï¼Œæ–¹ç¨‹ç»„æ±‚è§£æ˜¯å¦æˆåŠŸ
 //////////////////////////////////////////////////////////////////////
 bool CLEquation::GetRootsetTriDiagonal(CMatrix& mtxResult)
 {
 	int k, j;
 	double s;
 
-	// ½«³£Êı¾ØÕó¸³¸ø½â¾ØÕó
+	// å°†å¸¸æ•°çŸ©é˜µèµ‹ç»™è§£çŸ©é˜µ
 	mtxResult = m_mtxConst;
 	double *pDataConst = mtxResult.GetData();
 
@@ -755,10 +755,10 @@ bool CLEquation::GetRootsetTriDiagonal(CMatrix& mtxResult)
 	if (m_mtxCoef.GetNumRows() != n)
 		return false;
 
-	// ÎªÏµÊı¾ØÕó¶Ô½ÇÏßÊı×é·ÖÅäÄÚ´æ
+	// ä¸ºç³»æ•°çŸ©é˜µå¯¹è§’çº¿æ•°ç»„åˆ†é…å†…å­˜
 	double* pDiagData = new double[3 * n - 2];
 
-	// ¹¹ÔìÏµÊı¾ØÕó¶Ô½ÇÏßÔªËØÊı×é
+	// æ„é€ ç³»æ•°çŸ©é˜µå¯¹è§’çº¿å…ƒç´ æ•°ç»„
 	k = j = 0;
 	if (k == 0)
 	{
@@ -777,13 +777,13 @@ bool CLEquation::GetRootsetTriDiagonal(CMatrix& mtxResult)
 		pDiagData[j++] = m_mtxCoef.GetElement(k, k);
 	}
 
-	// Çó½â
+	// æ±‚è§£
 	for (k = 0; k <= n - 2; k++)
 	{
 		j = 3 * k;
 		s = pDiagData[j];
 
-		// Çó½âÊ§°Ü
+		// æ±‚è§£å¤±è´¥
 		if (fabs(s) + 1.0 == 1.0)
 		{
 			delete[] pDiagData;
@@ -803,53 +803,53 @@ bool CLEquation::GetRootsetTriDiagonal(CMatrix& mtxResult)
 		return false;
 	}
 
-	// µ÷Õû
+	// è°ƒæ•´
 	pDataConst[n - 1] = pDataConst[n - 1] / s;
 	for (k = n - 2; k >= 0; k--)
 		pDataConst[k] = pDataConst[k] - pDiagData[3 * k + 1] * pDataConst[k + 1];
 
-	// ÊÍ·ÅÄÚ´æ
+	// é‡Šæ”¾å†…å­˜
 	delete[] pDiagData;
 
 	return true;
 }
 
 //////////////////////////////////////////////////////////////////////
-// Ò»°ã´øĞÍ·½³Ì×éµÄÇó½â
+// ä¸€èˆ¬å¸¦å‹æ–¹ç¨‹ç»„çš„æ±‚è§£
 //
-// ²ÎÊı£º
-// 1. int nBandWidth - ´ø¿í
-// 2. CMatrix& mtxResult - CMatrixÒıÓÃ¶ÔÏó£¬·µ»Ø·½³Ì×é½â¾ØÕó
+// å‚æ•°ï¼š
+// 1. int nBandWidth - å¸¦å®½
+// 2. CMatrix& mtxResult - CMatrixå¼•ç”¨å¯¹è±¡ï¼Œè¿”å›æ–¹ç¨‹ç»„è§£çŸ©é˜µ
 //
-// ·µ»ØÖµ£ºbool ĞÍ£¬·½³Ì×éÇó½âÊÇ·ñ³É¹¦
+// è¿”å›å€¼ï¼šbool å‹ï¼Œæ–¹ç¨‹ç»„æ±‚è§£æ˜¯å¦æˆåŠŸ
 //////////////////////////////////////////////////////////////////////
 bool CLEquation::GetRootsetBand(int nBandWidth, CMatrix& mtxResult)
 {
 	int ls, k, i, j, is, u, v;
 	double p, t;
 
-	// ´ø¿í±ØĞëÎªÆæÊı
+	// å¸¦å®½å¿…é¡»ä¸ºå¥‡æ•°
 	if ((nBandWidth - 1) % 2 != 0)
 		return false;
 
-	// ½«³£Êı¾ØÕó¸³¸ø½â¾ØÕó
+	// å°†å¸¸æ•°çŸ©é˜µèµ‹ç»™è§£çŸ©é˜µ
 	mtxResult = m_mtxConst;
 	double *pDataConst = mtxResult.GetData();
 
-	// ·½³Ì×éÊôĞÔ
+	// æ–¹ç¨‹ç»„å±æ€§
 	int m = m_mtxConst.GetNumColumns();
 	int n = GetNumUnknowns();
 //	ASSERT(m_mtxCoef.GetNumRows() == n);
 	if (m_mtxCoef.GetNumRows() != n)
 		return false;
 
-	// ´ø¿íÊı×é£º´øĞÍ¾ØÕóµÄÓĞĞ§Êı¾İ
+	// å¸¦å®½æ•°ç»„ï¼šå¸¦å‹çŸ©é˜µçš„æœ‰æ•ˆæ•°æ®
 	double* pBandData = new double[nBandWidth*n];
 
-	// °ë´ø¿í
+	// åŠå¸¦å®½
 	ls = (nBandWidth - 1) / 2;
 
-	// ¹¹Ôì´ø¿íÊı×é
+	// æ„é€ å¸¦å®½æ•°ç»„
 	for (i = 0; i<n; ++i)
 	{
 		j = 0;
@@ -862,7 +862,7 @@ bool CLEquation::GetRootsetBand(int nBandWidth, CMatrix& mtxResult)
 		}
 	}
 
-	// Çó½â
+	// æ±‚è§£
 	for (k = 0; k <= n - 2; k++)
 	{
 		p = 0.0;
@@ -967,26 +967,26 @@ bool CLEquation::GetRootsetBand(int nBandWidth, CMatrix& mtxResult)
 			ls = ls + 1;
 	}
 
-	// ÊÍ·ÅÄÚ´æ
+	// é‡Šæ”¾å†…å­˜
 	delete[] pBandData;
 
 	return true;
 }
 
 //////////////////////////////////////////////////////////////////////
-// Çó½â¶Ô³Æ·½³Ì×éµÄ·Ö½â·¨
+// æ±‚è§£å¯¹ç§°æ–¹ç¨‹ç»„çš„åˆ†è§£æ³•
 //
-// ²ÎÊı£º
-// 1. CMatrix& mtxResult - CMatrixÒıÓÃ¶ÔÏó£¬·µ»Ø·½³Ì×é½â¾ØÕó
+// å‚æ•°ï¼š
+// 1. CMatrix& mtxResult - CMatrixå¼•ç”¨å¯¹è±¡ï¼Œè¿”å›æ–¹ç¨‹ç»„è§£çŸ©é˜µ
 //
-// ·µ»ØÖµ£ºbool ĞÍ£¬·½³Ì×éÇó½âÊÇ·ñ³É¹¦
+// è¿”å›å€¼ï¼šbool å‹ï¼Œæ–¹ç¨‹ç»„æ±‚è§£æ˜¯å¦æˆåŠŸ
 //////////////////////////////////////////////////////////////////////
 bool CLEquation::GetRootsetDjn(CMatrix& mtxResult)
 {
 	int i, j, l, k, u, v, w, k1, k2, k3;
 	double p;
 
-	// ·½³Ì×éÊôĞÔ£¬½«³£Êı¾ØÕó¸³¸ø½â¾ØÕó
+	// æ–¹ç¨‹ç»„å±æ€§ï¼Œå°†å¸¸æ•°çŸ©é˜µèµ‹ç»™è§£çŸ©é˜µ
 	CMatrix mtxCoef = m_mtxCoef;
 	mtxResult = m_mtxConst;
 	int n = mtxCoef.GetNumColumns();
@@ -994,7 +994,7 @@ bool CLEquation::GetRootsetDjn(CMatrix& mtxResult)
 	double* pDataCoef = mtxCoef.GetData();
 	double* pDataConst = mtxResult.GetData();
 
-	// ·Ç¶Ô³ÆÏµÊı¾ØÕó£¬²»ÄÜÓÃ±¾·½·¨Çó½â
+	// éå¯¹ç§°ç³»æ•°çŸ©é˜µï¼Œä¸èƒ½ç”¨æœ¬æ–¹æ³•æ±‚è§£
 	if (pDataCoef[0] == 0.0)
 		return false;
 
@@ -1094,18 +1094,18 @@ bool CLEquation::GetRootsetDjn(CMatrix& mtxResult)
 }
 
 //////////////////////////////////////////////////////////////////////
-// Çó½â¶Ô³ÆÕı¶¨·½³Ì×éµÄÆ½·½¸ù·¨
+// æ±‚è§£å¯¹ç§°æ­£å®šæ–¹ç¨‹ç»„çš„å¹³æ–¹æ ¹æ³•
 //
-// ²ÎÊı£º
-// 1. CMatrix& mtxResult - CMatrixÒıÓÃ¶ÔÏó£¬·µ»Ø·½³Ì×é½â¾ØÕó
+// å‚æ•°ï¼š
+// 1. CMatrix& mtxResult - CMatrixå¼•ç”¨å¯¹è±¡ï¼Œè¿”å›æ–¹ç¨‹ç»„è§£çŸ©é˜µ
 //
-// ·µ»ØÖµ£ºbool ĞÍ£¬·½³Ì×éÇó½âÊÇ·ñ³É¹¦
+// è¿”å›å€¼ï¼šbool å‹ï¼Œæ–¹ç¨‹ç»„æ±‚è§£æ˜¯å¦æˆåŠŸ
 //////////////////////////////////////////////////////////////////////
 bool CLEquation::GetRootsetCholesky(CMatrix& mtxResult)
 {
 	int i, j, k, u, v;
 
-	// ·½³Ì×éÊôĞÔ£¬½«³£Êı¾ØÕó¸³¸ø½â¾ØÕó
+	// æ–¹ç¨‹ç»„å±æ€§ï¼Œå°†å¸¸æ•°çŸ©é˜µèµ‹ç»™è§£çŸ©é˜µ
 	CMatrix mtxCoef = m_mtxCoef;
 	mtxResult = m_mtxConst;
 	int n = mtxCoef.GetNumColumns();
@@ -1113,7 +1113,7 @@ bool CLEquation::GetRootsetCholesky(CMatrix& mtxResult)
 	double* pDataCoef = mtxCoef.GetData();
 	double* pDataConst = mtxResult.GetData();
 
-	// ·Ç¶Ô³ÆÕı¶¨ÏµÊı¾ØÕó£¬²»ÄÜÓÃ±¾·½·¨Çó½â
+	// éå¯¹ç§°æ­£å®šç³»æ•°çŸ©é˜µï¼Œä¸èƒ½ç”¨æœ¬æ–¹æ³•æ±‚è§£
 	if (pDataCoef[0] <= 0.0)
 		return false;
 
@@ -1181,29 +1181,29 @@ bool CLEquation::GetRootsetCholesky(CMatrix& mtxResult)
 }
 
 //////////////////////////////////////////////////////////////////////
-// Çó½â´óĞÍÏ¡Êè·½³Ì×éµÄÈ«Ñ¡Ö÷Ôª¸ßË¹£­Ô¼È¥ÏûÈ¥·¨
+// æ±‚è§£å¤§å‹ç¨€ç–æ–¹ç¨‹ç»„çš„å…¨é€‰ä¸»å…ƒé«˜æ–¯ï¼çº¦å»æ¶ˆå»æ³•
 //
-// ²ÎÊı£º
-// 1. CMatrix& mtxResult - CMatrixÒıÓÃ¶ÔÏó£¬·µ»Ø·½³Ì×é½â¾ØÕó
+// å‚æ•°ï¼š
+// 1. CMatrix& mtxResult - CMatrixå¼•ç”¨å¯¹è±¡ï¼Œè¿”å›æ–¹ç¨‹ç»„è§£çŸ©é˜µ
 //
-// ·µ»ØÖµ£ºbool ĞÍ£¬·½³Ì×éÇó½âÊÇ·ñ³É¹¦
+// è¿”å›å€¼ï¼šbool å‹ï¼Œæ–¹ç¨‹ç»„æ±‚è§£æ˜¯å¦æˆåŠŸ
 //////////////////////////////////////////////////////////////////////
 bool CLEquation::GetRootsetGgje(CMatrix& mtxResult)
 {
 	int *pnJs, i, j, k, nIs, u, v;
 	double d, t;
 
-	// ·½³Ì×éÊôĞÔ£¬½«³£Êı¾ØÕó¸³¸ø½â¾ØÕó
+	// æ–¹ç¨‹ç»„å±æ€§ï¼Œå°†å¸¸æ•°çŸ©é˜µèµ‹ç»™è§£çŸ©é˜µ
 	CMatrix mtxCoef = m_mtxCoef;
 	mtxResult = m_mtxConst;
 	int n = mtxCoef.GetNumColumns();
 	double* pDataCoef = mtxCoef.GetData();
 	double* pDataConst = mtxResult.GetData();
 
-	// ÁÙÊ±»º³åÇø£¬´æ·Å±ä»»µÄÁĞÊı
+	// ä¸´æ—¶ç¼“å†²åŒºï¼Œå­˜æ”¾å˜æ¢çš„åˆ—æ•°
 	pnJs = new int[n];
 
-	// ÏûÔª
+	// æ¶ˆå…ƒ
 	for (k = 0; k <= n - 1; k++)
 	{
 		d = 0.0;
@@ -1289,7 +1289,7 @@ bool CLEquation::GetRootsetGgje(CMatrix& mtxResult)
 		}
 	}
 
-	// µ÷Õû
+	// è°ƒæ•´
 	for (k = n - 1; k >= 0; k--)
 	{
 		if (k != pnJs[k])
@@ -1300,47 +1300,47 @@ bool CLEquation::GetRootsetGgje(CMatrix& mtxResult)
 		}
 	}
 
-	// ÊÍ·ÅÄÚ´æ
+	// é‡Šæ”¾å†…å­˜
 	delete[] pnJs;
 
 	return true;
 }
 
 //////////////////////////////////////////////////////////////////////
-// Çó½âÍĞ²®Àû×È·½³Ì×éµÄÁĞÎÄÑ··½·¨
+// æ±‚è§£æ‰˜ä¼¯åˆ©å…¹æ–¹ç¨‹ç»„çš„åˆ—æ–‡é€Šæ–¹æ³•
 //
-// ²ÎÊı£º
-// 1. CMatrix& mtxResult - CMatrixÒıÓÃ¶ÔÏó£¬·µ»Ø·½³Ì×é½â¾ØÕó
+// å‚æ•°ï¼š
+// 1. CMatrix& mtxResult - CMatrixå¼•ç”¨å¯¹è±¡ï¼Œè¿”å›æ–¹ç¨‹ç»„è§£çŸ©é˜µ
 //
-// ·µ»ØÖµ£ºbool ĞÍ£¬·½³Ì×éÇó½âÊÇ·ñ³É¹¦
+// è¿”å›å€¼ï¼šbool å‹ï¼Œæ–¹ç¨‹ç»„æ±‚è§£æ˜¯å¦æˆåŠŸ
 //////////////////////////////////////////////////////////////////////
 bool CLEquation::GetRootsetTlvs(CMatrix& mtxResult)
 {
 	int i, j, k;
 	double a, beta, q, c, h, *y, *s;
 
-	// Î´ÖªÊı¸öÊı
+	// æœªçŸ¥æ•°ä¸ªæ•°
 	int n = m_mtxCoef.GetNumColumns();
 
-	// ³õÊ¼»¯½â½âÏòÁ¿
+	// åˆå§‹åŒ–è§£è§£å‘é‡
 	mtxResult.Init(n, 1);
 	double* x = mtxResult.GetData();
 
-	// ³£ÊıÊı×é
+	// å¸¸æ•°æ•°ç»„
 	double* pDataConst = m_mtxConst.GetData();
 
-	// ½¨Á¢TÊı×é
+	// å»ºç«‹Tæ•°ç»„
 	double* t = new double[n];
 
-	// ¹¹ÔìTÊı×é
+	// æ„é€ Tæ•°ç»„
 	for (i = 0; i<n; ++i)
 		t[i] = m_mtxCoef.GetElement(0, i);
 
-	// ÁÙÊ±Êı×é
+	// ä¸´æ—¶æ•°ç»„
 	s = new double[n];
 	y = new double[n];
 
-	// ·ÇÍĞ²®Àû×È·½³Ì×é£¬²»ÄÜÓÃ±¾·½·¨Çó½â
+	// éæ‰˜ä¼¯åˆ©å…¹æ–¹ç¨‹ç»„ï¼Œä¸èƒ½ç”¨æœ¬æ–¹æ³•æ±‚è§£
 	a = t[0];
 	if (a == 0.0)
 	{
@@ -1350,7 +1350,7 @@ bool CLEquation::GetRootsetTlvs(CMatrix& mtxResult)
 		return false;
 	}
 
-	// ÁĞÎÄÑ··½·¨Çó½â
+	// åˆ—æ–‡é€Šæ–¹æ³•æ±‚è§£
 	y[0] = 1.0;
 	x[0] = pDataConst[0] / a;
 	for (k = 1; k <= n - 1; k++)
@@ -1399,7 +1399,7 @@ bool CLEquation::GetRootsetTlvs(CMatrix& mtxResult)
 		x[k] = h*y[k];
 	}
 
-	// ÊÍ·ÅÄÚ´æ
+	// é‡Šæ”¾å†…å­˜
 	delete[] s;
 	delete[] y;
 	delete[] t;
@@ -1408,31 +1408,31 @@ bool CLEquation::GetRootsetTlvs(CMatrix& mtxResult)
 }
 
 //////////////////////////////////////////////////////////////////////
-// ¸ßË¹£­ÈüµÂ¶ûµü´ú·¨
+// é«˜æ–¯ï¼èµ›å¾·å°”è¿­ä»£æ³•
 //
-// ²ÎÊı£º
-// 1. CMatrix& mtxResult - CMatrixÒıÓÃ¶ÔÏó£¬·µ»Ø·½³Ì×é½â¾ØÕó
-// 2. double eps - ¿ØÖÆ¾«¶È£¬Ä¬ÈÏÖµÎª0.000001
+// å‚æ•°ï¼š
+// 1. CMatrix& mtxResult - CMatrixå¼•ç”¨å¯¹è±¡ï¼Œè¿”å›æ–¹ç¨‹ç»„è§£çŸ©é˜µ
+// 2. double eps - æ§åˆ¶ç²¾åº¦ï¼Œé»˜è®¤å€¼ä¸º0.000001
 //
-// ·µ»ØÖµ£ºbool ĞÍ£¬·½³Ì×éÇó½âÊÇ·ñ³É¹¦
+// è¿”å›å€¼ï¼šbool å‹ï¼Œæ–¹ç¨‹ç»„æ±‚è§£æ˜¯å¦æˆåŠŸ
 //////////////////////////////////////////////////////////////////////
 bool CLEquation::GetRootsetGaussSeidel(CMatrix& mtxResult, double eps /*= 0.000001*/)
 {
 	int i, j, u, v;
 	double p, t, s, q;
 
-	// Î´ÖªÊı¸öÊı
+	// æœªçŸ¥æ•°ä¸ªæ•°
 	int n = m_mtxCoef.GetNumColumns();
 
-	// ³õÊ¼»¯½âÏòÁ¿
+	// åˆå§‹åŒ–è§£å‘é‡
 	mtxResult.Init(n, 1);
 	double* x = mtxResult.GetData();
 
-	// ÏµÊıÓë³£Êı
+	// ç³»æ•°ä¸å¸¸æ•°
 	double* pDataCoef = m_mtxCoef.GetData();
 	double* pDataConst = m_mtxConst.GetData();
 
-	// Çó½â
+	// æ±‚è§£
 	for (i = 0; i <= n - 1; i++)
 	{
 		u = i*n + i;
@@ -1451,7 +1451,7 @@ bool CLEquation::GetRootsetGaussSeidel(CMatrix& mtxResult, double eps /*= 0.0000
 			return false;
 	}
 
-	// ¾«¶È¿ØÖÆ
+	// ç²¾åº¦æ§åˆ¶
 	p = eps + 1.0;
 	while (p >= eps)
 	{
@@ -1475,27 +1475,27 @@ bool CLEquation::GetRootsetGaussSeidel(CMatrix& mtxResult, double eps /*= 0.0000
 }
 
 //////////////////////////////////////////////////////////////////////
-// Çó½â¶Ô³ÆÕı¶¨·½³Ì×éµÄ¹²éîÌİ¶È·¨
+// æ±‚è§£å¯¹ç§°æ­£å®šæ–¹ç¨‹ç»„çš„å…±è½­æ¢¯åº¦æ³•
 //
-// ²ÎÊı£º
-// 1. CMatrix& mtxResult - CMatrixÒıÓÃ¶ÔÏó£¬·µ»Ø·½³Ì×é½â¾ØÕó
-// 2. double eps - ¿ØÖÆ¾«¶È£¬Ä¬ÈÏÖµÎª0.000001
+// å‚æ•°ï¼š
+// 1. CMatrix& mtxResult - CMatrixå¼•ç”¨å¯¹è±¡ï¼Œè¿”å›æ–¹ç¨‹ç»„è§£çŸ©é˜µ
+// 2. double eps - æ§åˆ¶ç²¾åº¦ï¼Œé»˜è®¤å€¼ä¸º0.000001
 //
-// ·µ»ØÖµ£ºbool ĞÍ£¬·½³Ì×éÇó½âÊÇ·ñ³É¹¦
+// è¿”å›å€¼ï¼šbool å‹ï¼Œæ–¹ç¨‹ç»„æ±‚è§£æ˜¯å¦æˆåŠŸ
 //////////////////////////////////////////////////////////////////////
 void CLEquation::GetRootsetGrad(CMatrix& mtxResult, double eps /*= 0.000001*/)
 {
 	int i, k;
 	double *p, *r, *s, *q, alpha, beta, d, e;
 
-	// Î´ÖªÊı¸öÊı
+	// æœªçŸ¥æ•°ä¸ªæ•°
 	int n = GetNumUnknowns();
 
-	// ³õÊ¼»¯½âÏòÁ¿
+	// åˆå§‹åŒ–è§£å‘é‡
 	mtxResult.Init(n, 1);
 	double* x = mtxResult.GetData();
 
-	// ¹¹ÔìÁÙÊ±¾ØÕó
+	// æ„é€ ä¸´æ—¶çŸ©é˜µ
 	CMatrix mtxP(n, 1);
 	p = mtxP.GetData();
 
@@ -1543,7 +1543,7 @@ void CLEquation::GetRootsetGrad(CMatrix& mtxResult, double eps /*= 0.000001*/)
 		for (k = 0; k <= n - 1; k++)
 			d = d + r[k] * r[k];
 
-		// Âú×ã¾«¶È£¬Çó½â½áÊø
+		// æ»¡è¶³ç²¾åº¦ï¼Œæ±‚è§£ç»“æŸ
 		d = sqrt(d);
 		if (d<eps)
 			break;
@@ -1558,44 +1558,44 @@ void CLEquation::GetRootsetGrad(CMatrix& mtxResult, double eps /*= 0.000001*/)
 }
 
 //////////////////////////////////////////////////////////////////////
-// Çó½âÏßĞÔ×îĞ¡¶ş³ËÎÊÌâµÄºÀË¹ºÉ¶ûµÂ±ä»»·¨
+// æ±‚è§£çº¿æ€§æœ€å°äºŒä¹˜é—®é¢˜çš„è±ªæ–¯è·å°”å¾·å˜æ¢æ³•
 //
-// ²ÎÊı£º
-// 1. CMatrix& mtxResult - CMatrixÒıÓÃ¶ÔÏó£¬·µ»Ø·½³Ì×é½â¾ØÕó
-// 2. CMatrix& mtxQ - CMatrixÒıÓÃ¶ÔÏó£¬·µ»ØºÀË¹ºÉ¶ûµÂ±ä»»µÄQ¾ØÕó
-// 3. CMatrix& mtxR - CMatrixÒıÓÃ¶ÔÏó£¬·µ»ØºÀË¹ºÉ¶ûµÂ±ä»»µÄR¾ØÕó
+// å‚æ•°ï¼š
+// 1. CMatrix& mtxResult - CMatrixå¼•ç”¨å¯¹è±¡ï¼Œè¿”å›æ–¹ç¨‹ç»„è§£çŸ©é˜µ
+// 2. CMatrix& mtxQ - CMatrixå¼•ç”¨å¯¹è±¡ï¼Œè¿”å›è±ªæ–¯è·å°”å¾·å˜æ¢çš„QçŸ©é˜µ
+// 3. CMatrix& mtxR - CMatrixå¼•ç”¨å¯¹è±¡ï¼Œè¿”å›è±ªæ–¯è·å°”å¾·å˜æ¢çš„RçŸ©é˜µ
 //
-// ·µ»ØÖµ£ºbool ĞÍ£¬·½³Ì×éÇó½âÊÇ·ñ³É¹¦
+// è¿”å›å€¼ï¼šbool å‹ï¼Œæ–¹ç¨‹ç»„æ±‚è§£æ˜¯å¦æˆåŠŸ
 //////////////////////////////////////////////////////////////////////
 bool CLEquation::GetRootsetMqr(CMatrix& mtxResult, CMatrix& mtxQ, CMatrix& mtxR)
 {
 	int i, j;
 	double d;
 
-	// ·½³Ì×éµÄ·½³ÌÊıºÍÎ´ÖªÊı¸öÊı
+	// æ–¹ç¨‹ç»„çš„æ–¹ç¨‹æ•°å’ŒæœªçŸ¥æ•°ä¸ªæ•°
 	int m = m_mtxCoef.GetNumRows();
 	int n = m_mtxCoef.GetNumColumns();
-	// ÆæÒì·½³Ì×é
+	// å¥‡å¼‚æ–¹ç¨‹ç»„
 	if (m < n)
 		return false;
 
-	// ½«½âÏòÁ¿³õÊ¼»¯Îª³£ÊıÏòÁ¿
+	// å°†è§£å‘é‡åˆå§‹åŒ–ä¸ºå¸¸æ•°å‘é‡
 	mtxResult = m_mtxConst;
 	double* pDataConst = mtxResult.GetData();
 
-	// ¹¹ÔìÁÙÊ±¾ØÕó£¬ÓÃÓÚQR·Ö½â
+	// æ„é€ ä¸´æ—¶çŸ©é˜µï¼Œç”¨äºQRåˆ†è§£
 	mtxR = m_mtxCoef;
 	double* pDataCoef = mtxR.GetData();
 
-	// QR·Ö½â
+	// QRåˆ†è§£
 	if (!mtxR.SplitQR(mtxQ))
 		return false;
 
-	// ÁÙÊ±»º³åÇø
+	// ä¸´æ—¶ç¼“å†²åŒº
 	double* c = new double[n];
 	double* q = mtxQ.GetData();
 
-	// Çó½â
+	// æ±‚è§£
 	for (i = 0; i <= n - 1; i++)
 	{
 		d = 0.0;
@@ -1615,48 +1615,48 @@ bool CLEquation::GetRootsetMqr(CMatrix& mtxResult, CMatrix& mtxQ, CMatrix& mtxR)
 		pDataConst[i] = (c[i] - d) / pDataCoef[i*n + i];
 	}
 
-	// ÊÍ·ÅÄÚ´æ
+	// é‡Šæ”¾å†…å­˜
 	delete[] c;
 
 	return true;
 }
 
 //////////////////////////////////////////////////////////////////////
-// Çó½âÏßĞÔ×îĞ¡¶ş³ËÎÊÌâµÄ¹ãÒåÄæ·¨
+// æ±‚è§£çº¿æ€§æœ€å°äºŒä¹˜é—®é¢˜çš„å¹¿ä¹‰é€†æ³•
 //
-// ²ÎÊı£º
-// 1. CMatrix& mtxResult - CMatrixÒıÓÃ¶ÔÏó£¬·µ»Ø·½³Ì×é½â¾ØÕó
-// 2. CMatrix& mtxAP - CMatrixÒıÓÃ¶ÔÏó£¬·µ»ØÏµÊı¾ØÕóµÄ¹ãÒåÄæ¾ØÕó
-// 3. CMatrix& mtxU - CMatrixÒıÓÃ¶ÔÏó£¬·µ»ØU¾ØÕó
-// 4. CMatrix& mtxV - CMatrixÒıÓÃ¶ÔÏó£¬·µ»ØV¾ØÕó
-// 5. double eps - ¿ØÖÆ¾«¶È£¬Ä¬ÈÏÖµÎª0.000001
+// å‚æ•°ï¼š
+// 1. CMatrix& mtxResult - CMatrixå¼•ç”¨å¯¹è±¡ï¼Œè¿”å›æ–¹ç¨‹ç»„è§£çŸ©é˜µ
+// 2. CMatrix& mtxAP - CMatrixå¼•ç”¨å¯¹è±¡ï¼Œè¿”å›ç³»æ•°çŸ©é˜µçš„å¹¿ä¹‰é€†çŸ©é˜µ
+// 3. CMatrix& mtxU - CMatrixå¼•ç”¨å¯¹è±¡ï¼Œè¿”å›UçŸ©é˜µ
+// 4. CMatrix& mtxV - CMatrixå¼•ç”¨å¯¹è±¡ï¼Œè¿”å›VçŸ©é˜µ
+// 5. double eps - æ§åˆ¶ç²¾åº¦ï¼Œé»˜è®¤å€¼ä¸º0.000001
 //
-// ·µ»ØÖµ£ºbool ĞÍ£¬·½³Ì×éÇó½âÊÇ·ñ³É¹¦
+// è¿”å›å€¼ï¼šbool å‹ï¼Œæ–¹ç¨‹ç»„æ±‚è§£æ˜¯å¦æˆåŠŸ
 //////////////////////////////////////////////////////////////////////
 bool CLEquation::GetRootsetGinv(CMatrix& mtxResult, CMatrix& mtxAP, CMatrix& mtxU, CMatrix& mtxV, double eps /*= 0.000001*/)
 {
 	int i, j;
 
-	// ·½³Ì¸öÊıºÍÎ´ÖªÊı¸öÊı
+	// æ–¹ç¨‹ä¸ªæ•°å’ŒæœªçŸ¥æ•°ä¸ªæ•°
 	int m = m_mtxCoef.GetNumRows();
 	int n = m_mtxCoef.GetNumColumns();
 
-	// ³õÊ¼»¯½âÏòÁ¿
+	// åˆå§‹åŒ–è§£å‘é‡
 	mtxResult.Init(n, 1);
 
 	double* pDataConst = m_mtxConst.GetData();
 	double* x = mtxResult.GetData();
 
-	// ÁÙÊ±¾ØÕó
+	// ä¸´æ—¶çŸ©é˜µ
 	CMatrix mtxA = m_mtxCoef;
 
-	// Çó¹ãÒåÄæ¾ØÕó
+	// æ±‚å¹¿ä¹‰é€†çŸ©é˜µ
 	if (!mtxA.GInvertUV(mtxAP, mtxU, mtxV, eps))
 		return false;
 
 	double* pAPData = mtxAP.GetData();
 
-	// Çó½â
+	// æ±‚è§£
 	for (i = 0; i <= n - 1; i++)
 	{
 		x[i] = 0.0;
@@ -1668,27 +1668,27 @@ bool CLEquation::GetRootsetGinv(CMatrix& mtxResult, CMatrix& mtxAP, CMatrix& mtx
 }
 
 //////////////////////////////////////////////////////////////////////
-// ²¡Ì¬·½³Ì×éµÄÇó½â
+// ç—…æ€æ–¹ç¨‹ç»„çš„æ±‚è§£
 //
-// ²ÎÊı£º
-// 1. CMatrix& mtxResult - CMatrixÒıÓÃ¶ÔÏó£¬·µ»Ø·½³Ì×é½â¾ØÕó
-// 2. int nMaxIt - µş¼Ó´ÎÊı£¬Ä¬ÈÏÖµÎª60
-// 3. double eps - ¿ØÖÆ¾«¶È£¬Ä¬ÈÏÖµÎª0.000001
+// å‚æ•°ï¼š
+// 1. CMatrix& mtxResult - CMatrixå¼•ç”¨å¯¹è±¡ï¼Œè¿”å›æ–¹ç¨‹ç»„è§£çŸ©é˜µ
+// 2. int nMaxIt - å åŠ æ¬¡æ•°ï¼Œé»˜è®¤å€¼ä¸º60
+// 3. double eps - æ§åˆ¶ç²¾åº¦ï¼Œé»˜è®¤å€¼ä¸º0.000001
 //
-// ·µ»ØÖµ£ºbool ĞÍ£¬·½³Ì×éÇó½âÊÇ·ñ³É¹¦
+// è¿”å›å€¼ï¼šbool å‹ï¼Œæ–¹ç¨‹ç»„æ±‚è§£æ˜¯å¦æˆåŠŸ
 //////////////////////////////////////////////////////////////////////
 bool CLEquation::GetRootsetMorbid(CMatrix& mtxResult, int nMaxIt /*= 60*/, double eps /*= 0.000001*/)
 {
 	int i, k;
 	double q, qq;
 
-	// ·½³ÌµÄ½×Êı
+	// æ–¹ç¨‹çš„é˜¶æ•°
 	int n = GetNumUnknowns();
 
-	// Éè¶¨µü´ú´ÎÊı, È±Ê¡Îª60
+	// è®¾å®šè¿­ä»£æ¬¡æ•°, ç¼ºçœä¸º60
 	i = nMaxIt;
 
-	// ÓÃÈ«Ñ¡Ö÷Ôª¸ßË¹ÏûÔª·¨Çó½â
+	// ç”¨å…¨é€‰ä¸»å…ƒé«˜æ–¯æ¶ˆå…ƒæ³•æ±‚è§£
 	CLEquation leqs(m_mtxCoef, m_mtxConst);
 	if (!leqs.GetRootsetGauss(mtxResult))
 		return false;
@@ -1697,18 +1697,18 @@ bool CLEquation::GetRootsetMorbid(CMatrix& mtxResult, int nMaxIt /*= 60*/, doubl
 	q = 1.0 + eps;
 	while (q >= eps)
 	{
-		// µü´ú´ÎÊıÒÑ´ï×î´óÖµ£¬ÈÔÎªÇóµÃ½á¹û£¬Çó½âÊ§°Ü
+		// è¿­ä»£æ¬¡æ•°å·²è¾¾æœ€å¤§å€¼ï¼Œä»ä¸ºæ±‚å¾—ç»“æœï¼Œæ±‚è§£å¤±è´¥
 		if (i == 0)
 			return false;
 
-		// µü´ú´ÎÊı¼õ1
+		// è¿­ä»£æ¬¡æ•°å‡1
 		i = i - 1;
 
-		// ¾ØÕóÔËËã
+		// çŸ©é˜µè¿ç®—
 		CMatrix mtxE = m_mtxCoef*mtxResult;
 		CMatrix mtxR = m_mtxConst - mtxE;
 
-		// ÓÃÈ«Ñ¡Ö÷Ôª¸ßË¹ÏûÔª·¨Çó½â
+		// ç”¨å…¨é€‰ä¸»å…ƒé«˜æ–¯æ¶ˆå…ƒæ³•æ±‚è§£
 		CLEquation leqs(m_mtxCoef, mtxR);
 		CMatrix mtxRR;
 		if (!leqs.GetRootsetGauss(mtxRR))
@@ -1729,6 +1729,6 @@ bool CLEquation::GetRootsetMorbid(CMatrix& mtxResult, int nMaxIt /*= 60*/, doubl
 
 	}
 
-	// Çó½â³É¹¦
+	// æ±‚è§£æˆåŠŸ
 	return true;
 }

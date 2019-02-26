@@ -1,28 +1,28 @@
-// PersonalMethodLibrary.cpp : ¶¨Òå DLL Ó¦ÓÃ³ÌĞòµÄµ¼³öº¯Êı¡£
+// PersonalMethodLibrary.cpp : å®šä¹‰ DLL åº”ç”¨ç¨‹åºçš„å¯¼å‡ºå‡½æ•°ã€‚
 //
 
 #include "stdafx.h"
 
 /**************************************************
 *
-* Description:¸÷Ä£¿éËµÃ÷
+* Description:å„æ¨¡å—è¯´æ˜
 *
 **************************************************/
-//AES AES¼ÓÃÜ
-//MD5 MD5Öµ¼ÆËã
-//Fit ÄâºÏ
-//Complex ¸´Êı
-//Integral ÊıÖµ»ı·Ö
-//Interpolate ²åÖµ
-//Matrix ¾ØÕó
-//LEquations Çó½âÏßĞÔ·½³Ì×é
-//NLEquations Çó½â·ÇÏßĞÔ·½³Ì×é
-//IntegralTransform »ı·Ö±ä»»
+//AES AESåŠ å¯†
+//MD5 MD5å€¼è®¡ç®—
+//Fit æ‹Ÿåˆ
+//Complex å¤æ•°
+//Integral æ•°å€¼ç§¯åˆ†
+//Interpolate æ’å€¼
+//Matrix çŸ©é˜µ
+//LEquations æ±‚è§£çº¿æ€§æ–¹ç¨‹ç»„
+//NLEquations æ±‚è§£éçº¿æ€§æ–¹ç¨‹ç»„
+//IntegralTransform ç§¯åˆ†å˜æ¢
 
-//DataAnalysis ÊıÖµÍ³¼Æ·ÖÎö
-//SortAlgorithm ÅÅĞòËã·¨
-//StringBuffer ×Ö·û´®´¦Àí
-//Express ¹«Ê½¼ÆËã
+//DataAnalysis æ•°å€¼ç»Ÿè®¡åˆ†æ
+//SortAlgorithm æ’åºç®—æ³•
+//StringBuffer å­—ç¬¦ä¸²å¤„ç†
+//Express å…¬å¼è®¡ç®—
 
 #ifdef AFX_CLASS  
 #define AFX_EX_CLASS _declspec(dllexport)  
@@ -33,7 +33,7 @@
 
 /**************************************************
 *
-*function£º»ñµÃDLLÃû³Æ
+*functionï¼šè·å¾—DLLåç§°
 *
 **************************************************/
 extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
@@ -48,14 +48,14 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 
 /**************************************************
 *
-*function£ºN»ÊºóÎÊÌâ-Çó½âËã·¨1
+*functionï¼šNçš‡åé—®é¢˜-æ±‚è§£ç®—æ³•1
 *
 **************************************************/
 //#include<iostream>
 //#define N 8
 //using namespace std;
 //static int gEightQueen[N] = { 0 }, gCount = 0;
-//void print()//Êä³öÃ¿Ò»ÖÖÇé¿öÏÂÆåÅÌÖĞ»ÊºóµÄ°Ú·ÅÇé¿ö
+//void print()//è¾“å‡ºæ¯ä¸€ç§æƒ…å†µä¸‹æ£‹ç›˜ä¸­çš‡åçš„æ‘†æ”¾æƒ…å†µ
 //{
 //	cout << gCount <<endl;
 //	return;
@@ -71,7 +71,7 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 //	}
 //	cout << "==========================\n";
 //}
-//int check_pos_valid(int loop, int value)//¼ì²éÊÇ·ñ´æÔÚÓĞ¶à¸ö»ÊºóÔÚÍ¬Ò»ĞĞ/ÁĞ/¶Ô½ÇÏßµÄÇé¿ö
+//int check_pos_valid(int loop, int value)//æ£€æŸ¥æ˜¯å¦å­˜åœ¨æœ‰å¤šä¸ªçš‡ååœ¨åŒä¸€è¡Œ/åˆ—/å¯¹è§’çº¿çš„æƒ…å†µ
 //{
 //	int index;
 //	int data;
@@ -118,50 +118,50 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 
 /**************************************************
 *
-*function£ºN»ÊºóÎÊÌâ-Çó½âËã·¨2
-* ÊÔÌ½-»ØËİËã·¨£¬µİ¹éÊµÏÖ
+*functionï¼šNçš‡åé—®é¢˜-æ±‚è§£ç®—æ³•2
+* è¯•æ¢-å›æº¯ç®—æ³•ï¼Œé€’å½’å®ç°
 *
 **************************************************/
 //#include "iostream"  
 //using namespace std;
 //#include "time.h"  
 //
-//// sumÓÃÀ´¼ÇÂ¼»Êºó·ÅÖÃ³É¹¦µÄ²»Í¬²¼¾ÖÊı£»upperlimÓÃÀ´±ê¼ÇËùÓĞÁĞ¶¼ÒÑ¾­·ÅÖÃºÃÁË»Êºó¡£  
+//// sumç”¨æ¥è®°å½•çš‡åæ”¾ç½®æˆåŠŸçš„ä¸åŒå¸ƒå±€æ•°ï¼›upperlimç”¨æ¥æ ‡è®°æ‰€æœ‰åˆ—éƒ½å·²ç»æ”¾ç½®å¥½äº†çš‡åã€‚  
 //long sum = 0, upperlim = 1;
 //
-//// ÊÔÌ½Ëã·¨´Ó×îÓÒ±ßµÄÁĞ¿ªÊ¼¡£  
+//// è¯•æ¢ç®—æ³•ä»æœ€å³è¾¹çš„åˆ—å¼€å§‹ã€‚  
 //void test(long row, long ld, long rd)
 //{
 //	if (row != upperlim)
 //	{
-//		// row£¬ld£¬rd½øĞĞ¡°»ò¡±ÔËËã£¬ÇóµÃËùÓĞ¿ÉÒÔ·ÅÖÃ»ÊºóµÄÁĞ,¶ÔÓ¦Î»Îª0£¬  
-//		// È»ºóÔÙÈ¡·´ºó¡°Óë¡±ÉÏÈ«1µÄÊı£¬À´ÇóµÃµ±Ç°ËùÓĞ¿ÉÒÔ·ÅÖÃ»ÊºóµÄÎ»ÖÃ£¬¶ÔÓ¦ÁĞ¸ÄÎª1  
-//		// Ò²¾ÍÊÇÇóÈ¡µ±Ç°ÄÄĞ©ÁĞ¿ÉÒÔ·ÅÖÃ»Êºó  
+//		// rowï¼Œldï¼Œrdè¿›è¡Œâ€œæˆ–â€è¿ç®—ï¼Œæ±‚å¾—æ‰€æœ‰å¯ä»¥æ”¾ç½®çš‡åçš„åˆ—,å¯¹åº”ä½ä¸º0ï¼Œ  
+//		// ç„¶åå†å–ååâ€œä¸â€ä¸Šå…¨1çš„æ•°ï¼Œæ¥æ±‚å¾—å½“å‰æ‰€æœ‰å¯ä»¥æ”¾ç½®çš‡åçš„ä½ç½®ï¼Œå¯¹åº”åˆ—æ”¹ä¸º1  
+//		// ä¹Ÿå°±æ˜¯æ±‚å–å½“å‰å“ªäº›åˆ—å¯ä»¥æ”¾ç½®çš‡å  
 //		long pos = upperlim & ~(row | ld | rd);
-//		while (pos)    // 0 -- »ÊºóÃ»ÓĞµØ·½¿É·Å£¬»ØËİ  
+//		while (pos)    // 0 -- çš‡åæ²¡æœ‰åœ°æ–¹å¯æ”¾ï¼Œå›æº¯  
 //		{
-//			// ¿½±´pos×îÓÒ±ßÎª1µÄbit£¬ÆäÓàbitÖÃ0  
-//			// Ò²¾ÍÊÇÈ¡µÃ¿ÉÒÔ·Å»ÊºóµÄ×îÓÒ±ßµÄÁĞ  
+//			// æ‹·è´posæœ€å³è¾¹ä¸º1çš„bitï¼Œå…¶ä½™bitç½®0  
+//			// ä¹Ÿå°±æ˜¯å–å¾—å¯ä»¥æ”¾çš‡åçš„æœ€å³è¾¹çš„åˆ—  
 //			long p = pos & -pos;
 //
-//			// ½«pos×îÓÒ±ßÎª1µÄbitÇåÁã  
-//			// Ò²¾ÍÊÇÎª»ñÈ¡ÏÂÒ»´ÎµÄ×îÓÒ¿ÉÓÃÁĞÊ¹ÓÃ×ö×¼±¸£¬  
-//			// ³ÌĞò½«À´»á»ØËİµ½Õâ¸öÎ»ÖÃ¼ÌĞøÊÔÌ½  
+//			// å°†posæœ€å³è¾¹ä¸º1çš„bitæ¸…é›¶  
+//			// ä¹Ÿå°±æ˜¯ä¸ºè·å–ä¸‹ä¸€æ¬¡çš„æœ€å³å¯ç”¨åˆ—ä½¿ç”¨åšå‡†å¤‡ï¼Œ  
+//			// ç¨‹åºå°†æ¥ä¼šå›æº¯åˆ°è¿™ä¸ªä½ç½®ç»§ç»­è¯•æ¢  
 //			pos -= p;
 //
-//			// row + p£¬½«µ±Ç°ÁĞÖÃ1£¬±íÊ¾¼ÇÂ¼Õâ´Î»Êºó·ÅÖÃµÄÁĞ¡£  
-//			// (ld + p) << 1£¬±ê¼Çµ±Ç°»Êºó×ó±ßÏàÁÚµÄÁĞ²»ÔÊĞíÏÂÒ»¸ö»Êºó·ÅÖÃ¡£  
-//			// (ld + p) >> 1£¬±ê¼Çµ±Ç°»ÊºóÓÒ±ßÏàÁÚµÄÁĞ²»ÔÊĞíÏÂÒ»¸ö»Êºó·ÅÖÃ¡£  
-//			// ´Ë´¦µÄÒÆÎ»²Ù×÷Êµ¼ÊÉÏÊÇ¼ÇÂ¼¶Ô½ÇÏßÉÏµÄÏŞÖÆ£¬Ö»ÊÇÒòÎªÎÊÌâ¶¼»¯¹é  
-//			// µ½Ò»ĞĞÍø¸ñÉÏÀ´½â¾ö£¬ËùÒÔ±íÊ¾ÎªÁĞµÄÏŞÖÆ¾Í¿ÉÒÔÁË¡£ÏÔÈ»£¬Ëæ×ÅÒÆÎ»  
-//			// ÔÚÃ¿´ÎÑ¡ÔñÁĞÖ®Ç°½øĞĞ£¬Ô­À´N¡ÁNÍø¸ñÖĞÄ³¸öÒÑ·ÅÖÃµÄ»ÊºóÕë¶ÔÆä¶Ô½ÇÏß  
-//			// ÉÏ²úÉúµÄÏŞÖÆ¶¼±»¼ÇÂ¼ÏÂÀ´ÁË  
+//			// row + pï¼Œå°†å½“å‰åˆ—ç½®1ï¼Œè¡¨ç¤ºè®°å½•è¿™æ¬¡çš‡åæ”¾ç½®çš„åˆ—ã€‚  
+//			// (ld + p) << 1ï¼Œæ ‡è®°å½“å‰çš‡åå·¦è¾¹ç›¸é‚»çš„åˆ—ä¸å…è®¸ä¸‹ä¸€ä¸ªçš‡åæ”¾ç½®ã€‚  
+//			// (ld + p) >> 1ï¼Œæ ‡è®°å½“å‰çš‡åå³è¾¹ç›¸é‚»çš„åˆ—ä¸å…è®¸ä¸‹ä¸€ä¸ªçš‡åæ”¾ç½®ã€‚  
+//			// æ­¤å¤„çš„ç§»ä½æ“ä½œå®é™…ä¸Šæ˜¯è®°å½•å¯¹è§’çº¿ä¸Šçš„é™åˆ¶ï¼Œåªæ˜¯å› ä¸ºé—®é¢˜éƒ½åŒ–å½’  
+//			// åˆ°ä¸€è¡Œç½‘æ ¼ä¸Šæ¥è§£å†³ï¼Œæ‰€ä»¥è¡¨ç¤ºä¸ºåˆ—çš„é™åˆ¶å°±å¯ä»¥äº†ã€‚æ˜¾ç„¶ï¼Œéšç€ç§»ä½  
+//			// åœ¨æ¯æ¬¡é€‰æ‹©åˆ—ä¹‹å‰è¿›è¡Œï¼ŒåŸæ¥NÃ—Nç½‘æ ¼ä¸­æŸä¸ªå·²æ”¾ç½®çš„çš‡åé’ˆå¯¹å…¶å¯¹è§’çº¿  
+//			// ä¸Šäº§ç”Ÿçš„é™åˆ¶éƒ½è¢«è®°å½•ä¸‹æ¥äº†  
 //			test(row + p, (ld + p) << 1, (rd + p) >> 1);
 //		}
 //	}
 //	else
 //	{
-//		// rowµÄËùÓĞÎ»¶¼Îª1£¬¼´ÕÒµ½ÁËÒ»¸ö³É¹¦µÄ²¼¾Ö£¬»ØËİ  
+//		// rowçš„æ‰€æœ‰ä½éƒ½ä¸º1ï¼Œå³æ‰¾åˆ°äº†ä¸€ä¸ªæˆåŠŸçš„å¸ƒå±€ï¼Œå›æº¯  
 //		sum++;
 //	}
 //}
@@ -170,7 +170,7 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 //{
 //	time_t tm;
 //	int n = 16;
-//	cout << "ÊäÈë»ÊºóÊı£º";
+//	cout << "è¾“å…¥çš‡åæ•°ï¼š";
 //	cin >> n;
 //	cout << endl;
 //
@@ -178,21 +178,21 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 //		n = atoi(argv[1]);
 //	tm = time(0);
 //
-//	// ÒòÎªÕûĞÍÊıµÄÏŞÖÆ£¬×î´óÖ»ÄÜ32Î»£¬  
-//	// Èç¹ûÏë´¦ÀíN´óÓÚ32µÄ»ÊºóÎÊÌâ£¬ĞèÒª  
-//	// ÓÃbitsetÊı¾İ½á¹¹½øĞĞ´æ´¢  
+//	// å› ä¸ºæ•´å‹æ•°çš„é™åˆ¶ï¼Œæœ€å¤§åªèƒ½32ä½ï¼Œ  
+//	// å¦‚æœæƒ³å¤„ç†Nå¤§äº32çš„çš‡åé—®é¢˜ï¼Œéœ€è¦  
+//	// ç”¨bitsetæ•°æ®ç»“æ„è¿›è¡Œå­˜å‚¨  
 //	if ((n < 1) || (n > 32))
 //	{
-//		printf(" Ö»ÄÜ¼ÆËã1-32Ö®¼ä\n");
+//		printf(" åªèƒ½è®¡ç®—1-32ä¹‹é—´\n");
 //		exit(-1);
 //	}
-//	printf("%d »Êºó\n", n);
+//	printf("%d çš‡å\n", n);
 //
-//	// N¸ö»ÊºóÖ»ĞèNÎ»´æ´¢£¬NÁĞÖĞÄ³ÁĞÓĞ»ÊºóÔò¶ÔÓ¦bitÖÃ1¡£  
+//	// Nä¸ªçš‡ååªéœ€Nä½å­˜å‚¨ï¼ŒNåˆ—ä¸­æŸåˆ—æœ‰çš‡ååˆ™å¯¹åº”bitç½®1ã€‚  
 //	upperlim = (upperlim << n) - 1;
 //
 //	test(0, 0, 0);
-//	printf("¹²ÓĞ%ldÖÖÅÅÁĞ, ¼ÆËãÊ±¼ä%dÃë \n", sum, (int)(time(0) - tm));
+//	printf("å…±æœ‰%ldç§æ’åˆ—, è®¡ç®—æ—¶é—´%dç§’ \n", sum, (int)(time(0) - tm));
 //	system("pause");
 //	return 0;
 //}
@@ -200,31 +200,31 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 
 /**************************************************
 *
-*function£ºÊı¶À½â·¨
+*functionï¼šæ•°ç‹¬è§£æ³•
 *
 **************************************************/
 //bool sign = false;
 //
-// //´´½¨Êı¶À¾ØÕó 
+// //åˆ›å»ºæ•°ç‹¬çŸ©é˜µ 
 //int num[9][9];
 //
-// //º¯ÊıÉùÃ÷ 
+// //å‡½æ•°å£°æ˜ 
 //void Input();
 //void Output();
 //bool Check(int n, int key);
 //void DFS(int n);
 //
-// //Ö÷º¯Êı 
+// //ä¸»å‡½æ•° 
 //int main()
 //{
-//	cout << "ÇëÊäÈëÒ»¸ö9*9µÄÊı¶À¾ØÕó£¬¿ÕÎ»ÒÔ0±íÊ¾:" << endl;
+//	cout << "è¯·è¾“å…¥ä¸€ä¸ª9*9çš„æ•°ç‹¬çŸ©é˜µï¼Œç©ºä½ä»¥0è¡¨ç¤º:" << endl;
 //	Input();
 //	DFS(0);
 //	Output();
 //	system("pause");
 //}
 //
-// //¶ÁÈëÊı¶À¾ØÕó 
+// //è¯»å…¥æ•°ç‹¬çŸ©é˜µ 
 //void Input()
 //{
 //	char temp[9][9];
@@ -238,7 +238,7 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 //	}
 //}
 //
-// //Êä³öÊı¶À¾ØÕó 
+// //è¾“å‡ºæ•°ç‹¬çŸ©é˜µ 
 //void Output()
 //{
 //	cout << endl;
@@ -260,32 +260,32 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 //	}
 //}
 //
-// //ÅĞ¶ÏkeyÌîÈënÊ±ÊÇ·ñÂú×ãÌõ¼ş 
+// //åˆ¤æ–­keyå¡«å…¥næ—¶æ˜¯å¦æ»¡è¶³æ¡ä»¶ 
 //bool Check(int n, int key)
 //{
-//	 //ÅĞ¶ÏnËùÔÚºáÁĞÊÇ·ñºÏ·¨ 
+//	 //åˆ¤æ–­næ‰€åœ¨æ¨ªåˆ—æ˜¯å¦åˆæ³• 
 //	for (int i = 0; i < 9; i++)
 //	{
-//		 //jÎªnÊú×ø±ê 
+//		 //jä¸ºnç«–åæ ‡ 
 //		int j = n / 9;
 //		if (num[j][i] == key) return false;
 //	}
 //
-//	 //ÅĞ¶ÏnËùÔÚÊúÁĞÊÇ·ñºÏ·¨ 
+//	 //åˆ¤æ–­næ‰€åœ¨ç«–åˆ—æ˜¯å¦åˆæ³• 
 //	for (int i = 0; i < 9; i++)
 //	{
-//		 //jÎªnºá×ø±ê 
+//		 //jä¸ºnæ¨ªåæ ‡ 
 //		int j = n % 9;
 //		if (num[i][j] == key) return false;
 //	}
 //
-//	 //xÎªnËùÔÚµÄĞ¡¾Å¹¬¸ñ×ó¶¥µãÊú×ø±ê 
+//	 //xä¸ºnæ‰€åœ¨çš„å°ä¹å®«æ ¼å·¦é¡¶ç‚¹ç«–åæ ‡ 
 //	int x = n / 9 / 3 * 3;
 //
-//	 //yÎªnËùÔÚµÄĞ¡¾Å¹¬¸ñ×ó¶¥µãºá×ø±ê 
+//	 //yä¸ºnæ‰€åœ¨çš„å°ä¹å®«æ ¼å·¦é¡¶ç‚¹æ¨ªåæ ‡ 
 //	int y = n % 9 / 3 * 3;
 //
-//	 //ÅĞ¶ÏnËùÔÚµÄĞ¡¾Å¹¬¸ñÊÇ·ñºÏ·¨ 
+//	 //åˆ¤æ–­næ‰€åœ¨çš„å°ä¹å®«æ ¼æ˜¯å¦åˆæ³• 
 //	for (int i = x; i < x + 3; i++)
 //	{
 //		for (int j = y; j < y + 3; j++)
@@ -294,38 +294,38 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 //		}
 //	}
 //
-//	 //È«²¿ºÏ·¨£¬·µ»ØÕıÈ· 
+//	 //å…¨éƒ¨åˆæ³•ï¼Œè¿”å›æ­£ç¡® 
 //	return true;
 //}
 //
-// //ÉîËÑ¹¹ÔìÊı¶À 
+// //æ·±æœæ„é€ æ•°ç‹¬ 
 //void DFS(int n)
 //{
-//	 //ËùÓĞµÄ¶¼·ûºÏ£¬ÍË³öµİ¹é 
+//	 //æ‰€æœ‰çš„éƒ½ç¬¦åˆï¼Œé€€å‡ºé€’å½’ 
 //	if (n > 80)
 //	{
 //		sign = true;
 //		return;
 //	}
-//	 //µ±Ç°Î»²»Îª¿ÕÊ±Ìø¹ı 
+//	 //å½“å‰ä½ä¸ä¸ºç©ºæ—¶è·³è¿‡ 
 //	if (num[n / 9][n % 9] != 0)
 //	{
 //		DFS(n + 1);
 //	}
 //	else
 //	{
-//		 //·ñÔò¶Ôµ±Ç°Î»½øĞĞÃ¶¾Ù²âÊÔ 
+//		 //å¦åˆ™å¯¹å½“å‰ä½è¿›è¡Œæšä¸¾æµ‹è¯• 
 //		for (int i = 1; i <= 9; i++)
 //		{
-//			 //Âú×ãÌõ¼şÊ±ÌîÈëÊı×Ö 
+//			 //æ»¡è¶³æ¡ä»¶æ—¶å¡«å…¥æ•°å­— 
 //			if (Check(n, i) == true)
 //			{
 //				num[n / 9][n % 9] = i;
-//				 //¼ÌĞøËÑË÷ 
+//				 //ç»§ç»­æœç´¢ 
 //				DFS(n + 1);
-//				 //·µ»ØÊ±Èç¹û¹¹Ôì³É¹¦£¬ÔòÖ±½ÓÍË³ö 
+//				 //è¿”å›æ—¶å¦‚æœæ„é€ æˆåŠŸï¼Œåˆ™ç›´æ¥é€€å‡º 
 //				if (sign == true) return;
-//				 //Èç¹û¹¹Ôì²»³É¹¦£¬»¹Ô­µ±Ç°Î» 
+//				 //å¦‚æœæ„é€ ä¸æˆåŠŸï¼Œè¿˜åŸå½“å‰ä½ 
 //				num[n / 9][n % 9] = 0;
 //			}
 //		}
@@ -335,7 +335,7 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 
 /**************************************************
 *
-*function£ºÍê³É¶Ë¿ÚÊµÀı
+*functionï¼šå®Œæˆç«¯å£å®ä¾‹
 *
 **************************************************/
 //#include <Winsock2.h> 
@@ -349,7 +349,7 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 //#define DefaultPort 20000  
 //#define DataBuffSize 8 * 1024
 //
-////½ÓÊÕÊı¾İ´æ·ÅÀà
+////æ¥æ”¶æ•°æ®å­˜æ”¾ç±»
 //class CSocketData
 //{
 //public:
@@ -380,7 +380,7 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 //private:
 //};
 //typedef CSocketData* PSOCKETDATA;
-////Íê³É¶Ë¿ÚÀàĞÍÅĞ¶Ï
+////å®Œæˆç«¯å£ç±»å‹åˆ¤æ–­
 //enum TYPE_SOCKET
 //{
 //	SEND_SOCKET, RECV_SOCKET
@@ -414,21 +414,21 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 //}IOCPDATA;
 //typedef list<IOCPDATA> IOCPLIST;
 //
-////×ÊÔ´Á´±í(±£Ö¤¹Ø±Õ³ÌĞòÊ±£¬ËùÓĞ×ÊÔ´Õı³£ÊÍ·Å)
+////èµ„æºé“¾è¡¨(ä¿è¯å…³é—­ç¨‹åºæ—¶ï¼Œæ‰€æœ‰èµ„æºæ­£å¸¸é‡Šæ”¾)
 //IOCPLIST IOCPList;
-////»¥³âÁ¿
+////äº’æ–¥é‡
 //HANDLE hmutex;
 //
 //void main()
 //{
-//	//´´½¨»¥³âÁ¿
+//	//åˆ›å»ºäº’æ–¥é‡
 //	hmutex = CreateMutex(NULL, TRUE, L"ICOPLIST");
 //	ReleaseMutex(hmutex);
 //
-//	//Íê³É¶Ë¿Ú¾ä±ú
+//	//å®Œæˆç«¯å£å¥æŸ„
 //	HANDLE completionPort;
 //
-//	//³õÊ¼»¯Ì×½Ó×Ö
+//	//åˆå§‹åŒ–å¥—æ¥å­—
 //	WSADATA wsaData;
 //	DWORD ret;
 //	if (ret = WSAStartup(0x0202, &wsaData) != 0)
@@ -436,17 +436,17 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 //		std::cout << "WSAStartup failed. Error:" << ret << std::endl;
 //		return;
 //	}
-//	//´´½¨Íê³É¶Ë¿Ú
+//	//åˆ›å»ºå®Œæˆç«¯å£
 //	completionPort = CreateIoCompletionPort(INVALID_HANDLE_VALUE, NULL, 0, 0);
 //	if (completionPort == NULL)
 //	{
 //		std::cout << "CreateIoCompletionPort failed. Error:" << GetLastError() << std::endl;
 //		return;
 //	}
-//	//»ñµÃÏµÍ³ĞÅÏ¢
+//	//è·å¾—ç³»ç»Ÿä¿¡æ¯
 //	SYSTEM_INFO mySysInfo;
 //	GetSystemInfo(&mySysInfo);
-//	// ´´½¨ 2 * CPUºËÊı + 1 ¸öÏß³Ì  
+//	// åˆ›å»º 2 * CPUæ ¸æ•° + 1 ä¸ªçº¿ç¨‹  
 //	DWORD threadID;
 //	for (DWORD i = 0; i < (mySysInfo.dwNumberOfProcessors * 2 + 1); ++i)
 //	{
@@ -460,7 +460,7 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 //
 //		CloseHandle(threadHandle);
 //	}
-//	//´´½¨¼àÌıÏß³Ì
+//	//åˆ›å»ºç›‘å¬çº¿ç¨‹
 //	{
 //		HANDLE threadHandle = CreateThread(NULL, 0, RecvProc, completionPort, 0, &threadID);
 //		if (threadHandle == NULL)
@@ -475,10 +475,10 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 //
 //	system("pause");
 //
-//	//¹Ø±ÕÍê³É¶Ë¿Ú£¬¼´ÍË³öËùÓĞÏß³Ì
+//	//å…³é—­å®Œæˆç«¯å£ï¼Œå³é€€å‡ºæ‰€æœ‰çº¿ç¨‹
 //	if (completionPort)
 //		CloseHandle(completionPort);
-//	//È·±£ËùÓĞ×ÊÔ´ÊÍ·Å
+//	//ç¡®ä¿æ‰€æœ‰èµ„æºé‡Šæ”¾
 //	for (IOCPLIST::iterator iter = IOCPList.begin(); iter != IOCPList.end();)
 //	{
 //		delete iter->pIoData->pSocketData;
@@ -501,7 +501,7 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 //	DWORD recvBytes;
 //	DWORD flags;
 //
-//	// Æô¶¯Ò»¸ö¼àÌısocket  
+//	// å¯åŠ¨ä¸€ä¸ªç›‘å¬socket  
 //	SOCKET listenSocket = WSASocket(AF_INET, SOCK_STREAM, 0, NULL, 0, WSA_FLAG_OVERLAPPED);
 //	if (listenSocket == INVALID_SOCKET)
 //	{
@@ -514,7 +514,7 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 //	internetAddr.sin_addr.s_addr = htonl(INADDR_ANY);
 //	internetAddr.sin_port = htons(DefaultPort);
 //
-//	// °ó¶¨¼àÌı¶Ë¿Ú  
+//	// ç»‘å®šç›‘å¬ç«¯å£  
 //	if (bind(listenSocket, (PSOCKADDR)&internetAddr, sizeof(internetAddr)) == SOCKET_ERROR)
 //	{
 //		std::cout << "Bind failed. Error:" << GetLastError() << std::endl;
@@ -527,7 +527,7 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 //		return 0;
 //	}
 //
-//	// ¿ªÊ¼ËÀÑ­»·£¬´¦ÀíÊı¾İ  
+//	// å¼€å§‹æ­»å¾ªç¯ï¼Œå¤„ç†æ•°æ®  
 //	while (1)
 //	{
 //		sockaddr_in  cliaddr;
@@ -539,9 +539,9 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 //			std::cout << "WSAAccept failed. Error:" << GetLastError() << std::endl;
 //			continue;
 //		}
-//		//¿Í»§¶ËIPµØÖ·£¨¿ÉÄÜÖ¸ÏòÖĞ¼äÂ·ÓÉÆ÷µØÖ·£©
+//		//å®¢æˆ·ç«¯IPåœ°å€ï¼ˆå¯èƒ½æŒ‡å‘ä¸­é—´è·¯ç”±å™¨åœ°å€ï¼‰
 //		cout << inet_ntoa(cliaddr.sin_addr) << endl;
-//		//¿Í»§¶ËIP¶Ë¿Ú
+//		//å®¢æˆ·ç«¯IPç«¯å£
 //		cout << cliaddr.sin_port << endl;
 //
 //		pHandleData = (LPPER_HANDLE_DATA)GlobalAlloc(GPTR, sizeof(PER_HANDLE_DATA));
@@ -550,7 +550,7 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 //			std::cout << "GlobalAlloc( HandleData ) failed. Error:" << GetLastError() << std::endl;
 //			continue;
 //		}
-//		//½«Ì×½Ó×ÖºÍÍê³É¶Ë¿Ú°ó¶¨
+//		//å°†å¥—æ¥å­—å’Œå®Œæˆç«¯å£ç»‘å®š
 //		pHandleData->socket = acceptSocket;
 //		if (CreateIoCompletionPort((HANDLE)acceptSocket, complationPort, (DWORD)pHandleData, 0) == NULL)
 //		{
@@ -616,14 +616,14 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 //			break;
 //		}
 //
-//		// ¼ì²éÊı¾İÊÇ·ñÒÑ¾­´«ÊäÍêÁË  
+//		// æ£€æŸ¥æ•°æ®æ˜¯å¦å·²ç»ä¼ è¾“å®Œäº†  
 //		if (bytesTransferred == 0)
 //		{
-//			//ÍË³öÏß³Ì
+//			//é€€å‡ºçº¿ç¨‹
 //			if (!pHandleData && !pIoData)
 //				break;
 //
-//			//¿Í»§¶Ë¶Ï¿ª	//Çå³ıÁĞ±í¶ÓÁĞÖĞ¶ÔÏó
+//			//å®¢æˆ·ç«¯æ–­å¼€	//æ¸…é™¤åˆ—è¡¨é˜Ÿåˆ—ä¸­å¯¹è±¡
 //			IOCPDATA Info;
 //			Info.pHandleData = pHandleData;
 //			Info.pIoData = pIoData;
@@ -633,7 +633,7 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 //				IOCPList.erase(iter);
 //			ReleaseMutex(hmutex);
 //
-//			//ÊÍ·Å×ÊÔ´
+//			//é‡Šæ”¾èµ„æº
 //			std::cout << " Start closing socket..." << std::endl;
 //			if (pHandleData)
 //			{
@@ -656,15 +656,15 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 //		{
 //			if (bytesTransferred == DataBuffSize)
 //			{
-//				//Êı¾İÎ´½ÓÊÕÍê¡¢´¦ÀíÒÑ½ÓÊÕÊı¾İ
+//				//æ•°æ®æœªæ¥æ”¶å®Œã€å¤„ç†å·²æ¥æ”¶æ•°æ®
 //				if (pIoData->pSocketData)
 //				{
 //					pIoData->pSocketData->add(pIoData->buffer);
 //				}
 //
-//				//Çå³ıÖØµş½á¹¹
+//				//æ¸…é™¤é‡å ç»“æ„
 //				ZeroMemory(&(pIoData->overlapped), sizeof(OVERLAPPED));
-//				//¼ÌĞøÍ¶·Å½ÓÊÕI/OÇëÇó
+//				//ç»§ç»­æŠ•æ”¾æ¥æ”¶I/Oè¯·æ±‚
 //				ZeroMemory(pIoData->buffer, sizeof(CHAR)*DataBuffSize);
 //				WSABUF buf;
 //				buf.len = DataBuffSize;
@@ -684,12 +684,12 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 //					pIoData->pSocketData->add(pIoData->buffer);
 //				}
 //
-//				//Çå³ıÖØµş½á¹¹			
+//				//æ¸…é™¤é‡å ç»“æ„			
 //				ZeroMemory(&(pIoData->overlapped), sizeof(OVERLAPPED));
-//				//Êä³ö½ÓÊÕµ½µÄÊı¾İ
+//				//è¾“å‡ºæ¥æ”¶åˆ°çš„æ•°æ®
 //				string str = "Send : \t" + pIoData->pSocketData->m_str + "\r\n";
 //				std::cout << str;
-//				//Í¶·Å·¢ËÍI/OÇëÇó
+//				//æŠ•æ”¾å‘é€I/Oè¯·æ±‚
 //				pIoData->Type = SEND_SOCKET;
 //				WSABUF buf;
 //				buf.len = pIoData->pSocketData->m_str.length();
@@ -706,7 +706,7 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 //		{
 //			if (bytesTransferred != pIoData->pSocketData->m_str.length())
 //			{
-//				//Êı¾İÎ´·¢ËÍÍê£¬¼ÌĞøÍ¶·Å·¢ËÍI/OÇëÇó
+//				//æ•°æ®æœªå‘é€å®Œï¼Œç»§ç»­æŠ•æ”¾å‘é€I/Oè¯·æ±‚
 //				pIoData->pSocketData->remove(bytesTransferred);
 //
 //				WSABUF buf;
@@ -722,9 +722,9 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 //			{
 //				pIoData->pSocketData->m_str = "";
 //
-//				//Çå³ıÖØµş½á¹¹			
+//				//æ¸…é™¤é‡å ç»“æ„			
 //				ZeroMemory(&(pIoData->overlapped), sizeof(OVERLAPPED));
-//				//Í¶·Å½ÓÊÕI/OÇëÇó
+//				//æŠ•æ”¾æ¥æ”¶I/Oè¯·æ±‚
 //				ZeroMemory(pIoData->buffer, sizeof(CHAR)*DataBuffSize);
 //				pIoData->Type = RECV_SOCKET;
 //				WSABUF buf;
@@ -746,7 +746,7 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 
 /**************************************************
 *
-*function£ºÊ®Áù½øÖÆ¸ñÊ½Êä³ö
+*functionï¼šåå…­è¿›åˆ¶æ ¼å¼è¾“å‡º
 *
 **************************************************/
 //void printHex(std::ifstream& ifs, std::ostream& ostream){
@@ -781,30 +781,30 @@ extern "C" AFX_EX_CLASS bool GetDllName(char * src,size_t len)
 
 /**************************************************
 *
-*function£ºwchar_tºÍstring×ª»»
+*functionï¼šwchar_tå’Œstringè½¬æ¢
 *
 **************************************************/
-////²»ÒªÍü¼ÇÔÚÊ¹ÓÃÍêwchar_t*ºódelete[]ÊÍ·ÅÄÚ´æ
+////ä¸è¦å¿˜è®°åœ¨ä½¿ç”¨å®Œwchar_t*ådelete[]é‡Šæ”¾å†…å­˜
 //wchar_t *multiByteToWideChar(string& pKey)
 //{
-//	//µÚÒ»´Îµ÷ÓÃ·µ»Ø×ª»»ºóµÄ×Ö·û´®³¤¶È£¬ÓÃÓÚÈ·ÈÏÎªwchar_t*¿ª±Ù¶à´óµÄÄÚ´æ¿Õ¼ä
+//	//ç¬¬ä¸€æ¬¡è°ƒç”¨è¿”å›è½¬æ¢åçš„å­—ç¬¦ä¸²é•¿åº¦ï¼Œç”¨äºç¡®è®¤ä¸ºwchar_t*å¼€è¾Ÿå¤šå¤§çš„å†…å­˜ç©ºé—´
 //	int pSize = MultiByteToWideChar(CP_OEMCP, 0, pKey.c_str(), strlen(pKey.c_str()) + 1, NULL, 0);
 //	wchar_t *pWCStrKey = new wchar_t[pSize];
-//	//µÚ¶ş´Îµ÷ÓÃ½«µ¥×Ö½Ú×Ö·û´®×ª»»³ÉË«×Ö½Ú×Ö·û´®
+//	//ç¬¬äºŒæ¬¡è°ƒç”¨å°†å•å­—èŠ‚å­—ç¬¦ä¸²è½¬æ¢æˆåŒå­—èŠ‚å­—ç¬¦ä¸²
 //	MultiByteToWideChar(CP_OEMCP, 0, pKey.c_str(), strlen(pKey.c_str()) + 1, pWCStrKey, pSize);
 //	return pWCStrKey;
 //}
-////²»ÒªÍü¼ÇÊ¹ÓÃÍêchar*ºódelete[]ÊÍ·ÅÄÚ´æ
+////ä¸è¦å¿˜è®°ä½¿ç”¨å®Œchar*ådelete[]é‡Šæ”¾å†…å­˜
 //char* wideCharToMultiByte(wchar_t* pWCStrKey)
 //{
-//	//µÚÒ»´Îµ÷ÓÃÈ·ÈÏ×ª»»ºóµ¥×Ö½Ú×Ö·û´®µÄ³¤¶È£¬ÓÃÓÚ¿ª±Ù¿Õ¼ä
+//	//ç¬¬ä¸€æ¬¡è°ƒç”¨ç¡®è®¤è½¬æ¢åå•å­—èŠ‚å­—ç¬¦ä¸²çš„é•¿åº¦ï¼Œç”¨äºå¼€è¾Ÿç©ºé—´
 //	int pSize = WideCharToMultiByte(CP_OEMCP, 0, pWCStrKey, wcslen(pWCStrKey), NULL, 0, NULL, NULL);
 //	char* pCStrKey = new char[pSize + 1];
-//	//µÚ¶ş´Îµ÷ÓÃ½«Ë«×Ö½Ú×Ö·û´®×ª»»³Éµ¥×Ö½Ú×Ö·û´®
+//	//ç¬¬äºŒæ¬¡è°ƒç”¨å°†åŒå­—èŠ‚å­—ç¬¦ä¸²è½¬æ¢æˆå•å­—èŠ‚å­—ç¬¦ä¸²
 //	WideCharToMultiByte(CP_OEMCP, 0, pWCStrKey, wcslen(pWCStrKey), pCStrKey, pSize, NULL, NULL);
 //	pCStrKey[pSize] = '\0';
 //	return pCStrKey;
 //
-//	//Èç¹ûÏëÒª×ª»»³Éstring£¬Ö±½Ó¸³Öµ¼´¿É
+//	//å¦‚æœæƒ³è¦è½¬æ¢æˆstringï¼Œç›´æ¥èµ‹å€¼å³å¯
 //	//string pKey = pCStrKey;
 //}

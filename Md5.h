@@ -15,29 +15,29 @@ typedef unsigned int uint32;
 class AFX_EX_CLASS CMD5 {
 public:
 	//
-	// 4¸ö¹¹Ôìº¯Êı
+	// 4ä¸ªæ„é€ å‡½æ•°
 	//
 
-	CMD5();                                           //Ä¬ÈÏ¹¹Ôìº¯Êı
-	CMD5(const void *input, size_t length);           //ÊäÈëÄÚ´æµØÖ·Óë³¤¶ÈĞÅÏ¢µÄ¹¹Ôìº¯Êı
-	CMD5(const string &str);                          //ÊäÈë×Ö·û´®µÄ¹¹Ôìº¯Êı
-	CMD5(ifstream &in);                               //ÊäÈëÁ÷µÄ¹¹Ôìº¯Êı
+	CMD5();                                           //é»˜è®¤æ„é€ å‡½æ•°
+	CMD5(const void *input, size_t length);           //è¾“å…¥å†…å­˜åœ°å€ä¸é•¿åº¦ä¿¡æ¯çš„æ„é€ å‡½æ•°
+	CMD5(const string &str);                          //è¾“å…¥å­—ç¬¦ä¸²çš„æ„é€ å‡½æ•°
+	CMD5(ifstream &in);                               //è¾“å…¥æµçš„æ„é€ å‡½æ•°
 
 	//
-	// 3¸öUpdateº¯Êı
+	// 3ä¸ªUpdateå‡½æ•°
 	//
 
-	void update(const void *input, size_t length);    //ÍùCMD5¶ÔÏóÄÚÌí¼ÓÄÚ´æ¿é
-	void update(const string &str);                   //Ìí¼Ó×Ö·û´®
-	void update(ifstream &in);                        //Ìí¼ÓÁ÷
+	void update(const void *input, size_t length);    //å¾€CMD5å¯¹è±¡å†…æ·»åŠ å†…å­˜å—
+	void update(const string &str);                   //æ·»åŠ å­—ç¬¦ä¸²
+	void update(ifstream &in);                        //æ·»åŠ æµ
 
 	//
-	// ¼ÆËãÊä³ö
+	// è®¡ç®—è¾“å‡º
 	//
 
-	const byte* digest();                             //¼ÆËãMD5Âë,²¢·µ»ØÖ¸ÏòËüµÄÖ¸Õë
-	string toString();                                //¼ÆËãMD5Âë,²¢·µ»ØÆä¶ÔÓ¦µÄ×Ö·û´®
-	void reset();                                     //ÖØÖÃ
+	const byte* digest();                             //è®¡ç®—MD5ç ,å¹¶è¿”å›æŒ‡å‘å®ƒçš„æŒ‡é’ˆ
+	string toString();                                //è®¡ç®—MD5ç ,å¹¶è¿”å›å…¶å¯¹åº”çš„å­—ç¬¦ä¸²
+	void reset();                                     //é‡ç½®
 private:
 	void update(const byte *input, size_t length);
 	void final();

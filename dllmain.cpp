@@ -1,4 +1,4 @@
-// dllmain.cpp : ¶¨Òå DLL Ó¦ÓÃ³ÌĞòµÄÈë¿Úµã¡£
+// dllmain.cpp : å®šä¹‰ DLL åº”ç”¨ç¨‹åºçš„å…¥å£ç‚¹ã€‚
 #include "stdafx.h"
 
 
@@ -13,7 +13,7 @@ bool APIENTRY DllMain( HMODULE hModule,
 	{
 		bool bflag = false;
 		wchar_t path[MAX_PATH];
-		//NULLÎªµ÷ÓÃ³ÌĞòµØÖ·£¬ hModuleÎª±¾¶¯Ì¬¿â³ÌĞò
+		//NULLä¸ºè°ƒç”¨ç¨‹åºåœ°å€ï¼Œ hModuleä¸ºæœ¬åŠ¨æ€åº“ç¨‹åº
 		GetModuleFileName(hModule, path, MAX_PATH);
 		wstring strPath(path);
 

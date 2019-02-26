@@ -20,7 +20,7 @@ public:
 	
 	
 	//
-	// Ñ­»·ÈßÓàĞ£ÑéCRC32
+	// å¾ªç¯å†—ä½™æ ¡éªŒCRC32
 	//
 
 public:
@@ -32,7 +32,7 @@ private:
 	unsigned long update_crc(unsigned long crc, unsigned char *buf, int len);
 
 	//
-	// HuffmanÊ÷ºÍHuffman±àÂë
+	// Huffmanæ ‘å’ŒHuffmanç¼–ç 
 	//
 
 public:
@@ -64,7 +64,7 @@ private:
 	void print_huffman_pre(huffman_node* pnode, map<unsigned char, string>& res);
 
 	//
-	// Ê®Áù½øÖÆÊä³öºÍ×ª»»
+	// åå…­è¿›åˆ¶è¾“å‡ºå’Œè½¬æ¢
 	//
 
 public:
@@ -75,7 +75,7 @@ public:
 
 
 	//
-	// KMP×Ö·û´®Æ¥Åä
+	// KMPå­—ç¬¦ä¸²åŒ¹é…
 	//
 
 public:

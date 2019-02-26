@@ -6,7 +6,7 @@
 #define DLEN 4
 #include <map>
 
-CBigNum::CBigNum(const int b)     //½«Ò»¸öintÀàĞÍµÄ±äÁ¿×ª»¯Îª´óÊı
+CBigNum::CBigNum(const int b)     //å°†ä¸€ä¸ªintç±»å‹çš„å˜é‡è½¬åŒ–ä¸ºå¤§æ•°
 {
 	int c, d = b;
 	len = 0;
@@ -19,7 +19,7 @@ CBigNum::CBigNum(const int b)     //½«Ò»¸öintÀàĞÍµÄ±äÁ¿×ª»¯Îª´óÊı
 	}
 	a[len++] = d;
 }
-CBigNum::CBigNum(const char*s, bool bIgnoreNonnumeric)     //½«Ò»¸ö×Ö·û´®ÀàĞÍµÄ±äÁ¿×ª»¯Îª´óÊı
+CBigNum::CBigNum(const char*s, bool bIgnoreNonnumeric)     //å°†ä¸€ä¸ªå­—ç¬¦ä¸²ç±»å‹çš„å˜é‡è½¬åŒ–ä¸ºå¤§æ•°
 {
 
 	if (bIgnoreNonnumeric)
@@ -85,14 +85,14 @@ CBigNum::CBigNum(const char*s, bool bIgnoreNonnumeric)     //½«Ò»¸ö×Ö·û´®ÀàĞÍµÄ±
 		a[index++] = t;
 	}
 }
-CBigNum::CBigNum(const CBigNum & T) : len(T.len)  //¿½±´¹¹Ôìº¯Êı
+CBigNum::CBigNum(const CBigNum & T) : len(T.len)  //æ‹·è´æ„é€ å‡½æ•°
 {
 	int i;
 	memset(a, 0, sizeof(a));
 	for (i = 0; i < len; i++)
 		a[i] = T.a[i];
 }
-CBigNum & CBigNum::operator=(const CBigNum & n)   //ÖØÔØ¸³ÖµÔËËã·û£¬´óÊıÖ®¼ä½øĞĞ¸³ÖµÔËËã
+CBigNum & CBigNum::operator=(const CBigNum & n)   //é‡è½½èµ‹å€¼è¿ç®—ç¬¦ï¼Œå¤§æ•°ä¹‹é—´è¿›è¡Œèµ‹å€¼è¿ç®—
 {
 	int i;
 	len = n.len;
@@ -101,7 +101,7 @@ CBigNum & CBigNum::operator=(const CBigNum & n)   //ÖØÔØ¸³ÖµÔËËã·û£¬´óÊıÖ®¼ä½øĞĞ
 		a[i] = n.a[i];
 	return *this;
 }
-istream& operator>>(istream & in, CBigNum & b)   //ÖØÔØÊäÈëÔËËã·û
+istream& operator>>(istream & in, CBigNum & b)   //é‡è½½è¾“å…¥è¿ç®—ç¬¦
 {
 	char ch[MAXSIZE * 4];
 	int i = -1;
@@ -122,7 +122,7 @@ istream& operator>>(istream & in, CBigNum & b)   //ÖØÔØÊäÈëÔËËã·û
 	b.len = count++;
 	return in;
 }
-ostream& operator<<(ostream& out, CBigNum& b)   //ÖØÔØÊä³öÔËËã·û
+ostream& operator<<(ostream& out, CBigNum& b)   //é‡è½½è¾“å‡ºè¿ç®—ç¬¦
 {
 	int i;
 	cout << b.a[b.len - 1];
@@ -134,10 +134,10 @@ ostream& operator<<(ostream& out, CBigNum& b)   //ÖØÔØÊä³öÔËËã·û
 	}
 	return out;
 }
-CBigNum CBigNum::operator+(const CBigNum & T) const   //Á½¸ö´óÊıÖ®¼äµÄÏà¼ÓÔËËã
+CBigNum CBigNum::operator+(const CBigNum & T) const   //ä¸¤ä¸ªå¤§æ•°ä¹‹é—´çš„ç›¸åŠ è¿ç®—
 {
 	CBigNum t(*this);
-	int i, big;      //Î»Êı   
+	int i, big;      //ä½æ•°   
 	big = T.len > len ? T.len : len;
 	for (i = 0; i < big; i++)
 	{
@@ -154,7 +154,7 @@ CBigNum CBigNum::operator+(const CBigNum & T) const   //Á½¸ö´óÊıÖ®¼äµÄÏà¼ÓÔËËã
 		t.len = big;
 	return t;
 }
-CBigNum CBigNum::operator-(const CBigNum & T) const   //Á½¸ö´óÊıÖ®¼äµÄÏà¼õÔËËã 
+CBigNum CBigNum::operator-(const CBigNum & T) const   //ä¸¤ä¸ªå¤§æ•°ä¹‹é—´çš„ç›¸å‡è¿ç®— 
 {
 	int i, j, big;
 	bool flag;
@@ -197,7 +197,7 @@ CBigNum CBigNum::operator-(const CBigNum & T) const   //Á½¸ö´óÊıÖ®¼äµÄÏà¼õÔËËã
 		t1.a[big - 1] = 0 - t1.a[big - 1];
 	return t1;
 }
-CBigNum CBigNum::operator*(const CBigNum & T) const   //Á½¸ö´óÊıÖ®¼äµÄÏà³ËÔËËã 
+CBigNum CBigNum::operator*(const CBigNum & T) const   //ä¸¤ä¸ªå¤§æ•°ä¹‹é—´çš„ç›¸ä¹˜è¿ç®— 
 {
 	CBigNum ret;
 	int i, j, up;
@@ -228,7 +228,7 @@ CBigNum CBigNum::operator*(const CBigNum & T) const   //Á½¸ö´óÊıÖ®¼äµÄÏà³ËÔËËã
 		ret.len--;
 	return ret;
 }
-CBigNum CBigNum::operator/(const int & b) const   //´óÊı¶ÔÒ»¸öÕûÊı½øĞĞÏà³ıÔËËã
+CBigNum CBigNum::operator/(const int & b) const   //å¤§æ•°å¯¹ä¸€ä¸ªæ•´æ•°è¿›è¡Œç›¸é™¤è¿ç®—
 {
 	CBigNum ret;
 	int i, down = 0;
@@ -242,7 +242,7 @@ CBigNum CBigNum::operator/(const int & b) const   //´óÊı¶ÔÒ»¸öÕûÊı½øĞĞÏà³ıÔËËã
 		ret.len--;
 	return ret;
 }
-int CBigNum::operator %(const int & b) const    //´óÊı¶ÔÒ»¸öintÀàĞÍµÄ±äÁ¿½øĞĞÈ¡Ä£ÔËËã    
+int CBigNum::operator %(const int & b) const    //å¤§æ•°å¯¹ä¸€ä¸ªintç±»å‹çš„å˜é‡è¿›è¡Œå–æ¨¡è¿ç®—    
 {
 	int i, d = 0;
 	for (i = len - 1; i >= 0; i--)
@@ -251,7 +251,7 @@ int CBigNum::operator %(const int & b) const    //´óÊı¶ÔÒ»¸öintÀàĞÍµÄ±äÁ¿½øĞĞÈ¡Ä
 	}
 	return d;
 }
-CBigNum CBigNum::operator^(const int & n) const    //´óÊıµÄn´Î·½ÔËËã
+CBigNum CBigNum::operator^(const int & n) const    //å¤§æ•°çš„næ¬¡æ–¹è¿ç®—
 {
 	CBigNum t, ret(1);
 	int i;
@@ -276,7 +276,7 @@ CBigNum CBigNum::operator^(const int & n) const    //´óÊıµÄn´Î·½ÔËËã
 	}
 	return ret;
 }
-bool CBigNum::operator>(const CBigNum & T) const   //´óÊıºÍÁíÒ»¸ö´óÊıµÄ´óĞ¡±È½Ï
+bool CBigNum::operator>(const CBigNum & T) const   //å¤§æ•°å’Œå¦ä¸€ä¸ªå¤§æ•°çš„å¤§å°æ¯”è¾ƒ
 {
 	int ln;
 	if (len > T.len)
@@ -294,7 +294,7 @@ bool CBigNum::operator>(const CBigNum & T) const   //´óÊıºÍÁíÒ»¸ö´óÊıµÄ´óĞ¡±È½Ï
 	else
 		return false;
 }
-bool CBigNum::operator >(const int & t) const    //´óÊıºÍÒ»¸öintÀàĞÍµÄ±äÁ¿µÄ´óĞ¡±È½Ï
+bool CBigNum::operator >(const int & t) const    //å¤§æ•°å’Œä¸€ä¸ªintç±»å‹çš„å˜é‡çš„å¤§å°æ¯”è¾ƒ
 {
 	CBigNum b(t);
 	return *this>b;

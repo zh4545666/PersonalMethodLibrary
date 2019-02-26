@@ -10,14 +10,14 @@ class AFX_EX_CLASS CIntegral
 {
 public:
 	//
-	// ¹¹ÔìÓëÎö¹¹
+	// æ„é€ ä¸ææ„
 	//
 
 	CIntegral();
 	virtual ~CIntegral();
 
 	//
-	// Ğéº¯Êı£º¼ÆËã»ı·Öº¯ÊıÖµ£¬±ØĞëÔÚÅÉÉúÀàÖĞ¸²¸Ç¸Ãº¯Êı
+	// è™šå‡½æ•°ï¼šè®¡ç®—ç§¯åˆ†å‡½æ•°å€¼ï¼Œå¿…é¡»åœ¨æ´¾ç”Ÿç±»ä¸­è¦†ç›–è¯¥å‡½æ•°
 	//
 
 	virtual double Func(double x)
@@ -26,30 +26,30 @@ public:
 	}
 
 	//
-	// ÊıÖµ»ı·ÖÇó½âËã·¨
+	// æ•°å€¼ç§¯åˆ†æ±‚è§£ç®—æ³•
 	//
 
-	// ±ä²½³¤ÌİĞÎÇó»ı·¨
+	// å˜æ­¥é•¿æ¢¯å½¢æ±‚ç§¯æ³•
 	double GetValueTrapezia(double a, double b, double eps = 0.000001);
-	// ±ä²½³¤ĞÁ²·ÉúÇó»ı·¨
+	// å˜æ­¥é•¿è¾›åœç”Ÿæ±‚ç§¯æ³•
 	double GetValueSimpson(double a, double b, double eps = 0.000001);
-	// ×ÔÊÊÓ¦ÌİĞÎÇó»ı·¨
+	// è‡ªé€‚åº”æ¢¯å½¢æ±‚ç§¯æ³•
 	double GetValueATrapezia(double a, double b, double d, double eps = 0.000001);
-	// Áú±´¸ñÇó»ı·¨
+	// é¾™è´æ ¼æ±‚ç§¯æ³•
 	double GetValueRomberg(double a, double b, double eps = 0.000001);
-	// ¼ÆËãÒ»Î¬»ı·ÖµÄÁ¬·ÖÊ½·¨
+	// è®¡ç®—ä¸€ç»´ç§¯åˆ†çš„è¿åˆ†å¼æ³•
 	double GetValuePq(double a, double b, double eps = 0.000001);
-	// ¸ßÕñµ´º¯ÊıÇó»ı·¨
+	// é«˜æŒ¯è¡å‡½æ•°æ±‚ç§¯æ³•
 	double GetValuePart(double a, double b, int m, int n, double fa[], double fb[], double s[]);
-	// ÀÕÈÃµÂ£­¸ßË¹Çó»ı·¨
+	// å‹’è®©å¾·ï¼é«˜æ–¯æ±‚ç§¯æ³•
 	double GetValueLegdGauss(double a, double b, double eps = 0.000001);
-	// À­¸Ç¶û£­¸ßË¹Çó»ı·¨
+	// æ‹‰ç›–å°”ï¼é«˜æ–¯æ±‚ç§¯æ³•
 	double GetValueLgreGauss();
-	// °£¶ûÃ×ÌØ£­¸ßË¹Çó»ı·¨
+	// åŸƒå°”ç±³ç‰¹ï¼é«˜æ–¯æ±‚ç§¯æ³•
 	double GetValueHermiteGauss();
 
 	//
-	// ÄÚ²¿º¯Êı
+	// å†…éƒ¨å‡½æ•°
 	//
 private:
 	void ppp(double x0, double x1, double h, double f0, double f1, double t0, double eps, double d, double t[]);

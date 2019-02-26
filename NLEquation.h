@@ -13,19 +13,19 @@
 class AFX_EX_CLASS CNLEquation
 {
 	//
-	// ¹«ÓĞ½Ó¿Úº¯Êı
+	// å…¬æœ‰æ¥å£å‡½æ•°
 	//
 public:
 
 	//
-	// ¹¹ÔìÓëÎö¹¹
+	// æ„é€ ä¸ææ„
 	//
 
 	CNLEquation();
 	virtual ~CNLEquation();
 
 	//
-	// Ğéº¯Êı£º¼ÆËã·½³Ì×ó¶Ëº¯ÊıÖµ£¬±ØĞëÔÚÒıÉêÀàÖĞ¸²¸Ç¸ÃÀàº¯Êı
+	// è™šå‡½æ•°ï¼šè®¡ç®—æ–¹ç¨‹å·¦ç«¯å‡½æ•°å€¼ï¼Œå¿…é¡»åœ¨å¼•ç”³ç±»ä¸­è¦†ç›–è¯¥ç±»å‡½æ•°
 	//
 
 	virtual double Func(double x)
@@ -52,43 +52,43 @@ public:
 	}
 
 	//
-	// ·ÇÏßĞÔ·½³ÌÇó½âËã·¨
+	// éçº¿æ€§æ–¹ç¨‹æ±‚è§£ç®—æ³•
 	//
 
-	// Çó·ÇÏßĞÔ·½³ÌÊµ¸ùµÄ¶Ô·Ö·¨
+	// æ±‚éçº¿æ€§æ–¹ç¨‹å®æ ¹çš„å¯¹åˆ†æ³•
 	int GetRootBisect(int nNumRoots, double x[], double xStart, double xEnd, double dblStep, double eps = 0.000001);
-	// Çó·ÇÏßĞÔ·½³ÌÒ»¸öÊµ¸ùµÄÅ£¶Ù·¨
+	// æ±‚éçº¿æ€§æ–¹ç¨‹ä¸€ä¸ªå®æ ¹çš„ç‰›é¡¿æ³•
 	bool GetRootNewton(double* x, int nMaxIt = 60, double eps = 0.000001);
-	// Çó·ÇÏßĞÔ·½³ÌÒ»¸öÊµ¸ùµÄ°£ÌØ½ğµü´ú·¨
+	// æ±‚éçº¿æ€§æ–¹ç¨‹ä¸€ä¸ªå®æ ¹çš„åŸƒç‰¹é‡‘è¿­ä»£æ³•
 	bool GetRootAitken(double* x, int nMaxIt = 60, double eps = 0.000001);
-	// Çó·ÇÏßĞÔ·½³ÌÒ»¸öÊµ¸ùµÄÁ¬·ÖÊ½½â·¨
+	// æ±‚éçº¿æ€§æ–¹ç¨‹ä¸€ä¸ªå®æ ¹çš„è¿åˆ†å¼è§£æ³•
 	bool GetRootPq(double* x, double eps = 0.000001);
-	// ÇóÊµÏµÊı´úÊı·½³ÌÈ«²¿¸ùµÄQR·½·¨
+	// æ±‚å®ç³»æ•°ä»£æ•°æ–¹ç¨‹å…¨éƒ¨æ ¹çš„QRæ–¹æ³•
 	bool GetRootQr(int n, double dblCoef[], double xr[], double xi[], int nMaxIt = 60, double eps = 0.000001);
-	// ÇóÊµÏµÊı´úÊı·½³ÌÈ«²¿¸ùµÄÅ£¶ÙÏÂÉ½·¨
+	// æ±‚å®ç³»æ•°ä»£æ•°æ–¹ç¨‹å…¨éƒ¨æ ¹çš„ç‰›é¡¿ä¸‹å±±æ³•
 	bool GetRootNewtonDownHill(int n, double dblCoef[], double xr[], double xi[]);
-	// Çó¸´ÏµÊı´úÊı·½³ÌÈ«²¿¸ùµÄÅ£¶ÙÏÂÉ½·¨
+	// æ±‚å¤ç³»æ•°ä»£æ•°æ–¹ç¨‹å…¨éƒ¨æ ¹çš„ç‰›é¡¿ä¸‹å±±æ³•
 	bool GetRootNewtonDownHill(int n, double ar[], double ai[], double xr[], double xi[]);
-	// Çó·ÇÏßĞÔ·½³ÌÒ»¸öÊµ¸ùµÄÃÉÌØ¿¨Âå·¨
+	// æ±‚éçº¿æ€§æ–¹ç¨‹ä¸€ä¸ªå®æ ¹çš„è’™ç‰¹å¡æ´›æ³•
 	void GetRootMonteCarlo(double* x, double xStart, int nControlB, double eps = 0.000001);
-	// ÇóÊµº¯Êı»ò¸´º¯Êı·½³ÌÒ»¸ö¸´¸ùµÄÃÉÌØ¿¨Âå·¨
+	// æ±‚å®å‡½æ•°æˆ–å¤å‡½æ•°æ–¹ç¨‹ä¸€ä¸ªå¤æ ¹çš„è’™ç‰¹å¡æ´›æ³•
 	void GetRootMonteCarlo(double* x, double* y, double xStart, int nControlB, double eps = 0.000001);
 
 	//
-	// ·ÇÏßĞÔ·½³Ì×éÇó½âËã·¨
+	// éçº¿æ€§æ–¹ç¨‹ç»„æ±‚è§£ç®—æ³•
 	//
 
-	// Çó·ÇÏßĞÔ·½³Ì×éÒ»×éÊµ¸ùµÄÌİ¶È·¨
+	// æ±‚éçº¿æ€§æ–¹ç¨‹ç»„ä¸€ç»„å®æ ¹çš„æ¢¯åº¦æ³•
 	bool GetRootsetGrad(int n, double x[], int nMaxIt = 500, double eps = 0.000001);
-	// Çó·ÇÏßĞÔ·½³Ì×éÒ»×éÊµ¸ùµÄÄâÅ£¶Ù·¨
+	// æ±‚éçº¿æ€§æ–¹ç¨‹ç»„ä¸€ç»„å®æ ¹çš„æ‹Ÿç‰›é¡¿æ³•
 	bool GetRootsetNewton(int n, double x[], double t, double h, int nMaxIt = 500, double eps = 0.000001);
-	// Çó·ÇÏßĞÔ·½³Ì×é×îĞ¡¶ş³Ë½âµÄ¹ãÒåÄæ·¨
+	// æ±‚éçº¿æ€§æ–¹ç¨‹ç»„æœ€å°äºŒä¹˜è§£çš„å¹¿ä¹‰é€†æ³•
 	bool GetRootsetGinv(int m, int n, double x[], double eps1 = 0.000001, double eps2 = 0.000001);
-	// Çó·ÇÏßĞÔ·½³Ì×éÒ»×éÊµ¸ùµÄÃÉÌØ¿¨Âå·¨
+	// æ±‚éçº¿æ€§æ–¹ç¨‹ç»„ä¸€ç»„å®æ ¹çš„è’™ç‰¹å¡æ´›æ³•
 	void GetRootsetMonteCarlo(int n, double x[], double xStart, int nControlB, double eps = 0.000001);
 
 	//
-	// ÄÚ²¿º¯Êı
+	// å†…éƒ¨å‡½æ•°
 	//
 private:
 	void g60(double* t, double* x, double* y, double* x1, double* y1, double* dx, double* dy, double* p, double* q, int* k, int* it);

@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Express.h"
 
-/* ³õÊ¼»¯¾²Ì¬Êı¾İ */
+/* åˆå§‹åŒ–é™æ€æ•°æ® */
 string CExpress::ptrList[] = { "f(", ",", "+", "-", "*", "/", "%", "^", "(", ")", "#" };
 int CExpress::ptrArgCnt[] = { 0, 1, 2, 2, 2, 2, 2, 2, 0, 0, 0 };
 
@@ -146,7 +146,7 @@ double CExpress::callFun(const string &fun, double arg[])
 
 void CExpress::readToken()
 {
-	while (pos < length && expression[pos] == ' ')  //È¥µôÇ°¿Õ¸ñ 
+	while (pos < length && expression[pos] == ' ')  //å»æ‰å‰ç©ºæ ¼ 
 	{  
 		++pos;
 	}
@@ -159,7 +159,7 @@ void CExpress::readToken()
 	char ch = expression[pos_t++];
 	char ch_n = pos_t < length ? expression[pos_t] : 0;
 
-	if (isdigit(ch) || (ch == '-' && isdigit(ch_n) && tkType != TKT_NUMBER)) //ÅĞ¶ÏÊı×Ö 
+	if (isdigit(ch) || (ch == '-' && isdigit(ch_n) && tkType != TKT_NUMBER)) //åˆ¤æ–­æ•°å­— 
 	{  
 		if (ch == '-')
 		{
@@ -179,11 +179,11 @@ void CExpress::readToken()
 		}
 		tkType = TKT_NUMBER;
 	}
-	else if (-1 != getPtrIndex(string(1, ch))) //ÅĞ¶ÏÔËËã·û 
+	else if (-1 != getPtrIndex(string(1, ch))) //åˆ¤æ–­è¿ç®—ç¬¦ 
 	{  
 		tkType = TKT_OPERATOR;
 	}
-	else if (isalpha(ch)) //ÅĞ¶Ïº¯Êı 
+	else if (isalpha(ch)) //åˆ¤æ–­å‡½æ•° 
 	{  
 		while (pos_t < length && (isalnum(ch) || ch == '_'))
 		{
@@ -240,8 +240,8 @@ int CExpress::getVal(double &res, const string &expression)
 
 int CExpress::getVal(double &res)
 {
-	stack<string> optr;  //Ëã·ûÕ» 
-	stack<double> opnd;  //ËãÊıÕ» 
+	stack<string> optr;  //ç®—ç¬¦æ ˆ 
+	stack<double> opnd;  //ç®—æ•°æ ˆ 
 
 	optr.push("#");
 	pos = 0;
@@ -257,7 +257,7 @@ int CExpress::getVal(double &res)
 
 		if (tkType == TKT_UNKNOW) 
 		{
-			return -1; //Î´Öª·ûºÅ 
+			return -1; //æœªçŸ¥ç¬¦å· 
 		}
 
 		if (tkType == TKT_NUMBER) 
@@ -293,7 +293,7 @@ int CExpress::getVal(double &res)
 						{
 							if (!getArg(opnd, arg, argCnt)) 
 							{
-								return -2;//±í´ïÊ½´íÎó 
+								return -2;//è¡¨è¾¾å¼é”™è¯¯ 
 							}
 							res = calculate(ptr, arg);
 							opnd.push(res);
@@ -305,7 +305,7 @@ int CExpress::getVal(double &res)
 						argCnt = funArgCnt[idx];
 						if (!getArg(opnd, arg, argCnt))
 						{
-							return -2;//±í´ïÊ½´íÎó 
+							return -2;//è¡¨è¾¾å¼é”™è¯¯ 
 						}
 						res = callFun(ptr, arg);
 						opnd.push(res);
@@ -340,7 +340,7 @@ int CExpress::getVal(double &res)
 	}
 	else
 	{
-		return -2;//±í´ïÊ½´íÎó 
+		return -2;//è¡¨è¾¾å¼é”™è¯¯ 
 	}
 	return 0;
 }
