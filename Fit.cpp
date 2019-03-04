@@ -1,4 +1,4 @@
-#include "stdafx.h"
+﻿#include "stdafx.h"
 #include "Fit.h"
 
 CFit::CFit():ssr(0), sse(0), rmse(0)

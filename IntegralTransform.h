@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #ifdef AFX_CLASS  
 #define AFX_EX_CLASS _declspec(dllexport)  

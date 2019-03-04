@@ -1,4 +1,4 @@
-#pragma once  
+﻿#pragma once  
 #include"stdafx.h"  
   
 #define AES_KEY_ROW_NUMBER 4  

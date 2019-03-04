@@ -1,4 +1,4 @@
-#ifndef CMD5_H  
+﻿#ifndef CMD5_H  
 #define CMD5_H  
 
 /* Type define */
