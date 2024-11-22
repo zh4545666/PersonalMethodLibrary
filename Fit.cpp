@@ -1,6 +1,8 @@
 ﻿#include "stdafx.h"
 #include "Fit.h"
 
+using namespace PersonalMethod;
+
 CFit::CFit():ssr(0), sse(0), rmse(0)
 {
 	factorlen = 2;

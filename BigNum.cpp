@@ -4,7 +4,46 @@
 #define MAXN 9999
 #define MAXSIZE 10
 #define DLEN 4
-#include <map>
+
+namespace PersonalMethod {
+
+	istream& operator>>(istream& in, CBigNum& b)   //重载输入运算符
+	{
+		char ch[MAXSIZE * 4];
+		int i = -1;
+		in >> ch;
+		int l = strlen(ch);
+		int count = 0, sum = 0;
+		for (i = l - 1; i >= 0;)
+		{
+			sum = 0;
+			int t = 1;
+			for (int j = 0; j < 4 && i >= 0; j++, i--, t *= 10)
+			{
+				sum += (ch[i] - '0') * t;
+			}
+			b.a[count] = sum;
+			count++;
+		}
+		b.len = count++;
+		return in;
+	}
+
+	ostream& operator<<(ostream& out, CBigNum& b)   //重载输出运算符
+	{
+		int i;
+		cout << b.a[b.len - 1];
+		for (i = b.len - 2; i >= 0; i--)
+		{
+			cout.width(DLEN);
+			cout.fill('0');
+			cout << b.a[i];
+		}
+		return out;
+	}
+}
+
+using namespace PersonalMethod;
 
 CBigNum::CBigNum(const int b)     //将一个int类型的变量转化为大数
 {
@@ -19,6 +58,7 @@ CBigNum::CBigNum(const int b)     //将一个int类型的变量转化为大数
 	}
 	a[len++] = d;
 }
+
 CBigNum::CBigNum(const char*s, bool bIgnoreNonnumeric)     //将一个字符串类型的变量转化为大数
 {
 
@@ -85,6 +125,7 @@ CBigNum::CBigNum(const char*s, bool bIgnoreNonnumeric)     //将一个字符串�
 		a[index++] = t;
 	}
 }
+
 CBigNum::CBigNum(const CBigNum & T) : len(T.len)  //拷贝构造函数
 {
 	int i;
@@ -92,6 +133,7 @@ CBigNum::CBigNum(const CBigNum & T) : len(T.len)  //拷贝构造函数
 	for (i = 0; i < len; i++)
 		a[i] = T.a[i];
 }
+
 CBigNum & CBigNum::operator=(const CBigNum & n)   //重载赋值运算符，大数之间进行赋值运算
 {
 	int i;
@@ -101,39 +143,7 @@ CBigNum & CBigNum::operator=(const CBigNum & n)   //重载赋值运算符，大�
 		a[i] = n.a[i];
 	return *this;
 }
-istream& operator>>(istream & in, CBigNum & b)   //重载输入运算符
-{
-	char ch[MAXSIZE * 4];
-	int i = -1;
-	in >> ch;
-	int l = strlen(ch);
-	int count = 0, sum = 0;
-	for (i = l - 1; i >= 0;)
-	{
-		sum = 0;
-		int t = 1;
-		for (int j = 0; j<4 && i >= 0; j++, i--, t *= 10)
-		{
-			sum += (ch[i] - '0')*t;
-		}
-		b.a[count] = sum;
-		count++;
-	}
-	b.len = count++;
-	return in;
-}
-ostream& operator<<(ostream& out, CBigNum& b)   //重载输出运算符
-{
-	int i;
-	cout << b.a[b.len - 1];
-	for (i = b.len - 2; i >= 0; i--)
-	{
-		cout.width(DLEN);
-		cout.fill('0');
-		cout << b.a[i];
-	}
-	return out;
-}
+
 CBigNum CBigNum::operator+(const CBigNum & T) const   //两个大数之间的相加运算
 {
 	CBigNum t(*this);
@@ -154,6 +164,7 @@ CBigNum CBigNum::operator+(const CBigNum & T) const   //两个大数之间的相
 		t.len = big;
 	return t;
 }
+
 CBigNum CBigNum::operator-(const CBigNum & T) const   //两个大数之间的相减运算 
 {
 	int i, j, big;
@@ -197,6 +208,7 @@ CBigNum CBigNum::operator-(const CBigNum & T) const   //两个大数之间的相
 		t1.a[big - 1] = 0 - t1.a[big - 1];
 	return t1;
 }
+
 CBigNum CBigNum::operator*(const CBigNum & T) const   //两个大数之间的相乘运算 
 {
 	CBigNum ret;
@@ -228,6 +240,7 @@ CBigNum CBigNum::operator*(const CBigNum & T) const   //两个大数之间的相
 		ret.len--;
 	return ret;
 }
+
 CBigNum CBigNum::operator/(const int & b) const   //大数对一个整数进行相除运算
 {
 	CBigNum ret;
@@ -242,6 +255,7 @@ CBigNum CBigNum::operator/(const int & b) const   //大数对一个整数进行�
 		ret.len--;
 	return ret;
 }
+
 int CBigNum::operator %(const int & b) const    //大数对一个int类型的变量进行取模运算    
 {
 	int i, d = 0;
@@ -251,6 +265,7 @@ int CBigNum::operator %(const int & b) const    //大数对一个int类型的变
 	}
 	return d;
 }
+
 CBigNum CBigNum::operator^(const int & n) const    //大数的n次方运算
 {
 	CBigNum t, ret(1);
@@ -276,6 +291,7 @@ CBigNum CBigNum::operator^(const int & n) const    //大数的n次方运算
 	}
 	return ret;
 }
+
 bool CBigNum::operator>(const CBigNum & T) const   //大数和另一个大数的大小比较
 {
 	int ln;
@@ -294,11 +310,13 @@ bool CBigNum::operator>(const CBigNum & T) const   //大数和另一个大数的
 	else
 		return false;
 }
+
 bool CBigNum::operator >(const int & t) const    //大数和一个int类型的变量的大小比较
 {
 	CBigNum b(t);
 	return *this>b;
 }
+
 string CBigNum::ToString()
 {
 	ostringstream ostr;

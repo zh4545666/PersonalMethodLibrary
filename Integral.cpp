@@ -1,6 +1,7 @@
 ﻿#include "stdafx.h"
 #include "Integral.h"
 
+using namespace PersonalMethod;
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction

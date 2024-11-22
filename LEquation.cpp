@@ -1,6 +1,7 @@
 ﻿#include "stdafx.h"
 #include "LEquation.h"
 
+using namespace PersonalMethod;
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction

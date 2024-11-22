@@ -1,6 +1,7 @@
 ﻿#include "stdafx.h"
 #include "md5.h"  
 
+using namespace PersonalMethod;
 
 /* Constants for MD5Transform routine. */
 #define S11 7  

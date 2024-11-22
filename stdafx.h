@@ -24,6 +24,7 @@
 #include <string>
 #include <stack>
 #include <vector>
+#include <map>
 #include <sstream>
 #include <iostream>
 #include <fstream>
@@ -38,3 +39,5 @@ template class _declspec(dllexport) std::basic_string<char, std::char_traits<cha
 //template class _declspec(dllexport) std::allocator<double>;
 //template class _declspec(dllexport) std::vector<double, std::allocator<double> >;
 
+
+#pragma  warning( disable: 4267 4244 )

@@ -1,6 +1,7 @@
 ﻿#include "stdafx.h"
 #include "Matrix.h"
 
+using namespace PersonalMethod;
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction

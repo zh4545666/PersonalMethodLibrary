@@ -1,6 +1,8 @@
 ﻿#include "stdafx.h"
 #include "Express.h"
 
+using namespace PersonalMethod;
+
 /* 初始化静态数据 */
 string CExpress::ptrList[] = { "f(", ",", "+", "-", "*", "/", "%", "^", "(", ")", "#" };
 int CExpress::ptrArgCnt[] = { 0, 1, 2, 2, 2, 2, 2, 2, 0, 0, 0 };

@@ -1,6 +1,7 @@
 ﻿#include "stdafx.h"
 #include "DataAnalysis.h"
 
+using namespace PersonalMethod;
 
 CDataAnalysis::CDataAnalysis()
 {

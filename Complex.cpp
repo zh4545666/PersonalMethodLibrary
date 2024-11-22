@@ -1,6 +1,7 @@
 ﻿#include "stdafx.h"
 #include "Complex.h"
 
+using namespace PersonalMethod;
 
 //////////////////////////////////////////////////////////////////////
 // 基本构造函数

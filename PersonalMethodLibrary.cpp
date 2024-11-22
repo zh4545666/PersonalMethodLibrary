@@ -30,7 +30,6 @@
 #define AFX_EX_CLASS _declspec(dllimport)  
 #endif 
 
-
 /**************************************************
 *
 *function：获得DLL名称

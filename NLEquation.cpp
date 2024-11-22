@@ -1,6 +1,7 @@
 ﻿#include "stdafx.h"
 #include "NLEquation.h"
 
+using namespace PersonalMethod;
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction

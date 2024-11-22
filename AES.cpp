@@ -1,6 +1,8 @@
 ﻿#include "stdafx.h"
 #include "AES.h"
-  
+
+using namespace PersonalMethod;
+
 //permutebox  
 static unsigned char permutebox[] =  
 { /*  0    1    2    3    4    5    6    7    8    9    a    b    c    d    e    f */  
@@ -69,7 +71,6 @@ CAES::~CAES(void)
 /* param : pDestPath    file path                                       */
 /* return : bool                                                        */
 /************************************************************************/
-
 bool CAES::Encrypt(char* pSrcFilePath, char* pDestFilePath)
 {
 	ifstream fs;
@@ -105,7 +106,6 @@ bool CAES::Encrypt(char* pSrcFilePath, char* pDestFilePath)
 /* param : pDestPath    file path                                       */
 /* return : bool                                                        */
 /************************************************************************/
-
 bool CAES::Decrypt(char* pSrcFilePath, char* pDestFilePath)
 {
 	ifstream fs;
@@ -142,7 +142,6 @@ bool CAES::Decrypt(char* pSrcFilePath, char* pDestFilePath)
 /* param :len encrypt data length                                      */  
 /* return : void                                                        */  
 /************************************************************************/  
-  
 void CAES::Encrypt(unsigned char* data ,unsigned char * encryptArray,size_t len)  
 {  
     memcpy(encryptArray,data,len);  
@@ -161,7 +160,6 @@ void CAES::Encrypt(unsigned char * encryptArray, size_t len)
 /* param :len decrypt data length                                      */  
 /* return : void                                                        */  
 /************************************************************************/  
-  
 void CAES::Decrypt(unsigned char * data,unsigned char * decryptArray,size_t len)  
 {     
     memcpy(decryptArray,data,len);  
@@ -176,8 +174,7 @@ void CAES::Decrypt(unsigned char * decryptArray, size_t len)
 /* create a Cipher  method  only one time  Encrypt                      */  
 /* param : input     input encrypt data                                 */  
 /* return : unsigned char *                                             */  
-/************************************************************************/  
-  
+/************************************************************************/    
 unsigned char* CAES::Cipher(unsigned char* input)  
 {  
   
@@ -211,6 +208,7 @@ unsigned char* CAES::Cipher(unsigned char* input)
     }  
     return input;  
 }  
+
 /************************************************************************/  
 /* create a InvCipher  method  only one time  decrypt                   */  
 /* param : input     input decrypt data                                 */  
@@ -249,6 +247,7 @@ unsigned char* CAES::InvCipher(unsigned char* input)
     }  
     return input;  
 }  
+
 /************************************************************************/  
 /* Create a specified length of data encryption method                  */  
 /* param : input     input data encryption                              */  
@@ -278,6 +277,7 @@ unsigned char* CAES::Cipher(void * input, size_t length)
     }  
     return (unsigned char*)input;  
 }  
+
 /************************************************************************/  
 /* Create a specified length of InvCipher method                        */  
 /* param : input     input data InvCipher                               */  
@@ -302,6 +302,7 @@ unsigned char* CAES::InvCipher(void * input, size_t length)
     }  
     return (unsigned char*)input;  
 }  
+
 /************************************************************************/  
 /*Create key method                                                     */  
 /* param : key      input data encryption key                           */  
@@ -351,8 +352,7 @@ void CAES::KeyExpansion(unsigned char* key, unsigned char swapbox[][4][4])
 /* param : a      row  char                                             */  
 /* param : b      column  char                                          */  
 /* return : unsigned char                                               */  
-/************************************************************************/  
-  
+/************************************************************************/    
 unsigned char CAES::FFmul(unsigned char a, unsigned char b)  
 {  
     unsigned char bw[AES_KEY_ROW_NUMBER];  
@@ -376,6 +376,7 @@ unsigned char CAES::FFmul(unsigned char a, unsigned char b)
     }  
     return res;  
 }  
+
 /************************************************************************/  
 /* Create bytes alternatives                                            */  
 /* param :  state[][]  Byte array alternative                           */  
@@ -392,6 +393,7 @@ void CAES::SubBytes(unsigned char state[][AES_KEY_COLUMN_NUMBER])
         }  
     }  
 }  
+
 /************************************************************************/  
 /* Create rows transform method                                         */  
 /* param :  state[][]  line array alternative                           */  
@@ -413,6 +415,7 @@ void CAES::ShiftRows(unsigned char state[][AES_KEY_COLUMN_NUMBER])
         }  
     }  
 }  
+
 /************************************************************************/  
 /* Create columns transform method                                      */  
 /* param :  state[][]  columns array alternative                        */  
@@ -455,6 +458,7 @@ void CAES::AddRoundKey(unsigned char state[][AES_KEY_COLUMN_NUMBER], unsigned ch
         }  
     }  
 }  
+
 /************************************************************************/  
 /* CreateInvSubBytes alternatives                                      */  
 /* param :  state[][]  InvSubBytes array alternative                    */  
@@ -471,6 +475,7 @@ void CAES::InvSubBytes(unsigned char state[][AES_KEY_COLUMN_NUMBER])
         }  
     }  
 }  
+
 /************************************************************************/  
 /* CreateInvShiftRows transform method                                 */  
 /* param :  state[][]  InvShiftRows array alternative                   */  
@@ -492,6 +497,7 @@ void CAES::InvShiftRows(unsigned char state[][AES_KEY_COLUMN_NUMBER])
         }  
     }  
 }  
+
 /************************************************************************/  
 /* CreateInvMixColumns transform method                                */  
 /* param :  state[][]  InvMixColumns array alternative                  */  
